@@ -1,43 +1,251 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 
-export default function Navbar() {
+const NAV_LEFT = [
+  {
+    label: 'Explore Killington',
+    dropdown: [
+      { label: 'Killington Resort',    href: '/killington-resort' },
+      { label: 'Lodging Options',       href: '/listings?category=lodging-options' },
+      { label: 'Woodward Terrain Park', href: '/woodward-terrain-park' },
+      { label: 'Ski Lessons',           href: '/ski-lessons' },
+      { label: 'The Bus',               href: '/the-bus' },
+      { label: 'The Bus Routes',        href: '/the-bus/routes' },
+      { label: 'The Bus Schedule',      href: '/the-bus/schedule' },
+      { label: 'Ski Lift Tickets',      href: '/ski-lift-tickets' },
+      { label: 'Ski Conditions',        href: '/ski-conditions' },
+    ],
+  },
+  {
+    label: 'Things To Do',
+    dropdown: [
+      { label: 'Summer Activities', href: '/listings?season=summer' },
+      { label: 'Winter Activities', href: '/listings?season=winter' },
+    ],
+  },
+  { label: 'Food', href: '/listings?category=places-to-eat' },
+  {
+    label: "Traveler's Choice",
+    dropdown: [
+      { label: 'Adventure',  href: '/listings?category=adventure' },
+      { label: 'Breweries',  href: '/listings?category=breweries' },
+      { label: 'Food',       href: '/listings?category=places-to-eat' },
+      { label: 'Golf',       href: '/listings?category=golf' },
+      { label: 'Hiking',     href: '/listings?category=hiking' },
+      { label: 'Ski Shops',  href: '/listings?category=ski-shops' },
+    ],
+  },
+]
+
+const NAV_RIGHT = [
+  {
+    label: 'Our Story',
+    dropdown: [
+      { label: 'How it Started', href: '/our-story' },
+      { label: 'Our Team',       href: '/our-team' },
+      { label: 'Giving Back',    href: '/giving-back' },
+    ],
+  },
+  { label: 'Blog',               href: '/blog' },
+  { label: 'Swag',               href: '/swag' },
+  { label: 'Best Gear For 2026', href: '/gear' },
+]
+
+function Chevron() {
   return (
-    <nav className="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
-        <Link href="/" className="flex-shrink-0">
-          <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '50px' }} />
-        </Link>
-        <div className="hidden lg:flex items-center gap-1 text-sm font-medium">
-          {[
-            { label: "Explore Killington", href: "/listings" },
-            { label: "Things To Do",       href: "/listings?season=all" },
-            { label: "Food",               href: "/listings?category=places-to-eat" },
-            { label: "Blog",               href: "/blog" },
-            { label: "Swag",               href: "/swag" },
-            { label: "Best Gear 2026",     href: "/gear" },
-          ].map((link, i, arr) => (
-            <span key={link.href} className="flex items-center">
-              <Link
-                href={link.href}
-                className="px-2 py-1 rounded hover:opacity-70 transition-opacity whitespace-nowrap"
-                style={{ color: '#00B4D8' }}
-              >
-                {link.label}
-              </Link>
-              {i < arr.length - 1 && <span className="text-gray-300 select-none">|</span>}
-            </span>
+    <svg className="w-3 h-3 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  )
+}
+
+function DesktopItem({ item }) {
+  if (!item.dropdown) {
+    return (
+      <Link
+        href={item.href}
+        className="px-3 py-1.5 text-sm text-gray-700 hover:text-gray-900 whitespace-nowrap font-medium transition-colors"
+      >
+        {item.label}
+      </Link>
+    )
+  }
+  return (
+    <div className="relative group">
+      <button className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-700 hover:text-gray-900 whitespace-nowrap font-medium transition-colors">
+        {item.label}
+        <Chevron />
+      </button>
+      {/* invisible bridge so cursor can reach the menu */}
+      <div className="absolute top-full left-0 w-full h-2" />
+      <div className="absolute top-[calc(100%+0.5rem)] left-0 hidden group-hover:block z-50 min-w-[192px]">
+        <div className="bg-white border border-gray-100 rounded-xl shadow-xl py-1.5">
+          {item.dropdown.map((sub) => (
+            <Link
+              key={sub.label + sub.href}
+              href={sub.href}
+              className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors whitespace-nowrap"
+            >
+              {sub.label}
+            </Link>
           ))}
         </div>
-        <Link
-          href="/listings"
-          className="flex-shrink-0 text-sm font-bold px-5 py-2.5 rounded-full text-white hover:opacity-90 transition-opacity shadow-sm"
-          style={{ backgroundColor: '#00B4D8' }}
-        >
-          Browse Listings
-        </Link>
       </div>
-    </nav>
+    </div>
+  )
+}
+
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen]  = useState(false)
+  const [searchOpen, setSearchOpen]  = useState(false)
+  const [openMobile, setOpenMobile]  = useState(null)
+
+  return (
+    <header className="bg-white sticky top-0 z-50 shadow-sm">
+
+      {/* ── Top tagline ── */}
+      <div className="hidden md:block border-b border-gray-100 py-3 text-center">
+        <p className="font-black uppercase text-gray-900" style={{ fontSize: '36px', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+          Discover the Best of Killington, Vermont
+        </p>
+      </div>
+
+      {/* ── Main nav row ── */}
+      <div className="border-b border-gray-100 relative">
+        <div className="max-w-screen-xl mx-auto px-5 flex items-center h-16">
+
+          {/* Left nav group */}
+          <div className="hidden lg:flex items-center flex-1 gap-0.5">
+            {NAV_LEFT.map((item) => (
+              <DesktopItem key={item.label} item={item} />
+            ))}
+          </div>
+
+          {/* Center logo — absolute on desktop so it's truly centered */}
+          <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block">
+            <Link href="/">
+              <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '52px' }} />
+            </Link>
+          </div>
+
+          {/* Mobile: logo left-aligned */}
+          <Link href="/" className="lg:hidden flex-shrink-0">
+            <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '44px' }} />
+          </Link>
+
+          {/* Right nav group */}
+          <div className="hidden lg:flex items-center flex-1 justify-end gap-0.5">
+            {NAV_RIGHT.map((item) => (
+              <DesktopItem key={item.label} item={item} />
+            ))}
+            {/* Search */}
+            <button
+              onClick={() => setSearchOpen((s) => !s)}
+              className="ml-2 p-2 text-gray-500 hover:text-gray-900 transition-colors"
+              aria-label="Search"
+            >
+              <svg className="w-4.5 h-4.5" style={{ width: '18px', height: '18px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <circle cx="11" cy="11" r="8" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile: hamburger */}
+          <button
+            className="lg:hidden ml-auto p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            onClick={() => setMobileOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+
+        </div>
+      </div>
+
+      {/* ── Search bar (expands below nav) ── */}
+      {searchOpen && (
+        <div className="border-b border-gray-100 bg-white px-6 py-3">
+          <div className="max-w-2xl mx-auto flex gap-3">
+            <input
+              autoFocus
+              type="text"
+              placeholder="Search listings, activities, places…"
+              className="flex-1 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && e.target.value.trim()) {
+                  window.location.href = `/listings?search=${encodeURIComponent(e.target.value.trim())}`
+                }
+              }}
+            />
+            <button
+              className="text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: '#00B4D8' }}
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── Mobile menu ── */}
+      {mobileOpen && (
+        <div className="lg:hidden border-b border-gray-200 bg-white overflow-y-auto max-h-[75vh]">
+          {[...NAV_LEFT, ...NAV_RIGHT].map((item) => (
+            <div key={item.label} className="border-b border-gray-50 last:border-0">
+              {item.dropdown ? (
+                <>
+                  <button
+                    className="w-full flex items-center justify-between px-5 py-3.5 text-sm font-medium text-gray-700"
+                    onClick={() => setOpenMobile(openMobile === item.label ? null : item.label)}
+                  >
+                    {item.label}
+                    <svg
+                      className={`w-4 h-4 text-gray-400 transition-transform ${openMobile === item.label ? 'rotate-180' : ''}`}
+                      fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openMobile === item.label && (
+                    <div className="bg-gray-50 pb-2">
+                      {item.dropdown.map((sub) => (
+                        <Link
+                          key={sub.label + sub.href}
+                          href={sub.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="block px-8 py-2.5 text-sm text-gray-600 hover:text-gray-900"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-5 py-3.5 text-sm font-medium text-gray-700 hover:text-gray-900"
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+    </header>
   )
 }
