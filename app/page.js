@@ -68,40 +68,52 @@ const POPULAR_SEARCHES = [
 
 const DEALS = [
   {
-    name: "Kids Ski Boots",
+    name: "Salomon Kids Ski Boots",
     price: "$149.95",
     url: "https://www.backcountry.com/salomon-qst-access-70t-gw-boot-kids",
     img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&q=75&fit=crop",
   },
   {
-    name: "Men's Bib Pant",
+    name: "Men's Gore-Tex Bib Pant",
     price: "$349.95",
     url: "https://www.backcountry.com/backcountry-cottonwoods-gore-tex-bib-pant-mens",
+    img: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&q=75&fit=crop",
+  },
+  {
+    name: "Helly Hansen Women's Jacket",
+    price: "$259.95",
+    url: "https://www.backcountry.com/helly-hansen-imperial-puffy-jacket-womens",
     img: "https://images.unsplash.com/photo-1605719124347-9d5b4f0a7edb?w=300&q=75&fit=crop",
   },
   {
-    name: "Women's Jacket",
-    price: "$259.95",
-    url: "https://www.backcountry.com/helly-hansen-imperial-puffy-jacket-womens",
-    img: "https://images.unsplash.com/photo-1617952739267-fa876e97e100?w=300&q=75&fit=crop",
-  },
-  {
-    name: "Women's Shell",
+    name: "Women's Gore-Tex Shell",
     price: "$449.95",
     url: "https://www.backcountry.com/backcountry-crestcarver-gore-tex-shell-jacket-womens",
-    img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&q=75&fit=crop",
+    img: "https://images.unsplash.com/photo-1522163182402-834f871fd851?w=300&q=75&fit=crop",
   },
   {
-    name: "Mind Expander Snowboard",
+    name: "Jones Mind Expander Snowboard",
     price: "$599.95",
     url: "https://www.backcountry.com/jones-snowboards-mind-expander-snowboard",
     img: "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=300&q=75&fit=crop",
   },
   {
-    name: "Bold Lite Ski Poles",
+    name: "Leki Bold Lite Ski Poles",
     price: "$89.95",
     url: "https://www.backcountry.com/leki-bold-lite-s-ski-poles",
-    img: "https://images.unsplash.com/photo-1551524559-8af4e6624178?w=300&q=75&fit=crop",
+    img: "https://images.unsplash.com/photo-1565992441121-4367a7dba8a0?w=300&q=75&fit=crop",
+  },
+  {
+    name: "Smith Vantage MIPS Helmet",
+    price: "$329.95",
+    url: "https://www.backcountry.com/smith-vantage-mips-helmet",
+    img: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=300&q=75&fit=crop",
+  },
+  {
+    name: "Oakley Flight Deck Goggles",
+    price: "$249.95",
+    url: "https://www.backcountry.com/oakley-flight-deck-l-prizm-goggle",
+    img: "https://images.unsplash.com/photo-1596753847901-04b59f41d5f9?w=300&q=75&fit=crop",
   },
 ]
 
@@ -158,6 +170,26 @@ export default function Home() {
       }
     }, 3000)
     return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    // Airbnb embed SDK
+    if (!document.getElementById('airbnb-jssdk')) {
+      const s = document.createElement('script')
+      s.id = 'airbnb-jssdk'
+      s.async = true
+      s.src = 'https://www.airbnb.com/embeddable/airbnb_jssdk'
+      document.body.appendChild(s)
+    }
+    // weatherwidget.io
+    if (!document.getElementById('weatherwidget-io-js')) {
+      const s = document.createElement('script')
+      s.id = 'weatherwidget-io-js'
+      s.src = 'https://weatherwidget.io/js/widget.min.js'
+      document.body.appendChild(s)
+    } else if (window.__weatherwidget_init) {
+      window.__weatherwidget_init()
+    }
   }, [])
 
   return (
@@ -406,7 +438,6 @@ export default function Home() {
 
           </div>
         </div>
-        <script async src="https://www.airbnb.com/embeddable/airbnb_jssdk"></script>
       </section>
 
       {/* ── SECTION 6: WEATHER WIDGET ── */}
@@ -416,12 +447,14 @@ export default function Home() {
             Weather Forecast
           </h2>
           <div className="flex justify-center">
-            <iframe
-              src="https://forecast7.com/en/43d68n72d78/killington/?unit=us"
-              style={{ width: '100%', maxWidth: '800px', height: '200px', border: 'none' }}
-              scrolling="no"
-              title="Killington Vermont Weather Forecast"
-            />
+            <a
+              className="weatherwidget-io"
+              href="https://forecast7.com/en/43d68n72d78/killington/?unit=us"
+              data-label_1="KILLINGTON, VT"
+              data-theme="clear"
+            >
+              KILLINGTON, VT
+            </a>
           </div>
         </div>
       </section>
