@@ -2,14 +2,7 @@
   {
     "name": "The Rivershed",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife",
-      "Places To Drink"
+      "Places to Eat"
     ],
     "address": "747 Killington Road Killington, VT 05751",
     "hours": "Monday - Wednesday 11:30am - 9:00pm Thursday - Saturday 11:30am - 10:00pm Sunday 11:30am",
@@ -19,17 +12,14 @@
     "website": "https://therivershed.com",
     "description": "Opened in November 2021, Rivershed Killington is the newest addition to the successful restaurant chain founded by Kara Tondorf, drawing inspiration from the vibrant food, music, and culture of Nashville, TN.",
     "email": "info@therivershed.com",
-    "localImage": "/images/listings/the-rivershed.webp"
+    "localImage": "/images/listings/the-rivershed.webp",
+    "lat": 43.6596842,
+    "lng": -72.7947101
   },
   {
     "name": "River Roost Brewery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Breweries"
     ],
     "address": "230 S Main St, Hartford, VT 05001",
     "hours": "Tuesday - Sunday: 12:00 PM - 6:00 PM",
@@ -39,17 +29,14 @@
     "website": "https://www.riverroostbrewery.com/",
     "description": "Established in 2016 in the heart of downtown White River Junction, Vermont. We offer a rotating and ever-evolving list of beers. Stop in and see what we’ve been brewing.",
     "email": "info@riverroostbrewery.com",
-    "localImage": "/images/listings/river-roost-brewery.webp"
+    "localImage": "/images/listings/river-roost-brewery.webp",
+    "lat": 43.6457703,
+    "lng": -72.3181592
   },
   {
     "name": "Chaffee Art Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience"
     ],
     "address": "16 S Main St Rutland, VT 05701",
     "hours": "Thursday–Friday, 12–5pm; and Saturday, 10am–3pm",
@@ -59,17 +46,14 @@
     "website": "https://www.chaffeeartcenter.org/",
     "description": "The Chaffee Art Center is a prominent cultural institution located in Rutland, Vermont. Established in 1961, it serves as a hub for the arts, providing a platform for local and regional artists to showcase their work. The center hosts various exhibitions, events, and educational programs to promote artistic expression and engagement within the community.",
     "email": "info@chaffeeartcenter.org",
-    "localImage": "/images/listings/the-chaffee-art-center.webp"
+    "localImage": "/images/listings/the-chaffee-art-center.webp",
+    "lat": 43.6077802,
+    "lng": -72.9715824
   },
   {
     "name": "Ski Clubs of Massachussets",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Ski Clubs"
     ],
     "address": "",
     "hours": "",
@@ -84,12 +68,8 @@
   {
     "name": "Woodstock Nordic Center at The Woodstock Inn & Resort",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Lodging Options",
+      "Nordic Ski"
     ],
     "address": "Woodstock Country Club, 76 South Street, Woodstock, VT 05091",
     "hours": "Daily - 9:00am-4:00pm",
@@ -98,17 +78,18 @@
     "phone": "(802) 457-6674",
     "website": "https://www.woodstockinn.com/do/things-to-do/woodstock-nordic-center",
     "description": "*Peak Period Rates Apply: 12/23/23 thru 1/1/24, 1/13/24 thru 1/15/24 & 2/17/24 thru 2/25/24.",
-    "email": "xcski@woodstockinn.com"
+    "email": "xcski@woodstockinn.com",
+    "localImage": "/images/listings/woodstock-nordic-center-at-the-woodstock-inn-resort.jpeg",
+    "lat": 43.6161837,
+    "lng": -72.5167484
   },
   {
     "name": "The Quechee Inn at Marshland Farm",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Lodging Options",
+      "Nordic Ski",
+      "Farm Visits",
+      "Paddle Board"
     ],
     "address": "1119 Quechee Main St, Quechee, VT 05059",
     "hours": "Daily: 9:00AM - 5:00PM",
@@ -118,17 +99,15 @@
     "website": "",
     "description": "Summer activities offered include guided fly fishing trips through our Fly Fishing School, kayak, canoe, and stand-up paddleboard rentals with optional guides. Additionally, we provide hybrid mountain bike rentals, guided nature hikes, Survival Camp for teenagers, mountaintop yoga sessions, and archery sessions tailored for women and children.",
     "email": "picknell420@gmail.com",
-    "localImage": "/images/listings/3440.webp"
+    "localImage": "/images/listings/3440.webp",
+    "lat": 43.6486901,
+    "lng": -72.4073819
   },
   {
     "name": "Mountain Green Resort",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Lodging Options",
+      "Nordic Ski"
     ],
     "address": "135 E Mountain Rd, Killington, VT 05751",
     "hours": "",
@@ -138,17 +117,14 @@
     "website": "https://mtgreen.com",
     "description": "Killington’s only high-rise, condominium hotel is a large condo complex in Killington, Vermont, located across from the Snowshed Baselodge and within walking distance of Killington Mountain.",
     "email": "stay@mtgreen.com",
-    "localImage": "/images/listings/mountain-green-resort.webp"
+    "localImage": "/images/listings/mountain-green-resort.webp",
+    "lat": 43.6297167,
+    "lng": -72.7945223
   },
   {
     "name": "Viking Nordic Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Nordic Ski"
     ],
     "address": "615 Little Pond Rd., PO Box 187 Londonderry, VT 05148",
     "hours": "Daily: 9:00AM - 4:30PM",
@@ -157,17 +133,15 @@
     "phone": "(802) 824-3933",
     "website": "https://www.vikingnordic.com/",
     "description": "Viking Nordic Center stands as one of the longest-established cross-country ski facilities in North America. Boasting an extensive 35-kilometer trail network, we cater to skiers, snowshoers, and fat bike enthusiasts alike. Whether navigating the gently rolling terrain of our inner trail system or embarking on the expansive loops through our wooded outer trail system, individuals ranging from beginners to experts can discover terrain that offers both satisfaction and a challenge.",
-    "email": "skiandstay@vikingnordic.com"
+    "email": "skiandstay@vikingnordic.com",
+    "localImage": "/images/listings/viking-nordic-center.jpeg",
+    "lat": 43.2263946,
+    "lng": -72.7838828
   },
   {
     "name": "Mountain Meadows Cross Country Ski and Snowshoe Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Nordic Ski"
     ],
     "address": "2363 Route 4, Killington, VT 05751",
     "hours": "",
@@ -177,17 +151,14 @@
     "website": "https://xcskiing.net/",
     "description": "Mountain Meadows Nordic Ski Center is a popular destination for backcountry skiing in the United States.",
     "email": "basecampvt@mac.com",
-    "localImage": "/images/listings/mountain-meadows-xcskiing.webp"
+    "localImage": "/images/listings/mountain-meadows-xcskiing.webp",
+    "lat": 43.6686148,
+    "lng": -72.8030764
   },
   {
     "name": "Lost Nation Brewing",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Breweries"
     ],
     "address": "87 Creamery Rd, Morrisville, VT 05661",
     "hours": "Wednesday - Sunday: 12:00 PM - 7:00 PM",
@@ -196,17 +167,15 @@
     "phone": "(802) 851-8041",
     "website": "https://lostnationbrewing.com/",
     "description": "Lost Nation Brewing is a craft brewery located in Morrisville, Vermont, USA. Known for its diverse selection of craft beers, Lost Nation Brewing offers a range of styles to cater to various tastes. The brewery is recognized for its commitment to producing high-quality and innovative beers.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/lost-nation-brewing.jpeg",
+    "lat": 44.5699888,
+    "lng": -72.603009
   },
   {
     "name": "Outer Limits Brewing",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Breweries"
     ],
     "address": "60 Village Green, Proctorsville, VT 05153",
     "hours": "Mon-Tue: Closed; Wed-Fri: 3:00PM - 8:00 PM; Sat & Sun: 12:00PM - 8:00PM",
@@ -215,17 +184,15 @@
     "phone": "",
     "website": "https://www.outerlimitsbrewing.com/",
     "description": "BEER: reminder that we won’t be brewing again until the spring/summer season but we will be offering up some of VT’s finest brews. Let us know if there are any local beers you’d like to see on our lineup!",
-    "email": "Contact@outerlimitsbrewing.com"
+    "email": "Contact@outerlimitsbrewing.com",
+    "localImage": "/images/listings/outer-limits-brewing.jpeg",
+    "lat": 43.3817813,
+    "lng": -72.6382277
   },
   {
     "name": "Foley Brothers Brewing",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Breweries"
     ],
     "address": "79 Stone Mill Dam Rd, Brandon, VT 05733",
     "hours": "Thursday - Saturday: 11:00AM - 5:00PM",
@@ -235,17 +202,14 @@
     "website": "https://foleybrothersbrewing.com/",
     "description": "It’s a family affair at Foley Brothers Brewing in Brandon, Vermont. Father, Bob Foley and wife Rhonda bought The Inn at Neshobe River in 2006 and started the Neshobe River Winery. Five years in to running the family winery he recalls the younger Foley generation began experimenting making beer, first with ginger wheat and brown ale and Foley Brothers Brewing was born in 2012. Siblings Pat, Dan and Christine were the founders. While working in the family winery Pat and Dan traveled and worked in wineries in California, New Zealand and South Africa. Christine Lea, Patrick’s wife hails from Durban South Africa and has been an integral part of the business since the very beginning. The flagship Double IPA, Fair Maiden is named after Christine!",
     "email": "brewinginvermont@gmail.com",
-    "localImage": "/images/listings/foley-brothers-brewing.webp"
+    "localImage": "/images/listings/foley-brothers-brewing.webp",
+    "lat": 43.8115521,
+    "lng": -73.0766575
   },
   {
     "name": "Hermit Thrush Brewery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Breweries"
     ],
     "address": "29 High Street, Ste 101C Brattleboro, VT 05301",
     "hours": "Thursday - Monday: 11:00AM - 7:00PM",
@@ -255,17 +219,14 @@
     "website": "https://www.hermitthrushbrewery.com/",
     "description": "Happy to welcome you to Hermit Thrush Brewery! Our taproom is open 5 days a week, Thursday through Monday.",
     "email": "info@hermitthrushbrewery.com",
-    "localImage": "/images/listings/hermit-thrush-brewery.webp"
+    "localImage": "/images/listings/hermit-thrush-brewery.webp",
+    "lat": 42.8535888,
+    "lng": -72.5596934
   },
   {
     "name": "Killington Beer Company",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Breweries"
     ],
     "address": "PO Box 872 Killington, VT 05751",
     "hours": "",
@@ -275,18 +236,14 @@
     "website": "https://killingtonbeer.com",
     "description": "In response to deterring social interactions in light of Covid-19 our landlord has closed our building thus terminating our tasting room operations until further notice. We will notify you when we open again for business. Sorry for any inconvenience. Stay safe!!",
     "email": "info@killingtonbeer.com",
-    "localImage": "/images/listings/killington-beer-company.webp"
+    "localImage": "/images/listings/killington-beer-company.webp",
+    "lat": 43.67433,
+    "lng": -72.7784445
   },
   {
     "name": "Harpoon Brewery Riverbend",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "here"
+      "Breweries"
     ],
     "address": "336 Ruth Carney Drive, Windsor, VT 05089",
     "hours": "Sunday - Tuesday from 11AM to 6PM - Wednesday, Thursday, Friday & Saturday from 11AM",
@@ -296,17 +253,17 @@
     "website": "https://www.harpoonbrewery.com/windsor-brewery/",
     "description": "Enjoy our brewery’s fresh lineup of craft beer, cider, and seltzers and delicious food from the kitchen. Join us indoors or outdoors on the patio or on our spacious lawn. Click here to see our daily offerings and order to-go!",
     "email": "info@harpoonbrewery.com",
-    "localImage": "/images/listings/harpoon-brewery-riverbend.webp"
+    "localImage": "/images/listings/harpoon-brewery-riverbend.webp",
+    "lat": 43.5129222,
+    "lng": -72.4016103
   },
   {
     "name": "Appalachian Trail Adventures",
     "categories": [
-      "Food",
       "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Waterfalls",
+      "Paddle Board",
+      "Hiking"
     ],
     "address": "78 Weathervane Dr, Killington, VT 05751",
     "hours": "Mon - Sun: 7:00AM - 9:00PM",
@@ -316,37 +273,14 @@
     "website": "https://appalachiantrailadventures.com/",
     "description": "For adventurists seeking an active vacation in a small group setting, ATA’s Hiking Vacations provides unparalleled customer service and experienced guides to lead you on a memorable hiking vacation. Repeatedly, we hear this was the best vacation ever, as our TripAdvisor reviews contest. We will leave you feeling invigorated from hiking, breathing fresh air, dining on delightful cuisine, indulging with massages therapy and sore cheeks from laughing with your guides and new friends. ATA has a one of kind hiking vacation program.",
     "email": "",
-    "localImage": "/images/listings/appalachian-trail-adventures.webp"
-  },
-  {
-    "name": "Chaffee Art Center",
-    "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
-    ],
-    "address": "16 S Main St Rutland, VT 05701",
-    "hours": "Thursday–Friday, 12–5pm; and Saturday, 10am–3pm",
-    "image": "https://killingtongetaway.com/wp-content/uploads/2024/01/Rutland-Chaffee-Arts-scaled.jpeg",
-    "url": "https://killingtongetaway.com/listing/the-chaffee-art-center/",
-    "phone": "(802) 775-0356",
-    "website": "https://www.chaffeeartcenter.org/",
-    "description": "The Chaffee Art Center is a prominent cultural institution located in Rutland, Vermont. Established in 1961, it serves as a hub for the arts, providing a platform for local and regional artists to showcase their work. The center hosts various exhibitions, events, and educational programs to promote artistic expression and engagement within the community.",
-    "email": "info@chaffeeartcenter.org",
-    "localImage": "/images/listings/the-chaffee-art-center.webp"
+    "localImage": "/images/listings/appalachian-trail-adventures.webp",
+    "lat": 43.6568947,
+    "lng": -72.7880478
   },
   {
     "name": "Preston’s – At the Killington Grand Hotel",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Drink"
     ],
     "address": "228 E Mountain Rd Killington, VT 05751",
     "hours": "Mon-Fri: 7:00 AM - 11:00 PM; Sat-Sun: 7:00AM-12:00AM",
@@ -355,17 +289,15 @@
     "phone": "(802) 422-6111",
     "website": "https://www.killington.com/things-to-do/dining-apres/prestons",
     "description": "Conveniently located at the Grand Resort Hotel, Preston’s serves après and dinner with indoor and patio dining available during the summer months. During the winter Preston’s also offers breakfast daily and lunch on weekends and select peak dates. Reservations are recommended for parties of eight or more. Take-out is available.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/prestons-at-the-killington-grand-hotel.webp",
+    "lat": 43.6266194,
+    "lng": -72.793985
   },
   {
     "name": "Pyramid Holistic Wellness Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Spa Day"
     ],
     "address": "120 Merchants Row Rutland, VT 05701",
     "hours": "",
@@ -374,16 +306,14 @@
     "phone": "802-775-8080",
     "website": "https://pyramidvt.com/",
     "description": "Pyramid Holistic Wellness Center specializes in Sound Healing, Crystals, and Immersion Meditation Rooms to Relax the Mind, Align the Body and Inspire the Spirit.",
-    "email": "coughline@pyramidvt.com"
+    "email": "coughline@pyramidvt.com",
+    "localImage": "/images/listings/pyramid-holistic-wellness-center.jpeg",
+    "lat": 43.6091453,
+    "lng": -72.9806812
   },
   {
     "name": "Surefoot",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
       "Ski Shops"
     ],
     "address": "937 Killington Rd, Killington, VT 05751",
@@ -394,16 +324,13 @@
     "website": "https://www.surefoot.com/",
     "description": "Surefoot is a well-known ski and snowboard equipment store, and the one in Killington is no exception. Customers often appreciate the store’s extensive selection of high-quality ski boots, custom boot fitting services, and knowledgeable staff. The personalized fitting process is a standout feature, ensuring customers find the perfect fit for their skiing or snowboarding needs. The staff’s expertise in recommending suitable equipment based on individual preferences and skill levels adds value to the overall shopping experience. Additionally, the store’s commitment to providing top-notch customer service contributes to its positive reputation among winter sports enthusiasts in Killington.",
     "email": "killington@surefoot.com",
-    "localImage": "/images/listings/surefoot-customized-boot-fitters.webp"
+    "localImage": "/images/listings/surefoot-customized-boot-fitters.webp",
+    "lat": 43.6585917,
+    "lng": -72.791357
   },
   {
     "name": "First Stop Board Barn – Ski, Snowboard, Bike, Paddle Shop",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
       "Ski Shops"
     ],
     "address": "",
@@ -413,17 +340,13 @@
     "phone": "(802) 422-9050",
     "website": "https://firststopboardbarn.com",
     "description": "First Stop Board Barn was established in 1979. We are a full-service ski, snowboard, bike, and paddle shop offering equipment, clothing, rentals, demos, turning, repairs, and custom boot fitting.",
-    "email": "info@firststopboardbarn.com"
+    "email": "info@firststopboardbarn.com",
+    "localImage": "/images/listings/first-stop-board-barn.jpeg"
   },
   {
     "name": "Yama Ramen",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat"
     ],
     "address": "2500 Killington Rd, Killington, VT 05751",
     "hours": "",
@@ -432,17 +355,15 @@
     "phone": "(802) 315-0061",
     "website": "https://www.yamaramenvt.com/",
     "description": "Located on the Killington access road, Yama Ramen serves community-style ramen. Stop in for hot ramen bowls, bao buns, and other delicious treats. Come to the service window to order, grab a beer, wine, or sake, and enjoy a local artist-filled dining space.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/yama-ramen.png",
+    "lat": 43.6378378,
+    "lng": -72.7879615
   },
   {
     "name": "299 North Main Street",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "299 North Main Street Rutland, VT 05701",
     "hours": "",
@@ -452,17 +373,14 @@
     "website": "",
     "description": "This charging station is located in the city of Rutland. It is maintained by the ChargePoint network and has 2 J1772 Ports.",
     "email": "",
-    "localImage": "/images/listings/rutland-ev-charging-station.webp"
+    "localImage": "/images/listings/rutland-ev-charging-station.webp",
+    "lat": 43.6266519,
+    "lng": -72.9757304
   },
   {
     "name": "West Street Public Parking – South",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "117 West Street Rutland, VT 05701",
     "hours": "",
@@ -471,17 +389,15 @@
     "phone": "",
     "website": "",
     "description": "This charging station is located in the city of Rutland. It is maintained by the EVgo network, and has 1 CHAdeMO Port.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/west-street-public-parking.jpeg",
+    "lat": 43.6082689,
+    "lng": -72.9798952
   },
   {
     "name": "Lincoln Place Station 1",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "10 Lincoln Avenue Rutland, VT 05701",
     "hours": "",
@@ -490,17 +406,15 @@
     "phone": "",
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "This charging station is located in the city of Rutland. It is maintained by the ChargePoint network and has 1 J1772 Port.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/lincoln-place-station-1.png",
+    "lat": 43.6090926,
+    "lng": -72.9751501
   },
   {
     "name": "Rutland, VT Supercharger",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "194 Woodstock Avenue Rutland, VT 05701",
     "hours": "",
@@ -509,17 +423,15 @@
     "phone": "",
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "This charging station is located in the city of Rutland. It is maintained by the Tesla network and has 6 Tesla Ports.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/rutland-vt-supercharger.jpeg",
+    "lat": 43.617401,
+    "lng": -72.9575705
   },
   {
     "name": "Deer Brook Inn – Tesla Destination",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "4548 West Woodstock Road Woodstock, VT 05091",
     "hours": "",
@@ -528,17 +440,15 @@
     "phone": "",
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "This charging station is located in the city of Woodstock. It is maintained by the Tesla network and has 1 Tesla Port.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/deer-brook-inn-tesla-destination.jpeg",
+    "lat": 43.596677,
+    "lng": -72.600696
   },
   {
     "name": "Rutland Regional Medical Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "160 Allen Street, Rutland, VT, 05701",
     "hours": "",
@@ -547,17 +457,15 @@
     "phone": "",
     "website": "",
     "description": "This charging station is located in the city of Rutland. It is non-networked and has 3 J1772 Ports.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/rutland-regional-medical-center.jpeg",
+    "lat": 43.5977388,
+    "lng": -72.9562921
   },
   {
     "name": "Killington Ski Resort – Skyeship",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "",
     "hours": "",
@@ -566,17 +474,13 @@
     "phone": "",
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "This charging station is located in the city of Killington. It is maintained by the Tesla network and has 4 J1772 Ports, and 5 Tesla Ports.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-ski-resort-skyeship.jpeg"
   },
   {
     "name": "Killington Resort – K-1 Lodge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "4763 Killington Road Killington, VT 05751",
     "hours": "",
@@ -585,17 +489,15 @@
     "phone": "",
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "This charging station is located in the city of Killington. It is maintained by the Tesla network and has 6 J1772 Ports, and 7 Tesla Ports.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-resort-k-1-lodge.png",
+    "lat": 43.6198182,
+    "lng": -72.8027151
   },
   {
     "name": "Hideaway Chalet Killington Ski – Tesla",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "998 Killington Road Killington, VT 05751",
     "hours": "",
@@ -604,17 +506,15 @@
     "phone": "",
     "website": "https://www.tesla.com/findus",
     "description": "This charging station is located in the city of Killington. It is maintained by the Tesla network and has 1 Tesla Port.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/hideaway-chalet-killington-ski-tesla.jpeg",
+    "lat": 43.6574821,
+    "lng": -72.7902069
   },
   {
     "name": "Killington Ski Resort (Snowshed Self Park) – Tesla Destination",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "4763 Killington Road Killington, VT 05751",
     "hours": "",
@@ -623,17 +523,15 @@
     "phone": "",
     "website": "https://www.tesla.com/findus",
     "description": "This charging station is located in the city of Killington. It is maintained by the Tesla network and has 4 J1772 Ports, and 5 Tesla Ports.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-ski-resort-snowshed-self-park-tesla-destination.png",
+    "lat": 43.6198182,
+    "lng": -72.8027151
   },
   {
     "name": "EV Charging Station at Lookout Bar and Restaurant",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "2910 Killington Road Killington, VT 05751",
     "hours": "",
@@ -643,17 +541,14 @@
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "These EV charging stations are located at the Lookout Bar and Restaurant and are maintained by the ChargePoint network and has 4 J1772 Ports, and 1 CHAdeMO-J1772 Combo Port.",
     "email": "",
-    "localImage": "/images/listings/ev-charging-at-lookout-tavern.webp"
+    "localImage": "/images/listings/ev-charging-at-lookout-tavern.webp",
+    "lat": 43.6367831,
+    "lng": -72.7944601
   },
   {
     "name": "Killington Ski Resort (K1) – Tesla Destination",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "4763 Killington Road Killington, VT 05751",
     "hours": "",
@@ -662,17 +557,16 @@
     "phone": "",
     "website": "https://www.tesla.com/findus/location/charger/dc38918",
     "description": "This charging station is located in the city of Killington. It is maintained by the Tesla network, and has 4 J1772 Ports, and 5 Tesla Ports.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-ski-resort-k1-tesla-destination.png",
+    "lat": 43.6198182,
+    "lng": -72.8027151
   },
   {
     "name": "The Cellars at Jasper Hill Farm",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Farm Visits",
+      "Cheese Shops"
     ],
     "address": "884 Garvin Hill Rd, Greensboro Bend, VT 05842",
     "hours": "Monday - Thursday: 8:30 AM - 5:00 PM Friday: 8:30 AM - 4:30 PM",
@@ -681,17 +575,16 @@
     "phone": "(802) 533-2566",
     "website": "https://www.jasperhillfarm.com/",
     "description": "The Cellars at Jasper Hill Farm is an innovative 22,000-square-foot underground facility located in Greensboro, Vermont. The Cellars were constructed to provide affinage, or aging expertise, as well as distribution and marketing services for local cheese makers. At the Cellars, we ripen cheese made by Jasper Hill Creameries as well as those made by several other producers. Each cheese in our collection is made from a single herd of cows. Fresh wheels are introduced to one of seven specially calibrated vaults, where they receive customized care until perfect ripeness.",
-    "email": "info@jasperhillfarm.com"
+    "email": "info@jasperhillfarm.com",
+    "localImage": "/images/listings/cheese-cellars-at-jasper-hill-farm.jpeg",
+    "lat": 44.5489422,
+    "lng": -72.2648257
   },
   {
     "name": "Spring Brook Farm",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Farm Visits",
+      "Cheese Shops"
     ],
     "address": "706 Caper Hill Rd, Reading, VT 05062",
     "hours": "Monday-Saturday: 8:00AM - 4:00PM",
@@ -700,17 +593,16 @@
     "phone": "(802) 484-1226",
     "website": "https://www.sbfcheese.org/cheese",
     "description": "Spring Brook Farm Cheese is located on Spring Brook Farm in Reading, VT. We have been making cheese since 2007, when we made our first batch of Tarentaise, an alpine-style cheese, using cheesemaking methods that are traditional to the Beaufort Region of France. In the following years, we developed Reading, our raclette-style cheese, and Ashbrook, our ode to the French Morbier.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/spring-brook-farm.jpeg",
+    "lat": 43.5172367,
+    "lng": -72.5406112
   },
   {
     "name": "Cabot Creamery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Farm Visits",
+      "Cheese Shops"
     ],
     "address": "",
     "hours": "Monday-Saturday: 11:00AM-5:00PM",
@@ -719,17 +611,13 @@
     "phone": "",
     "website": "https://cabotcreamery.com/",
     "description": "The farm families who own Cabot Creamery Cooperative love what they do. And they’ve been doing it for a long time—every single day since 1919. Over 100 years later, we’re proud of our thriving farms, strong communities, and happy, healthy cows that produce the rich, buttery milk that we use to make Cabot’s award-winning cheese and dairy products. Of course, you’re a big part of this too. You inspire us to keep doing what we do for generations to come.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/cabot-creamery.jpeg"
   },
   {
     "name": "Grafton Village Cheese Company",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Cheese Shops"
     ],
     "address": "400 Linden St, Brattleboro, VT 05301",
     "hours": "",
@@ -738,17 +626,16 @@
     "phone": "(802) 246-1000",
     "website": "https://www.graftonvillagecheese.com/",
     "description": "The Grafton Cooperative Cheese Company was founded in 1892 by dairy farmers who gathered in a cooperative to make their surplus raw milk into cheese. In the days before refrigeration, this was common in the rural agricultural communities and an abundance of fresh, creamy milk was turned into a food that could be stored. Located in Grafton, VT",
-    "email": "info@graftonvillagecheese.com"
+    "email": "info@graftonvillagecheese.com",
+    "localImage": "/images/listings/grafton-village-cheese-company.jpeg",
+    "lat": 42.8640786,
+    "lng": -72.5684806
   },
   {
     "name": "Consider Bardwell Farms",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Farm Visits",
+      "Cheese Shops"
     ],
     "address": "",
     "hours": "",
@@ -763,12 +650,7 @@
   {
     "name": "Vermont Shepherd",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Cheese Shops"
     ],
     "address": "281 Patch Farm Rd, Putney, VT 05346",
     "hours": "",
@@ -777,17 +659,15 @@
     "phone": "802-387-4473",
     "website": "https://vermontshepherd.com/",
     "description": "We’re a 250-acre farm in Westminster West, Vermont with 300-700 sheep (depending on the time of year), 2 Border Collies (who herd the sheep) and 8 Maremma – a beautiful white dog who protects the sheep from predators – along with shepherds of all ages. At the northern edge of the farm is a Cave which is home to our 2 types of cheese, where they live out the seasons of their lives.  Please visit us if you’re ever in the neighborhood, and enjoy the cheese!",
-    "email": "vermontshepherd@gmail.com"
+    "email": "vermontshepherd@gmail.com",
+    "localImage": "/images/listings/vermont-shepherd.jpeg",
+    "lat": 42.9751766,
+    "lng": -72.5215973
   },
   {
     "name": "Vermont Farmstead Cheese Co.",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Cheese Shops"
     ],
     "address": "3786 Church Hill Rd, South Woodstock, VT 05071",
     "hours": "Monday - Friday: 8:00AM to 4:00PM",
@@ -796,17 +676,15 @@
     "phone": "(802) 457-9992",
     "website": "http://www.vermontfarmstead.com/",
     "description": "Vermont Farmstead Cheese Company began as a community effort to preserve a picturesque 18-acre dairy farm in South Woodstock, Vt in 2009. Passionate residents raised money to purchase the land, buildings, and equipment in hopes that it would remain a dairy farm. With the generous contributions and tireless efforts of an entire community, our dream was realized and Vermont Farmstead became the first community-owned artisan cheese and dairy facility in the state.",
-    "email": "sales@vermontfarmstead.com"
+    "email": "sales@vermontfarmstead.com",
+    "localImage": "/images/listings/vermont-farmstead-cheese-co.jpeg",
+    "lat": 43.5734744,
+    "lng": -72.5409346
   },
   {
     "name": "West River Creamery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Cheese Shops"
     ],
     "address": "1061 Middletown Rd, Londonderry, VT 05148",
     "hours": "",
@@ -815,17 +693,15 @@
     "phone": "(802) 824-6900",
     "website": "https://www.westrivercreamery.com/",
     "description": "West River Creamery is located at Middletown Farm, which is nestled between three mountains in Londonderry, VT.  The farm is over 200 hundred acres and has been an operating dairy farm since 1945.",
-    "email": "westrivercreamery@comcast.net"
+    "email": "westrivercreamery@comcast.net",
+    "localImage": "/images/listings/west-river-creamery.jpeg",
+    "lat": 43.2081184,
+    "lng": -72.8140092
   },
   {
     "name": "Cobb Hill Cheese",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Cheese Shops"
     ],
     "address": "5 Linden Rd, Hartland, VT 05048",
     "hours": "",
@@ -834,17 +710,16 @@
     "phone": "(802) 436-4360",
     "website": "https://cobbhillcheese.com",
     "description": "Cobb Hill Cheese has been handcrafting artisan cheeses, on the farm in Hartland, Vermont since 2000. We age all our cheeses in our cave. The natural rinds are developed first by brining and then by aging on racks in the cave for 2-12 months. Our award winning Ascutney Mountain Cheese was the 1st type we made followed shortly with Caerphilly, a Welsh style cheddar suited to the rich milk from the cows. In 2016 we branched out into making farmhouse style Gouda. We have our Goudas smoked at Grafton Village Cheese. Our Havarti, is available in plain or dill. Our Brownsville Trail, is a caraway infused Alpine cheese. Our Oh My Gouda is now available as a baby wheel for any occasion. Every batch of cheese is made from fresh milk every other day. Cedar Mountain Farm’s jersey cows provide a rich milk which imparts a delicious, nutty flavor to the cheese. Our cheese makers follow the age-old process of heating milk, adding lactic bacteria and vegetable rennet, hand stirring the curd, hooping and pressing.",
-    "email": "info@cobbhillcheese.com"
+    "email": "info@cobbhillcheese.com",
+    "localImage": "/images/listings/cobb-hill-cheese.jpeg",
+    "lat": 43.5481347,
+    "lng": -72.4243459
   },
   {
     "name": "Crowley Cheese Company",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Farm Visits",
+      "Cheese Shops"
     ],
     "address": "14 Crowley Ln, Mt Holly, VT 05758",
     "hours": "Monday-Friday: 8:00PM - 4:00PM - Saturday & Sunday: 10:00AM - 4:00PM",
@@ -854,17 +729,15 @@
     "website": "https://crowleycheese.com",
     "description": "Crowley Cheese Company in Vermont is a storied artisanal cheese producer, crafting a legacy of exquisite dairy products since 1824. Nestled in the picturesque landscape of Vermont, Crowley Cheese is renowned for its commitment to traditional cheesemaking methods and premium, locally-sourced ingredients. With a rich history and a dedication to quality, this family-owned establishment invites you to savor the authentic taste of Vermont through their meticulously crafted cheeses. Explore the heritage and flavors that define Crowley Cheese Company, a true gem in the Vermont culinary scene.",
     "email": "sales@crowleycheese.com",
-    "localImage": "/images/listings/crowley-cheese-company.webp"
+    "localImage": "/images/listings/crowley-cheese-company.webp",
+    "lat": 43.4241432,
+    "lng": -72.7866524
   },
   {
     "name": "Sugarbush Farm",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Farm Visits",
+      "Maple Sugar"
     ],
     "address": "591 Sugarbush Farm Rd, Woodstock, VT 05091",
     "hours": "",
@@ -874,17 +747,14 @@
     "website": "https://sugarbushfarm.com/",
     "description": "Here in Vermont cheese is made the traditional way which provides the best flavor and old fashioned quality.",
     "email": "contact@sugarbushfarm.com",
-    "localImage": "/images/listings/sugarbush-farm.webp"
+    "localImage": "/images/listings/sugarbush-farm.webp",
+    "lat": 43.6247646,
+    "lng": -72.5189791
   },
   {
     "name": "EV ChargePoint at Killington Grand Hotel",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "EV Charging"
     ],
     "address": "228 East Mountain Road Killington, VT 05751",
     "hours": "",
@@ -894,18 +764,14 @@
     "website": "https://chargehub.com/en/full-details-page.html",
     "description": "Killington Grand Hotel lower parking lot first 2 parking stalls on the left. This charging station is located in the city of Killington. It is maintained by the ChargePoint network and has 2 J1772 Ports.",
     "email": "",
-    "localImage": "/images/listings/ev-chargepoint-at-killington-grand-hotel.webp"
+    "localImage": "/images/listings/ev-chargepoint-at-killington-grand-hotel.webp",
+    "lat": 43.6266194,
+    "lng": -72.793985
   },
   {
     "name": "Hannaford Supermarkets",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "grocery"
+      "Grocery Markets"
     ],
     "address": "318 S Main St Rutland, VT 05701",
     "hours": "Monday - Sunday: 7:00 AM - 10:00 PM",
@@ -915,18 +781,13 @@
     "website": "https://stores.hannaford.com/vt/rutland/8306",
     "description": "Hannaford Supermarkets in Vermont epitomizes a commitment to quality and community. As a prominent grocery retailer, Hannaford has been serving Vermonters with a diverse range of products, emphasizing freshness and local sourcing. With a dedicated focus on customer satisfaction, Hannaford stands as a reliable and convenient choice for residents seeking top-notch grocery options. Explore a shopping experience that blends quality, variety, and community connection at Hannaford Supermarkets in Vermont.",
     "email": "",
-    "localImage": "/images/listings/hannaford-supermarkets.webp"
+    "localImage": "/images/listings/hannaford-supermarkets.webp",
+    "lat": 43.5857477,
+    "lng": -72.9709088
   },
   {
     "name": "Walmart Supercenter",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "grocery",
       "Grocery Markets"
     ],
     "address": "",
@@ -935,20 +796,13 @@
     "url": "https://killingtongetaway.com/listing/walmart-supercenter-rutland-vermont/",
     "phone": "(802) 773-0200",
     "website": "https://walmart.com",
-    "description": "",
-    "email": ""
+    "description": "Walmart offers a larger variety of products with a small food sections that is mostly focused on dry goods.",
+    "email": "",
+    "localImage": "/images/listings/walmart-supercenter-rutland-vermont.jpeg"
   },
   {
     "name": "Mountain Merchant",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "here",
-      "grocery",
       "Grocery Markets"
     ],
     "address": "2384 Killington Rd, Killington, VT 05751",
@@ -959,18 +813,13 @@
     "website": "https://mountainmerchantvt.com/",
     "description": "Welcome to the Mountain Merchant at Killington, VT!",
     "email": "info@mountainmerchantvt.com",
-    "localImage": "/images/listings/mountain-merchant.webp"
+    "localImage": "/images/listings/mountain-merchant.webp",
+    "lat": 43.6391344,
+    "lng": -72.7880374
   },
   {
     "name": "Killington Deli & Marketplace",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "grocery",
       "Grocery Markets"
     ],
     "address": "",
@@ -986,13 +835,7 @@
   {
     "name": "Rutland Country Club",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Golf"
     ],
     "address": "",
     "hours": "Daily: 8:00AM - 5:00PM",
@@ -1001,18 +844,14 @@
     "phone": "",
     "website": "https://rutlandcountryclub.com",
     "description": "The 18-hole “Rutland” course at the Rutland Country Club features 6,134 yards of golf from the longest tees for a par of  70. The course rating is 69.7 and it has a slope rating of 125 on Bent grass. Designed by Styles & VanCleef, the Rutland golf course opened in 1901.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/rutland-country-club.jpeg"
   },
   {
     "name": "Mount Ascutney Resort",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Places to Eat",
+      "Lodging Options"
     ],
     "address": "485 Hotel Rd, Brownsville, VT 05037",
     "hours": "Daily: 7:00 AM - 11:00 PM",
@@ -1021,18 +860,16 @@
     "phone": "(802) 484-7711",
     "website": "https://holidayinnclub.com/",
     "description": "The Holiday Inn Club Vacations Mount Ascutney Resort is a family-friendly venue space located in the charming town of Brownsville, Vermont. At the Holiday Inn Club, couples can exchange vows set to the backdrop of the natural beauty of Mount Ascutney. Whether you’re looking to celebrate in the great outdoors or want something more traditional, this venue can host your dream wedding event.",
-    "email": "abonney@holidayinnclub.com"
+    "email": "abonney@holidayinnclub.com",
+    "localImage": "/images/listings/mount-ascutney-resort.jpeg",
+    "lat": 43.4657515,
+    "lng": -72.4707908
   },
   {
     "name": "New England Maple Museum",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Farm Visits",
+      "Maple Sugar"
     ],
     "address": "",
     "hours": "Mon-Fri: 10:00 AM – 4:00 PM",
@@ -1041,18 +878,13 @@
     "phone": "(802) 483-9414",
     "website": "https://www.maplemuseum.com/",
     "description": "Conveniently located in the heart of Maple Country, nestled in the foothills of the Green Mountains, where Vermont’s finest maple syrup is made. The museum offers a trip through over 200 years of maple sugaring history starting with the Native American discovery that maple sap cooked over an open fire produces a sweet syrup.",
-    "email": "info@maplemuseum.com"
+    "email": "info@maplemuseum.com",
+    "localImage": "/images/listings/new-england-maple-museum.jpeg"
   },
   {
     "name": "Plymouth Artisan Cheese",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Farm Visits"
     ],
     "address": "106 Messer Hill Road, Plymouth Notch, Vermont 05056",
     "hours": "Daily from 11 am to 4 pm",
@@ -1062,18 +894,14 @@
     "website": "https://plymouthcheese.com/",
     "description": "Handcrafted raw whole milk cheese, produced using one of America’s oldest cheese recipes. Noted for its smooth texture and creamy taste, Plymouth is the second oldest cheese operation in the US.",
     "email": "pac@plymouthcheese.com",
-    "localImage": "/images/listings/plymouth-artisan-cheese.webp"
+    "localImage": "/images/listings/plymouth-artisan-cheese.webp",
+    "lat": 43.5362677,
+    "lng": -72.7235586
   },
   {
     "name": "Hinterland Organic Farm",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Farm Visits"
     ],
     "address": "",
     "hours": "Daily from 12:00 pm - 6:00 pm",
@@ -1082,18 +910,13 @@
     "phone": "802-747-8571",
     "website": "https://www.hinterlandfarmkitchen.com/",
     "description": "Nestled in the Green Mountains of Killington, VT. Come cool down in the Mountains!",
-    "email": "Bpilsmak@gmail.com"
+    "email": "Bpilsmak@gmail.com",
+    "localImage": "/images/listings/hinterland-organic-farm.webp"
   },
   {
     "name": "Quechee Club Lakeland Course",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Golf"
     ],
     "address": "",
     "hours": "Monday 8:00 AM-4:30 PM Tuesday-Thursday 8:00 AM-2:00 PM Fri-Sun 8:00 AM-4:30 PM",
@@ -1108,13 +931,7 @@
   {
     "name": "Fox Run Golf Club",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Golf"
     ],
     "address": "89 Fox Lane, Ludlow, VT 05149",
     "hours": "Daily 9:00 AM - 4:00 PM",
@@ -1123,18 +940,15 @@
     "phone": "(802) 228-1396",
     "website": "https://foxrungolf.org",
     "description": "Fox Run Golf Club is a Championship 18-hole par 70  Heathland style golf course. Complete with a state of the art practice  facility. After your round come visit us at our 19th hole the newly renovated Sports Bar Calcuttas at Fox Run. Great patio with live music.",
-    "email": "info@foxrungolf.org"
+    "email": "info@foxrungolf.org",
+    "localImage": "/images/listings/fox-run-golf-club.jpeg",
+    "lat": 43.4157714,
+    "lng": -72.7015103
   },
   {
     "name": "Killington Golf Course",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Golf"
     ],
     "address": "4763 Killington Rd, Killington, VT 05751",
     "hours": "Daily: 7:00 AM - 6:00 PM",
@@ -1143,21 +957,15 @@
     "phone": "802-422-6700",
     "website": "https://www.killington.com/plan-your-trip/summer-activities/golf",
     "description": "The Killington Golf Course features a full practice  facility, including 14-station driving range, a 12,000 square-foot  putting green and practice bunker. Appropriate golf attire is required,  collared shirts and no jeans, please.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-golf-course.jpeg",
+    "lat": 43.6198182,
+    "lng": -72.8027151
   },
   {
     "name": "SUP Yoga",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Burlington Surf Club",
-      "HULA Lakeside",
-      "staff@wndnwvs.com",
-      "Summer"
+      "Paddle Board"
     ],
     "address": "32 Lakeside Ave Burlington, VT 05401",
     "hours": "Sundays (9:00-10:30AM), and Tuesdays (6:00-7:30PM",
@@ -1166,19 +974,16 @@
     "phone": "802-540-2529",
     "website": "http://www.wndnwvs.com/demos-lessons-rentals/sup-yoga.html",
     "description": "As if yoga on land weren’t challenging enough! For all you yogis that would like to take it up a notch, paddleboard yoga may be your new jam. We’ll be offering SUP yoga every Sunday morning and Tuesday evening beginning June 16th with certified SUP yoga instructor, Sarah Krause. Sarah is excited to combine her passion for yoga with her love of paddling. Yoga on an unstable surface brings a new set of challenges into the game. Bring a bathing suit, and a sense of humor, and expect to get wet!",
-    "email": "staff@wndnwvs.com"
+    "email": "staff@wndnwvs.com",
+    "localImage": "/images/listings/sup-yoga-burlington.jpeg",
+    "lat": 44.4612508,
+    "lng": -73.2211816
   },
   {
     "name": "Blue Ridge Outfitters",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
       "Ski Shops",
-      "Summer",
-      "Winter"
+      "Paddle Board"
     ],
     "address": "5 Sugar House Ln, Chittenden, VT 05701",
     "hours": "Daily 8:00 am - 8:00 pm",
@@ -1187,18 +992,15 @@
     "phone": "802-345-6934",
     "website": "https://paddlevt.com/",
     "description": "Blue Ridge Outfitters is a family-run business and we have been renting flat-water paddle boats since 1998. Kayaks, paddle boards, and canoes can all be rented from our extensive selection of boats in Chittenden, Vermont where we can deliver your rented boats to Chittenden Reservoir.",
-    "email": "bro@paddlevt.com"
+    "email": "bro@paddlevt.com",
+    "localImage": "/images/listings/blue-ridge-outfitters.jpeg",
+    "lat": 43.6750962,
+    "lng": -72.9430442
   },
   {
     "name": "Woodstock Middle Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "Mountain Ave, Woodstock, VT 05091",
     "hours": "",
@@ -1207,18 +1009,15 @@
     "phone": "",
     "website": "",
     "description": "Likely the most photographed bridge in Woodstock, the 139-foot-long Middle Covered Bridge is a breathtaking sight to behold no matter the season. Pause on this town lattice truss structure in the height of summer for a break from the heat. Stand back in spring or fall for a show of brilliant color in view of its old wooden walls or admire the Mt Tom star shining bright above the bridge’s snow-crusted roof in winter.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/woodstock-middle-covered-bridge.jpeg",
+    "lat": 43.6244767,
+    "lng": -72.5240734
   },
   {
     "name": "Quechee Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "",
     "hours": "",
@@ -1227,18 +1026,13 @@
     "phone": "",
     "website": "",
     "description": "The original Quechee Covered Bridge was actually a steel bridge, constructed in 1970 as a 70-foot span over the Ottauquechee River in Quechee VT. The great waterfall and swimming hole are still a local favorite. This bridge is a two-lane bridge complete with a pedestrian walkway alongside.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/quechee-covered-bridge.jpeg"
   },
   {
     "name": "Lincoln Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "Woodstock, VT 05091",
     "hours": "",
@@ -1247,18 +1041,15 @@
     "phone": "",
     "website": "",
     "description": "The Lincoln Covered Bridge is a historic covered bridge, just south of U.S. Route 4 in West Woodstock, Vermont. Built in 1877, it is one of the only known examples of a wooden Pratt truss bridge in the United States. It was listed on the National Register of Historic Places in 1973.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/lincoln-covered-bridge.jpeg",
+    "lat": 43.6247646,
+    "lng": -72.5189791
   },
   {
     "name": "The West Dummerston Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "",
     "hours": "",
@@ -1273,13 +1064,7 @@
   {
     "name": "The Taftsville Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "",
     "hours": "",
@@ -1294,13 +1079,7 @@
   {
     "name": "Brown Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "",
     "hours": "",
@@ -1309,18 +1088,13 @@
     "phone": "",
     "website": "",
     "description": "The Brown Covered Bridge is a wooden covered bridge in Shrewsbury, Vermont. Located in the northwestern part of the town, it carries Upper Cold River Road over the Cold River. It was closed to vehicular traffic in 2011 due to damage from Hurricane Irene and reopened as a National Historic Site on July 5, 2016.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/brown-covered-bridge.jpeg"
   },
   {
     "name": "Pulp Mill Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "Weybridge, VT 05753",
     "hours": "",
@@ -1329,18 +1103,15 @@
     "phone": "",
     "website": "",
     "description": "The Pulp Mill Covered Bridge, also called the Paper Mill Covered Bridge, is a wooden covered bridge that crosses Otter Creek between Middlebury and Weybridge, Vermont on Seymour Street. It was listed on the National Register of Historic Places in 1974.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/pulp-mill-covered-bridge.jpeg",
+    "lat": 44.0661986,
+    "lng": -73.2157386
   },
   {
     "name": "Green Mountain National",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Golf"
     ],
     "address": "476 Barrows Towne Rd, Killington, VT 05751",
     "hours": "Daily: 7:00AM - 6:00PM",
@@ -1349,19 +1120,16 @@
     "phone": "802-422-4653",
     "website": "https://gmngc.com/",
     "description": "The Green Mountain National Golf Course, located just minutes from Killington Resort, is one of the finest golf courses in the  Northeast and is ranked the #1 public golf course in Vermont. Our unique and challenging design offers a private golf experience that will challenge players of all abilities.",
-    "email": "dbowyer@greatlifegolf.com"
+    "email": "dbowyer@greatlifegolf.com",
+    "localImage": "/images/listings/green-mountain-national.webp",
+    "lat": 43.6956637,
+    "lng": -72.8237788
   },
   {
     "name": "Killington Grand Resort & Hotel",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer",
-      "Winter"
+      "Places to Eat",
+      "Lodging Options"
     ],
     "address": "",
     "hours": "Daily: 7:00AM - 7:00PM",
@@ -1370,18 +1138,13 @@
     "phone": "802-422-6171",
     "website": "",
     "description": "Certainly! Killington Resort in Vermont offers a variety of dining options. Here are a few places you can consider:",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-resort.jpeg"
   },
   {
     "name": "Woodstock Country Club",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Golf"
     ],
     "address": "76 South St Woodstock, VT 05091",
     "hours": "Daily: 7:00 AM - 5:00 PM",
@@ -1390,18 +1153,15 @@
     "phone": "(802) 457-6674",
     "website": "",
     "description": "Woodstock Country Club offers a great 18-hole  regulation course located in Woodstock, VT. The course was designed by  Robert Trent Jones Sr, ASGCA. It opened in 1900 and has been named one of the world’s “top 100 golf resorts” by Golf Magazine.",
-    "email": "email@woodstockinn.com"
+    "email": "email@woodstockinn.com",
+    "localImage": "/images/listings/woodstock-country-club.jpeg",
+    "lat": 43.6161837,
+    "lng": -72.5167484
   },
   {
     "name": "Falls of Lana",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "Lake Dunmore Rd, Salisbury, VT 05769",
     "hours": "",
@@ -1411,18 +1171,14 @@
     "website": "",
     "description": "They’re located in the Moosalamoo National Recreation Area, and like most of Vermont’s falls, are free to visit. The falls drop nearly 100 feet through the dramatically rocky and forested precipice over Sucker Brook and have 3 distinct sections, each of which is accessible by trails that in total length are less than a mile long. Due to the area’s harsh weather, it’s best to plan your trip in the spring, summer, or early fall.",
     "email": "",
-    "localImage": "/images/listings/falls-of-lana.webp"
+    "localImage": "/images/listings/falls-of-lana.webp",
+    "lat": 43.9051138,
+    "lng": -73.0658059
   },
   {
     "name": "Middlebury Falls",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "Otter Creek, Middlebury, VT 05753",
     "hours": "",
@@ -1431,18 +1187,16 @@
     "phone": "",
     "website": "",
     "description": "The view from the footbridge below Otter Falls may make you feel like you’ve stepped a few centuries back in time. Located in Middlebury in Addison Country, the falls are among the most scenic you’ll see anywhere.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/middlebury-falls.jpeg",
+    "lat": 43.9939887,
+    "lng": -73.1559144
   },
   {
     "name": "Warren Falls",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls",
+      "Hiking"
     ],
     "address": "3919 Vermont Rte 100, Warren, VT 05674",
     "hours": "",
@@ -1452,18 +1206,14 @@
     "website": "",
     "description": "The falls’ cool green water makes an appealing contrast to the surrounding grey boulders. They’re a popular recreation spot in the warm summer months, so if that’s when you’re going, don’t expect to have the place to yourself.",
     "email": "",
-    "localImage": "/images/listings/warren-falls.webp"
+    "localImage": "/images/listings/warren-falls.webp",
+    "lat": 44.0938735,
+    "lng": -72.8626494
   },
   {
     "name": "Bingham Falls",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "",
     "hours": "",
@@ -1472,19 +1222,14 @@
     "phone": "",
     "website": "",
     "description": "The town of Stowe is famous as a winter wonderland, where skiers from all over America congregate to swoosh down the area’s dramatic slopes.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/bingham-falls.jpeg"
   },
   {
     "name": "East Willard Bridge & Waterfall",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer",
-      "Winter"
+      "Covered Bridges",
+      "Waterfalls"
     ],
     "address": "21 Evarts Rd, North Hartland, VT 05052",
     "hours": "",
@@ -1493,18 +1238,15 @@
     "phone": "",
     "website": "",
     "description": "Located in the town of North Hartland in Windsor County, as the name implies, East Willard Falls are accompanied by two amazing covered bridges that are the perfect man-made complement to the river’s natural beauty. The bridges and falls are on Mill Road where it crosses the Ottauquechee River.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/east-willard-bridge-waterfall.webp",
+    "lat": 43.5922409,
+    "lng": -72.3499016
   },
   {
     "name": "Big Falls",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "Troy, VT 05859",
     "hours": "",
@@ -1513,18 +1255,15 @@
     "phone": "",
     "website": "",
     "description": "Just a stone’s throw from the border with Canada, Big Falls are in Big Falls State Park on the Missisquoi River, near the town of Troy. Though the falls’ total drop is only about 40 feet, their true majesty lies in their pristine natural setting and the power with which the pressurized water squeezes and roars its way through the narrow, rocky gorge.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/big-falls.jpeg",
+    "lat": 44.9037718,
+    "lng": -72.4058578
   },
   {
     "name": "Lye Brook Falls",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "Manchester, VT 05255",
     "hours": "",
@@ -1533,18 +1272,15 @@
     "phone": "",
     "website": "",
     "description": "At 125 feet, Lye Brook Falls are among Vermont’s most dramatic and are found in the Green Mountain National Forest in Manchester. The falls are reachable after a long hike of nearly 5 miles, and though it’s long, it’s only moderately difficult.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/lye-brook-falls.jpeg",
+    "lat": 43.1637747,
+    "lng": -73.0719969
   },
   {
     "name": "Thundering Brook Falls Trail",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "2295 River Rd Fork, Killington, VT 05751",
     "hours": "",
@@ -1553,18 +1289,15 @@
     "phone": "",
     "website": "",
     "description": "Located on the scenic Appalachian Trail, which winds its way thousands of miles down the ancient mountain range in the eastern portion of the United States. The falls are comprised of two distinct falls, the lower of which has an 80-foot drop, and combined they’re nearly 125 feet. There’s a raised viewing platform that’ll give you a clear look at both portions of the falls, and since the falls are easily accessible, they’re a great place for a family hike followed by a picnic.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/thundering-brook-falls-trail-3.jpeg",
+    "lat": 43.6604789,
+    "lng": -72.7729328
   },
   {
     "name": "Moss Glen Falls",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls"
     ],
     "address": "",
     "hours": "",
@@ -1573,18 +1306,13 @@
     "phone": "",
     "website": "",
     "description": "Near the top of the list for Vermont’s largest waterfall, Moss Glenn Waterfall in Stowe is a magnificent, multi-tiered fall set amidst beautiful mountains. It’s nearly 125 feet tall, and like most of Vermont’s falls, it’s easy to get to.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/moss-glen-falls.jpeg"
   },
   {
     "name": "Snowmobile Vermont",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Snowmobile Tours"
     ],
     "address": "",
     "hours": "Daily: 9:00 AM - 6:00 PM",
@@ -1593,17 +1321,13 @@
     "phone": "802-422-2121",
     "website": "https://www.snowmobilevermont.com/",
     "description": "Snowmobile Vermont* is the state’s oldest, largest, and most experienced snowmobile tour company, offering a wide range of riding, appealing to everyone from the beginner to the most advanced rider. New riders will receive all the instructions needed before heading out.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/snowmobile-vermont.png"
   },
   {
     "name": "Billings Farm & Museum",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience"
     ],
     "address": "69 Old River Rd Woodstock, VT 05091",
     "hours": "Daily 10:00 am to 5:00 pm",
@@ -1613,17 +1337,14 @@
     "website": "https://billingsfarm.org/",
     "description": "This fully operating farm features farm animals, pastures, and interactive activities that are fun for the whole family. You will see steers, cows, oxen, sheep, pigs, horses, goats, and chickens on this lovely farm. There are four historic barns on-site displaying tools, farming equipment, and family possessions passed down from previous generations. These exhibits also teach about ice cutting, maple sugaring, and the life of rural farmers who took care of this piece of land.",
     "email": "info@billingsfarm.org",
-    "localImage": "/images/listings/billings-farm-museum.webp"
+    "localImage": "/images/listings/billings-farm-museum.webp",
+    "lat": 43.6312562,
+    "lng": -72.5141417
   },
   {
     "name": "American Precision Museum",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience"
     ],
     "address": "196 Main St Windsor, VT 05089",
     "hours": "Daily 10:00 am to 5:00 pm",
@@ -1632,18 +1353,16 @@
     "phone": "(802) 674-5781",
     "website": "https://americanprecision.org/",
     "description": "Founded in 1966 in a historic registry building, American Precision Museum followed the course of manufacturing from using water power and hand-powered lathes and turrets to producing tens of thousands of rifles for the Union during the Civil War. It now traces the history of the tool-machine industry through changing exhibits that show the progress and history of manufacturing.",
-    "email": "apm@americanprecision.org"
+    "email": "apm@americanprecision.org",
+    "localImage": "/images/listings/american-precision-museum.jpeg",
+    "lat": 43.4747643,
+    "lng": -72.3894922
   },
   {
     "name": "VINS Nature Center",
     "categories": [
-      "Food",
       "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Museum Experience"
     ],
     "address": "149 Natures Way Quechee, VT 05059",
     "hours": "Daily 10:00 am to 5:00 pm",
@@ -1652,17 +1371,15 @@
     "phone": "(802) 359-5000",
     "website": "https://vinsweb.org/home",
     "description": "The VINS Nature Center is located off US Highway 4 in eastern Vermont. VINS stands for Vermont Institute of Natural Science, and its origins date back to 1970 when a water cleanup project for the Ottauquechee River began. This nature center has been open to the public since 2004. VINS serves as a rehabilitation center for injured birds of prey, a songbird aviary, and an educational hub for anyone wanting to learn how to protect the environment. The surrounding acreage of forests and rolling hills offer scenic views for its visitors.",
-    "email": "info@vinsweb.org"
+    "email": "info@vinsweb.org",
+    "localImage": "/images/listings/vins-nature-center.jpeg",
+    "lat": 43.6467056,
+    "lng": -72.4197296
   },
   {
     "name": "Calvin Coolidge Presidential Homestead",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience"
     ],
     "address": "3780 Route 100A Plymouth, VT 05056",
     "hours": "Monday - Sunday, 10:00 am to 5:00 pm",
@@ -1671,17 +1388,15 @@
     "phone": "(802) 672-3389",
     "website": "https://coolidgefoundation.org",
     "description": "Come experience one of America’s best-preserved presidential birthplaces, the President Calvin Coolidge State Historic Site in Plymouth Notch, Vermont. The 600-acre site features historic buildings and artifacts from the President’s era. See the modest home where President Coolidge was born, step inside the family homestead where Coolidge took the presidential oath of office, pause for reflection in the warm, wood-paneled church where the Coolidge family worshiped, and end your visit at the humble grave site where President Coolidge rests alongside his family.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/calvin-coolidge-presidential-homestead.jpeg",
+    "lat": 43.564845,
+    "lng": -72.680594
   },
   {
     "name": "Montshire Museum of Science",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience"
     ],
     "address": "1 Montshire Rd Norwich, VT 05055",
     "hours": "Daily 10:00 am to 5:00 pm",
@@ -1690,18 +1405,16 @@
     "phone": "(802) 649-2200",
     "website": "http://www.montshire.org/",
     "description": "The Montshire Museum of Science in Norwich, Vermont, is an award-winning, hands-on science center with more than 125 exhibits, both indoors and out, on nature, technology, astronomy, and the physical sciences. Visiting exhibitions, educational programs, and special events are offered throughout the year. Open daily from 10 a.m. to 5 p.m. (closed on Thanksgiving and Christmas). The water is on in the outdoor Science Park from early May through mid-October. Visitors need to check in at the front desk to receive an admission sticker prior to using the Museum’s galleries, facilities, and trails.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/montshire-museum-of-science.jpeg",
+    "lat": 43.702583,
+    "lng": -72.308391
   },
   {
     "name": "Mount Tom and the Pogue",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Rock Climbing",
+      "Hiking"
     ],
     "address": "",
     "hours": "",
@@ -1710,18 +1423,14 @@
     "phone": "",
     "website": "",
     "description": "Length: 5.5 miles\nEstimated time: 2.5 hours\nElevation gain: 700 feet\nDogs: Yes, on-leash\nFee: Free",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/mount-tom-and-the-pogue.jpeg"
   },
   {
     "name": "Canty Trail to the top of Blue Ridge Mountain",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Rock Climbing",
+      "Hiking"
     ],
     "address": "",
     "hours": "",
@@ -1736,13 +1445,7 @@
   {
     "name": "Killington Peak via Bucklin Trail",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Rock Climbing"
     ],
     "address": "",
     "hours": "",
@@ -1751,18 +1454,13 @@
     "phone": "",
     "website": "",
     "description": "",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-peak-via-bucklin-trail.png"
   },
   {
     "name": "Calvin Coolidge State Park",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Hiking"
     ],
     "address": "",
     "hours": "Daily from 10:00AM",
@@ -1771,18 +1469,13 @@
     "phone": "",
     "website": "https://vtstateparks.com/coolidge.html",
     "description": "",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/calvin-coolidge-state-park.jpeg"
   },
   {
     "name": "Thundering Brook Falls Trail",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Hiking"
     ],
     "address": "",
     "hours": "",
@@ -1791,18 +1484,16 @@
     "phone": "",
     "website": "",
     "description": "The Thunder Brook Falls parking area, it’s wheelchair accessible and very easy.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/thundering-brook-falls-trail-2.jpeg",
+    "lat": 43.6604789,
+    "lng": -72.7729328
   },
   {
     "name": "Dear Leap Lookout and Mountain Loop (Appalachian Trail)",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Rock Climbing",
+      "Hiking"
     ],
     "address": "",
     "hours": "Daily: 10:00 AM",
@@ -1811,18 +1502,13 @@
     "phone": "",
     "website": "",
     "description": "The Appalachian Trail, also called the A.T., is a hiking trail in the Eastern United States, extending almost 2,200 miles between Springer Mountain in Georgia and Mount Katahdin in Maine, and passing through 14 states.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/dear-leap-lookout-and-mountain-loop-appalachian-trail.jpeg"
   },
   {
     "name": "Root’s Ski & Snowboard",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "",
     "hours": "Daily: 8:00AM - 6:00PM",
@@ -1831,18 +1517,13 @@
     "phone": "802 422 5000",
     "website": "https://rootsrentals.com/",
     "description": "Reasonable rates and great service. This is a small ski shop that is great for any beginner who is not looking to spend a lot of money on a ski rental weekend.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/roots-ski-snowboard.jpeg"
   },
   {
     "name": "Northern Ski Works",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "",
     "hours": "Daily: 8:30 AM - 10:00 PM",
@@ -1857,13 +1538,7 @@
   {
     "name": "Forerunner Ski Shop",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "",
     "hours": "Monday - Sunday: 8:30AM - 6:00PM, Friday works until 11:00PM",
@@ -1872,18 +1547,13 @@
     "phone": "",
     "website": "https://www.forerunnerskishop.com/",
     "description": "Full-service boutique ski shop carrying high end unique European and American technical outerwear. Killington’s only mogul ski shop boasts the largest mogul ski inventory in VT.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/forerunner-ski-shop.jpeg"
   },
   {
     "name": "Base Camp Outfitters",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "",
     "hours": "Daily 9:00 AM - 5:00 PM",
@@ -1892,18 +1562,13 @@
     "phone": "",
     "website": "https://basecampvt.com/",
     "description": "Specializing in Backcountry and Telemark Skiing for over 25 years. Now featuring consignment Telemark, Alpine Touring, and Nordic Equipment.",
-    "email": "info@basecampvt.com"
+    "email": "info@basecampvt.com",
+    "localImage": "/images/listings/base-camp-outfitters.jpeg"
   },
   {
     "name": "Killington Sports",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "2326 US 4, Killington, VT 05751",
     "hours": "Daily: 10:00AM - 5:00PM",
@@ -1912,19 +1577,15 @@
     "phone": "(802) 422-6800",
     "website": "https://killingtonsports.com/",
     "description": "Killington Sports offers one of the largest selections of outerwear & accessories in the region. Everything from Killington Resort logo wear, sunglasses, jackets, goggles, luggage, winter closeouts, and lift tickets.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/killington-sports.jpeg",
+    "lat": 43.6677035,
+    "lng": -72.8041879
   },
   {
     "name": "Basin Sports",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Ski Essentials",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "2886 Killington Road Killington, VT 05751",
     "hours": "Monday - Friday: 8:15AM - 6:00PM; Sat & Sun: 7:15AM - 8:00 PM",
@@ -1933,18 +1594,15 @@
     "phone": "(802) 422-3234",
     "website": "https://www.basinski.com/",
     "description": "Basin Sports is the oldest business in the Killington community. In fact, the Basin Ski Shop opened ten days before Killington Ski Resort, on December 14, 1958. For more than sixty years Basin Sports has been a leading mountain-sports retailer with a long history of outstanding customer service. The industry has taken notice too, having awarded Basin Sports the Ski Magazine Gold Medal nine years in a row and twice naming Basin Sports the best ski shop in New England.",
-    "email": "store@basinski.com"
+    "email": "store@basinski.com",
+    "localImage": "/images/listings/basin-sports.jpeg",
+    "lat": 43.6368408,
+    "lng": -72.7942505
   },
   {
     "name": "Darkside Snowboards",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "",
     "hours": "Daily: 8:00AM - 6:00PM",
@@ -1953,18 +1611,13 @@
     "phone": "",
     "website": "https://darksidesnowboards.com",
     "description": "The go-to spot for snowboarders. Darkside Snowboards is a rider-owned-rider-operated brick-and-mortar business with over 30 years of experience, Darkside Snowboards has something for riders of all skill levels.",
-    "email": "darksidesnowboards@gmail.com"
+    "email": "darksidesnowboards@gmail.com",
+    "localImage": "/images/listings/darkside-snowboards.png"
   },
   {
     "name": "Aspen East Ski Shop & Surf the Earth Snowboards",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "3429 Route 4 Killington, VT 05751",
     "hours": "Daily from 8:30 AM to 6:00 PM",
@@ -1973,18 +1626,15 @@
     "phone": "(802) 422-3739",
     "website": "",
     "description": "Aspen East & Surf the Earth Snowboards has been around for over 40 years with friendly service and advice. Two-time winner of SKI Magazine Gold Medal Shop Of The Year. “Best of New England” Snowboard Shop award.",
-    "email": "staff@aspeneast.com"
+    "email": "staff@aspeneast.com",
+    "localImage": "/images/listings/aspen-east-ski-shop-and-snowboards.jpeg",
+    "lat": 43.6664013,
+    "lng": -72.7853935
   },
   {
     "name": "Black Dog Sports",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "133 E Mountain Rd, Killington, VT 05751",
     "hours": "Daily: 8:00AM - 8:00PM, Friday Close is at 11:00PM, Saturday Closes at 9:00PM",
@@ -1993,18 +1643,15 @@
     "phone": "(802) 422 4281",
     "website": "https://blackdogdeals.com/",
     "description": "Closest ski shop to the mountain without being on the mountain. This is by far the most strategically located Ski shop in Killington by a long stretch-unless you want to pay double at Snowshed. In and out in 20 minutes.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/black-dog-sports.jpeg",
+    "lat": 43.629595,
+    "lng": -72.7957065
   },
   {
     "name": "Peak Performance Ski Shop",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Ski Shops"
     ],
     "address": "",
     "hours": "Daily: 8:30AM - 5:00PM",
@@ -2019,12 +1666,7 @@
   {
     "name": "Dream Maker Bakers",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Bakery & Cafes"
     ],
     "address": "",
     "hours": "Wed - Sun: 7:00 am to 2:00 pm",
@@ -2033,17 +1675,14 @@
     "phone": "802-422-5950",
     "website": "https://dreammakerbakers.com",
     "description": "Full service all bakery with cafe style breakfast, pastry, coffee and lunch. We specializing in special order cakes and event dessert buffets.",
-    "email": "celebrations@dreammakerbakers.com"
+    "email": "celebrations@dreammakerbakers.com",
+    "localImage": "/images/listings/dream-maker-bakers.jpeg"
   },
   {
     "name": "Sunup Bakery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat",
+      "Bakery & Cafes"
     ],
     "address": "2250 Killington Rd, Killington, VT 05751",
     "hours": "Mon, Tues, Thur, Fri 7:00 am – 4:00 pm",
@@ -2052,18 +1691,15 @@
     "phone": "(802) 422-3865",
     "website": "https://sunupbakery.com/",
     "description": "Healthy and delicious take-out is what we do! Breakfast all-day or lunch daily. There is something for everyone from vegetarians to meat lovers alike! We know you are in a hurry to get on the mountain skiing and snowboarding or mountain biking and hiking, to get to your tee time, to get back to the house before the family wakes up – so when you need to grab breakfast or lunch and take it with you, we are here. Or if you want to grab a nice coffee drink and spend your morning lazily sipping it while sitting on our deck reading the local paper and watching the cars go by, you can do that too.",
-    "email": "sunup@vermontel.net"
+    "email": "sunup@vermontel.net",
+    "localImage": "/images/listings/sunup-bakery.png",
+    "lat": 43.64109,
+    "lng": -72.7886001
   },
   {
     "name": "Au Comptoir",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Drink"
     ],
     "address": "4 Mechanic St, Woodstock, VT 05091",
     "hours": "Daily: 3:00PM - 10:00PM",
@@ -2073,18 +1709,15 @@
     "website": "",
     "description": "Au Comptoir, French for “at the bar,” is the latest project from Zoe Zilian, co-founder of Farmhouse Pottery. Located in the village of Woodstock, this modern craft cocktail bar aims to provide a high standard of hospitality within a space inspired by the beautiful materials of the old world. Come experience our unique menu of original cocktails using the freshest seasonal ingredients, an organic wine list, and a charming selection of snacks.",
     "email": "",
-    "localImage": "/images/listings/au-comptoir.webp"
+    "localImage": "/images/listings/au-comptoir.webp",
+    "lat": 43.6249433,
+    "lng": -72.5174936
   },
   {
     "name": "Inn at Long Trail",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Drink",
+      "Lodging Options"
     ],
     "address": "",
     "hours": "Mon-Fri 3pm-9pm",
@@ -2093,18 +1726,13 @@
     "phone": "(802) 775-7181",
     "website": "https://www.innatlongtrail.com/",
     "description": "The Inn at Long Trail is. a classic Vermont inn, bed and breakfast. with an Irish pub, and formal dining room. Live Irish music every weekend is offered in their pub which is in a grotto-looking spot at the base of their property. Definitely a throwback spot but at least you can drink a proper pint of Guinness at the first pub it was served in Vermont.",
-    "email": "info@innatlongtrail.com"
+    "email": "info@innatlongtrail.com",
+    "localImage": "/images/listings/inn-at-long-trail.jpeg"
   },
   {
     "name": "O’Dwyer’s Irish Pub",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Drink"
     ],
     "address": "200 Summit Rd, Killington, VT 05751",
     "hours": "Monday & Tuesday: Closed. Wednesday - Sunday: 4:00PM - 10:00PM",
@@ -2113,18 +1741,15 @@
     "phone": "(802) 422-3535",
     "website": "https://www.odwyers.com/",
     "description": "O’Dwyer’s is the Public House Home of the Killington Irish Festival. They are an Irish-run and owned family bar and restaurant with ready-to-pour Guinness, Harp, and Smithwicks. The restaurant prepares all home-cooked specials. They also have great live Irish and Americana music on Friday and Saturday nights.",
-    "email": "frontdesk@summitlodgevt.com"
+    "email": "frontdesk@summitlodgevt.com",
+    "localImage": "/images/listings/odwyers-irish-pub.jpeg",
+    "lat": 43.6557759,
+    "lng": -72.7869754
   },
   {
     "name": "Mogul’s Sports Pub",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Drink"
     ],
     "address": "2630 Killington Rd, Killington, VT 05751",
     "hours": "Monday & Tuesday: Closed. Wednesday - Sunday: 3:00PM - 2:00AM",
@@ -2133,18 +1758,15 @@
     "phone": "(802) 422-4777",
     "website": "https://mogulssportspub.com",
     "description": "Moguls offers live entertainment every weekend with some of the best musicians in the Killington area. We also host great events and parties, from Winter Olympics, to DJ Dance parties, to Turkey Bowling & more. Pool tables, music, and all the makings of a great dive bar.",
-    "email": "mogulssportspub@gmail.com"
+    "email": "mogulssportspub@gmail.com",
+    "localImage": "/images/listings/moguls-sports-pub.png",
+    "lat": 43.6368868,
+    "lng": -72.7898389
   },
   {
     "name": "Roaring Brook Umbrella Bar",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Drink"
     ],
     "address": "4563 Killington Rd, Killington, VT 05751",
     "hours": "Mon - Fri: 8:00AM - 5:00PM; Sat - Sun: 8:00 AM - 4:00 PM",
@@ -2153,19 +1775,16 @@
     "phone": "800-734-9435",
     "website": "https://www.killington.com/things-to-do/dining-apres/resort-dining/rbu",
     "description": "Roaring Brook Umbrella Bar is owned and operated by Killington Resort and is located at the base of the mountain next to the main base lodge. Open during the day and for Apre’ Ski this is s a great spot to hang out when you are ready to call it a day. Sit indoors or outdoors (your choice) and enjoy the same great views.",
-    "email": "info@vermont.com"
+    "email": "info@vermont.com",
+    "localImage": "/images/listings/roaring-brook-umbrella-bar.webp",
+    "lat": 43.6173092,
+    "lng": -72.8034548
   },
   {
     "name": "Rutland Beer Works at Killington",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife",
-      "Winter"
+      "Places to Drink",
+      "Breweries"
     ],
     "address": "41 Center St, Rutland, VT 05701",
     "hours": "Wed - Fri: 4:00PM - 9:00PM; Saturday & Sunday: 12:00PM - 9:00PM",
@@ -2174,18 +1793,16 @@
     "phone": "(802) 775-7063",
     "website": "https://www.rutlandbeerworks.com/",
     "description": "Rutland Beer Works is a 15-barrel brewery in the heart of Rutland, Vermont and they have a small outpost tucked away inside the Mountain Green condos and is considered a hidden spot for those looking for something quick and easy. Fast service and decent menu options make this a great find.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/rutland-beer-works-at-killington.jpeg",
+    "lat": 43.6068055,
+    "lng": -72.9783821
   },
   {
     "name": "Killington Distillery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Drink",
+      "Breweries"
     ],
     "address": "47 Old Mill Rd, Killington, VT 05751",
     "hours": "Sunday - Thursday: 5:00PM - 9:00PM; Friday & Saturday: 3:00PM - 9:00PM",
@@ -2195,19 +1812,14 @@
     "website": "https://killingtondistillery.com/",
     "description": "Killington Distillery sits at the base of Killington Mountain, elevation 4241ft, where the extremes are the way of life. Together you can explore the peaks of whiskey’s topography while dining in a private Gondola. You can also sit indoors and enjoy food off their limited menu. The drinks are really great and there s a nice selection for everyone.",
     "email": "info@killstill.com",
-    "localImage": "/images/listings/killington-distillery.webp"
+    "localImage": "/images/listings/killington-distillery.webp",
+    "lat": 43.6308296,
+    "lng": -72.7973765
   },
   {
     "name": "The Wobbly Barn",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife",
-      "Places To Drink"
+      "Places to Drink"
     ],
     "address": "2229 Killington Rd, Killington, VT 05751",
     "hours": "Monday: Closed. Tuesday - Sunday: 4:00PM - 9:00 PM",
@@ -2216,19 +1828,15 @@
     "phone": "(802) 422-6171",
     "website": "https://www.killington.com/things-to-do/dining-apres/wobbly-barn/",
     "description": "The Wobbly Barn has been called Killington’s home for good-time dining and high-altitude entertainment! Recently listed in the top  5 of USA Today’s Best Apres Ski-Bar and Top 30 Apres Spots in the USA. Downstairs is a steakhouse and late at night, the upstairs party starts. The mix of live music and DJs gets everyone dancing and having a good time.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/wobbly-barn.jpeg",
+    "lat": 43.6413175,
+    "lng": -72.78785
   },
   {
     "name": "The Pickle Barrel",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife",
-      "Places To Drink"
+      "Places to Drink"
     ],
     "address": "1741 Killington Rd, Killington, VT 05751",
     "hours": "Wednesday - Sunday: 7:00PM - 12:00AM",
@@ -2237,18 +1845,15 @@
     "phone": "(802) 422-3035",
     "website": "http://www.picklebarrelnightclub.com/",
     "description": "4 Bars, 3 Levels, 2 Stages, 1 Legendary Party – The Pickle Barrel is Killington’s largest and most exciting entertainment venue. Centrally located on Killington Road, the Pickle Barrel has 3 separate levels of entertainment, performance stages, dance floors & bars within one of the craziest-looking buildings. The Pickle Barrel has been a favorite party spot and gathering place since the 1960s.",
-    "email": "info@picklebarrelnightclub.com"
+    "email": "info@picklebarrelnightclub.com",
+    "localImage": "/images/listings/the-pickle-barrel.jpeg",
+    "lat": 43.6482804,
+    "lng": -72.7882552
   },
   {
     "name": "Dr. Coburn’s Tonic",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Eat"
     ],
     "address": "3 Elm St, Woodstock, VT 05091",
     "hours": "Tuesday-Sunday: 12:00PM",
@@ -2257,18 +1862,15 @@
     "phone": "(802) 457-7184",
     "website": "https://www.coburnsrestaurantvt.com/",
     "description": "Dr. Coburn’s Tonic serves great American food and creative craft cocktails. If you are looking for a perfect place for date night, a friend’s night out, or a casual family dinner you will find all the classic dishes.",
-    "email": "coburns@drcoburnstonic.net"
+    "email": "coburns@drcoburnstonic.net",
+    "localImage": "/images/listings/dr-coburns-tonic.jpeg",
+    "lat": 43.6253744,
+    "lng": -72.5182471
   },
   {
     "name": "Ransom Tavern",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Places To Drink"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Sunday - Tuesday: Closed; Wednesday - Saturday: 5:00 PM - 9:00 PM",
@@ -2277,17 +1879,14 @@
     "phone": "(802) 457-1473",
     "website": "https://www.kedronvalleyinn.com/dining",
     "description": "Ransom Tavern located in the historic village of South Woodstock at the Kedron Valley Inn, is an authentic Italian find! Their menu celebrates the Neapolitan tradition of antipasti, salads, and pizzas alongside locally crafted beers, a contemporary wine list, and a variety of craft cocktails.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/ransom-tavern.jpeg"
   },
   {
     "name": "The Village Inn of Woodstock",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat",
+      "Lodging Options"
     ],
     "address": "41 Pleasant St, Woodstock, VT 05091",
     "hours": "",
@@ -2296,19 +1895,15 @@
     "phone": "",
     "website": "https://villageinnofwoodstock.com/contact-us",
     "description": "Delivering New England’s finest seafood and pasta now in the heart of Vermont at The Village Inn of Woodstock. This smaller 35-seat restaurant is open nights and weekends and offers diners the same great flavors and quality as its Boston-based counterparts.",
-    "email": "stay@villageinnofwoodstock.com"
+    "email": "stay@villageinnofwoodstock.com",
+    "localImage": "/images/listings/the-village-inn-of-woodstock.webp",
+    "lat": 43.6265843,
+    "lng": -72.5111635
   },
   {
     "name": "JAX Food & Games",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife",
-      "Places To Drink"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "",
@@ -2317,19 +1912,13 @@
     "phone": "(802) 422-5334",
     "website": "http://www.jaxfoodandgames.com/",
     "description": "Eat like a local at JAX Food & Games, Killington’s hometown bar, which offers weekly live entertainment, cheap food, and an extensive selection of locally crafted beers with late-night food served until the last call. Very affordable menu options.",
-    "email": "jennyb@karrgroup.net"
+    "email": "jennyb@karrgroup.net",
+    "localImage": "/images/listings/jax-food-games.jpeg"
   },
   {
     "name": "The Foundry at Summit Pond",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife",
-      "Places To Drink"
+      "Places to Eat"
     ],
     "address": "63 Summit Rd, Killington, VT 05751",
     "hours": "Daily: 4:00 PM – 9:00 PM",
@@ -2338,17 +1927,15 @@
     "phone": "(802) 422-5335",
     "website": "https://www.foundrykillington.com/",
     "description": "Looking for that wine menu? The Foundry offers over 100+ varieties of wind. Waterside seating welcomes you to relax and enjoy craft beverages that compliment impeccable, chef-driven local cuisine. The warm fireplace in the winter is a huge fan favorite.",
-    "email": "kyleg@karrgroup.net"
+    "email": "kyleg@karrgroup.net",
+    "localImage": "/images/listings/the-foundry-at-summit-pond.jpeg",
+    "lat": 43.6562396,
+    "lng": -72.7886405
   },
   {
     "name": "iPie Pizzeria & Lounge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Daily: 11:00AM - 8:30PM",
@@ -2363,12 +1950,7 @@
   {
     "name": "Sushi Yoshi",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Monday: Closed. Thursday- Sunday 11:30 AM–10:00 PM",
@@ -2377,18 +1959,14 @@
     "phone": "(802) 422 4241",
     "website": "http://vermontsushi.com/menu-selections/",
     "description": "Even if the Atlantic Ocean is a few hundred miles away, the guys at Sushi Yoshi get fresh fish delivered daily from Boston. Sit at the bar or grab a table with friends. Prices are reasonable and you will get your sushi fix while visiting Killington, Vermont.",
-    "email": "mail@vermontsushi.com"
+    "email": "mail@vermontsushi.com",
+    "localImage": "/images/listings/sushi-yoshi.jpeg"
   },
   {
     "name": "The Lookout Tavern",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Eat",
+      "Places to Drink"
     ],
     "address": "",
     "hours": "Daily: 11:30 AM – 9:00 PM",
@@ -2397,19 +1975,13 @@
     "phone": "(802) 422-5665",
     "website": "https://www.lookoutvt.com/",
     "description": "Lookout Tavern is a great spot for ApreSki happy hour. They are known for making a great set of chicken wings and are open all year round. Family-friendly and always lively.",
-    "email": "lookoutvt@gmail.com"
+    "email": "lookoutvt@gmail.com",
+    "localImage": "/images/listings/the-lookout-tavern.jpeg"
   },
   {
     "name": "The Liquid Art Coffeehouse",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "802-422-2787",
-      "nightlife"
+      "Bakery & Cafes"
     ],
     "address": "",
     "hours": "Mon, Wed-Sun: 08:00 AM - 9:00 PM",
@@ -2424,13 +1996,8 @@
   {
     "name": "The 506 Bistro and Bar",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "nightlife"
+      "Places to Eat",
+      "Places to Drink"
     ],
     "address": "",
     "hours": "Monday & Thursday through Sunday: 5:00 PM - 9:00 PM",
@@ -2439,17 +2006,13 @@
     "phone": "",
     "website": "https://www.ontheriverwoodstock.com/bistro-bar",
     "description": "In The River Inn hotel’s heart, the 506 Bistro and Bar offers a simple,  seasonal menu featuring Vermont highlights. Enjoy the open bar and lounge, the atmosphere is casual and warm. Favorites are likely a Yankee pot roast, an organic burger, or a fresh strawberry shortcake.",
-    "email": "reservations@ontheriverwoodstock.com"
+    "email": "reservations@ontheriverwoodstock.com",
+    "localImage": "/images/listings/the-506-bistro-and-bar.webp"
   },
   {
     "name": "The Prince & The Pauper",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Tuesday - Saturday: 5:00 PM - 8:00 PM",
@@ -2458,17 +2021,13 @@
     "phone": "(802) 457-1818",
     "website": "https://www.princeandpauper.com/",
     "description": "The Prince & The Pauper restaurant has been delighting guests with superb food, creative cocktails, & impeccable service for over 47 yrs. Offering dishes from classic to contemporary you will definitely need reservations.",
-    "email": "info@princeandpauper.com"
+    "email": "info@princeandpauper.com",
+    "localImage": "/images/listings/the-prince-the-pauper.webp"
   },
   {
     "name": "Mon Vert Café",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Bakery & Cafes"
     ],
     "address": "28 Central St, Woodstock, VT 05091",
     "hours": "Mon-Sun: 7:30 AM - 5:00 PM",
@@ -2477,17 +2036,16 @@
     "phone": "(802) 457-7143",
     "website": "https://www.monvertcafe.com/",
     "description": "One of the best brunch spots you will find if you can find a table – arrive early or stroll town with a coffee. Mon Vert Café prides itself on wholesome, local, organic products in a comfortable atmosphere. AvoToast and more.",
-    "email": "monvertcafe@gmail.com"
+    "email": "monvertcafe@gmail.com",
+    "localImage": "/images/listings/mon-vert-cafe.jpeg",
+    "lat": 43.6258641,
+    "lng": -72.5169864
   },
   {
     "name": "The Hartland Diner",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat",
+      "Lodging Options"
     ],
     "address": "",
     "hours": "Daily: 07:00 AM - 2:00 PM",
@@ -2502,13 +2060,8 @@
   {
     "name": "The Mountain Top Inn & Resort",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "802.483.2311"
+      "Lodging Options",
+      "Nordic Ski"
     ],
     "address": "",
     "hours": "",
@@ -2517,18 +2070,13 @@
     "phone": "(802) 483 2311",
     "website": "https://mountaintopinn.com/",
     "description": "The Mountain Top Inn’s location offers spectacular lake & mountain views overlooking 700+ acres. The restaurant and tavern deliver spectacular views and creative cuisine (plus outdoor seating in summer).",
-    "email": "stay@mountaintopinn.com"
+    "email": "stay@mountaintopinn.com",
+    "localImage": "/images/listings/the-mountain-top-inn.jpeg"
   },
   {
     "name": "Long Trail Pub & Brewery",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Places To Drink"
+      "Breweries"
     ],
     "address": "",
     "hours": "Sunday - Wednesday: 12:00PM - 6:00PM; Thursday - Saturday: 12:00PM - 7:00PM",
@@ -2537,17 +2085,13 @@
     "phone": "(802) 672-5011",
     "website": "https://longtrail.com/",
     "description": "Long Trail Brewing Company is a regional brewery in Bridgewater, VT, and offers up a great brewery environment that also serves food for Lunch only. During the summer months enjoy drinking a flight of beers while overlooking the Outtaqueeche River.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/long-trail-pub-brewery.jpeg"
   },
   {
     "name": "Ledgewood Yurt",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Lodging Options"
     ],
     "address": "",
     "hours": "Monday - Thursday: Closed; Friday - Sunday: 11:00 AM - 2:30 PM",
@@ -2556,17 +2100,13 @@
     "phone": "(866) 809-9147",
     "website": "",
     "description": "Tucked away, the Ledgewood Yurt is a ski-in-ski-out restaurant and bar. The yurt is also accessible by snowshoe, or, if you’re feeling particularly lazy, via an after-hours snowcat-drawn sleigh ride, which ends with a gourmet five-course dinner. Reservations required.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/ledgewood-yurt.webp"
   },
   {
     "name": "Red Rooster at the Woodstock Inn & Resort",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Daily: 7:30–10 AM, 12–3 PM, 5:30–9 PM",
@@ -2575,17 +2115,14 @@
     "phone": "(802) 457-6671",
     "website": "https://www.woodstockinn.com/stay/culinary-experiences/dining/the-red-rooster",
     "description": "The Woodstock Inn offers a great fine dining experience with its in-house restaurant called Red Rooster. Artisan fresh baked bread. Reservations are recommended.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/red-rooster-at-the-woodstock-inn-resort.jpeg"
   },
   {
     "name": "Simon Pearce",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience",
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Wednesday-Sunday | Dinner 5:30 – 9:00PM",
@@ -2594,17 +2131,13 @@
     "phone": "(802) 295-1470",
     "website": "https://www.simonpearce.com/our-restaurant",
     "description": "Simon Pearce is a world-renowned maker of fine hand-blown glass dinnerware and decor. You can dine steps from his shop, overlooking a waterfall and covered bridge as you enjoy breathtaking sights. Great food!",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/simon-pearce.webp"
   },
   {
     "name": "Worthy Kitchen",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat"
     ],
     "address": "",
     "hours": "Monday - Wednesday: Closed; Thursday & Friday: 4:00PM - 9:00PM",
@@ -2613,17 +2146,13 @@
     "phone": "(802) 457-7281",
     "website": "https://www.worthyvermont.com/worthy-kitchen",
     "description": "Worthy Kitchen offers a great selection of craft beers and pub-style food with a menu that will make your relatives visiting from the South very happy. Laid back and no",
-    "email": "info@worthykitchen.com"
+    "email": "info@worthykitchen.com",
+    "localImage": "/images/listings/worthy-kitchen.png"
   },
   {
     "name": "Homestyle Hotel Inn & Restaurant",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Lodging Options"
     ],
     "address": "",
     "hours": "Thursday - Sunday 4:00PM - 9:00PM",
@@ -2638,12 +2167,8 @@
   {
     "name": "Cloudland Farm-To-Table",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Places to Eat",
+      "Farm Visits"
     ],
     "address": "",
     "hours": "Fridays & Saturdays Only: 5:00PM - 10:00PM",
@@ -2658,15 +2183,8 @@
   {
     "name": "Green Mountain Rock Climbing Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Facility Waiver",
-      "Rate or Membership option",
-      "Summer"
+      "Rock Climbing",
+      "Adventure"
     ],
     "address": "223 Woodstock Ave. Rutland, VT 05701",
     "hours": "Mon - Fri: 3-9 PM Sat & Sun: 12-5 PM",
@@ -2676,17 +2194,14 @@
     "website": "https://www.vermontclimbing.com/first-time-here/",
     "description": "Whether you are new to rock climbing or just new to our gym… WELCOME!",
     "email": "hello@vermontclimbing.com",
-    "localImage": "/images/listings/green-mountain-rock-climbing-center.webp"
+    "localImage": "/images/listings/green-mountain-rock-climbing-center.webp",
+    "lat": 43.6197748,
+    "lng": -72.955845
   },
   {
     "name": "Wonderfeet Kid’s Museum",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Museum Experience"
     ],
     "address": "GMP Energy Innovation Center, 66 Merchants Row, Rutland, VT 05701",
     "hours": "Tues-Sun: 10:00AM - 4:00PM",
@@ -2701,13 +2216,6 @@
   {
     "name": "Killington Market",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "grocery",
       "Grocery Markets"
     ],
     "address": "2023 Killington Rd, Killington, VT 05751",
@@ -2718,17 +2226,14 @@
     "website": "https://killingtonmarket.com/",
     "description": "We have groceries, meats and seafood, beer, craft beer, wine and cheese, delicatessen, take-out, baked goods, catering, Vermont specialty products, and more.",
     "email": "kmarket@aol.com",
-    "localImage": "/images/listings/killington-market.webp"
+    "localImage": "/images/listings/killington-market.webp",
+    "lat": 43.6443405,
+    "lng": -72.7880363
   },
   {
     "name": "Killington Medical Clinic",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Spa Day"
     ],
     "address": "3902 Killington Rd, Killington, VT 05751",
     "hours": "Thursday - Monday: 9:30AM - 5:00PM",
@@ -2737,18 +2242,15 @@
     "phone": "(802) 422-6125",
     "website": "https://www.rrmc.org/locations/profile/killington-medical-clinic/",
     "description": "The Killington Medical Clinic is an urgent care clinic that is only open during ski season (November-April). Outside of ski season, please visit Rutland Regional Medical Center at 160 Allen St., Rutland, VT for medical care.",
-    "email": "guestservices@killington.com"
+    "email": "guestservices@killington.com",
+    "localImage": "/images/listings/killington-medical-clinic.jpeg",
+    "lat": 43.6253932,
+    "lng": -72.7986744
   },
   {
     "name": "Windsor-Cornish Covered Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "",
     "hours": "",
@@ -2763,13 +2265,8 @@
   {
     "name": "Thundering Brook Falls Trail",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Waterfalls",
+      "Hiking"
     ],
     "address": "2295 River Rd Fork, Killington, VT 05751",
     "hours": "",
@@ -2778,17 +2275,15 @@
     "phone": "",
     "website": "",
     "description": "Located on the scenic Appalachian Trail, which winds its way thousands of miles down the ancient mountain range in the eastern portion of the United States. The falls are comprised of two distinct falls, the lower of which has an 80-foot drop, and combined they’re nearly 125 feet. There’s a raised viewing platform that’ll give you a clear look at both portions of the falls, and since the falls are easily accessible, they’re a great place for a family hike followed by a picnic.",
-    "email": ""
+    "email": "",
+    "localImage": "/images/listings/thundering-brook-falls-trail.png",
+    "lat": 43.6604789,
+    "lng": -72.7729328
   },
   {
     "name": "Back Country Cafe",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Bakery & Cafes"
     ],
     "address": "923 Killington Rd, Killington, VT 05751",
     "hours": "Monday - Friday 7:00 PM to 12:00 PM; Saturday & Sunday: 7:00 AM - 1:00 PM",
@@ -2798,18 +2293,14 @@
     "website": "https://www.facebook.com/BackCountryBreakfastCafe/",
     "description": "Back Country Cafe Pancake House serves hearty Vermont breakfast and brunch. Delicious and creative.",
     "email": "stenvt@aol.com",
-    "localImage": "/images/listings/back-country-cafe.webp"
+    "localImage": "/images/listings/back-country-cafe.webp",
+    "lat": 43.6587599,
+    "lng": -72.7916579
   },
   {
     "name": "The Kissing Bridge",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Winter"
+      "Covered Bridges"
     ],
     "address": "1292 Rockingham Rd, Bellows Falls, VT 05101",
     "hours": "",
@@ -2819,17 +2310,14 @@
     "website": "",
     "description": "The Vermont Country Store in Rockingham, VT (about 30 min drive from Killington), is famous for its covered “Kissing Bridge”. The name comes from an old tradition from the horse-and-buggy days when boys and girls would meet in the quietly covered bridges to kiss. People used to call all covered bridges “kissing bridges”, and the name stuck to the one located next to the Vermont Country Store. Couples who visit the store are welcome to stroll through the bridge and keep the tradition going.",
     "email": "",
-    "localImage": "/images/listings/the-kissing-bridge.webp"
+    "localImage": "/images/listings/the-kissing-bridge.webp",
+    "lat": 43.1972786,
+    "lng": -72.5050035
   },
   {
     "name": "The Spa at the Woods",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops"
+      "Spa Day"
     ],
     "address": "53 Woods Ln, Killington, VT 05751",
     "hours": "Daily from 9:00 AM to 6:00 PM",
@@ -2839,18 +2327,14 @@
     "website": "https://www.spaatthewoods.com/",
     "description": "Nestled in the heart of Killington, Vermont, The Spa at the Woods invites you to leave the world behind. Choose from our bespoke spa treatments—whether it’s a rejuvenating massage, radiant facial, healing acupuncture, or a luxurious mani/pedi—designed just for you. Picture yourself unwinding in our solarium pool and hot tub, or letting stress melt away in our sauna and eucalyptus steam room. Your tranquil retreat awaits.",
     "email": "spa@spaatthewoods.com",
-    "localImage": "/images/listings/the-spa-at-the-woods.webp"
+    "localImage": "/images/listings/the-spa-at-the-woods.webp",
+    "lat": 43.658315,
+    "lng": -72.7962732
   },
   {
     "name": "Doubleday Maple Sugar Farm",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Maple Sugar"
     ],
     "address": "",
     "hours": "Tuesdays only from 9 am to 3 pm",
@@ -2865,13 +2349,7 @@
   {
     "name": "Killington Adventure Center",
     "categories": [
-      "Food",
-      "Adventure",
-      "Breweries",
-      "Golf",
-      "Hiking",
-      "Ski Shops",
-      "Summer"
+      "Adventure"
     ],
     "address": "3861 Killington Rd, Killington, VT 05751",
     "hours": "Mondays & Thursday to Sunday - 10 am to 5 pm",
@@ -2881,6 +2359,8 @@
     "website": "https://www.killington.com/plan-your-trip/summer-activities/adventure-center",
     "description": "Enjoy Family fun at the Killington Adventure Center",
     "email": "",
-    "localImage": "/images/listings/killington-adventure-center.webp"
+    "localImage": "/images/listings/killington-adventure-center.webp",
+    "lat": 43.6259371,
+    "lng": -72.7966516
   }
 ]

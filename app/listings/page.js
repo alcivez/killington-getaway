@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -32,38 +32,29 @@ const CATEGORIES = [
   { name: "EV Charging",       slug: "ev-charging",      emoji: "⚡" },
 ]
 
-// Map display category names from JSON to our slugs
 const CAT_MAP = {
-  'food': 'places-to-eat',
   'places to eat': 'places-to-eat',
   'breweries': 'breweries',
   'ski shops': 'ski-shops',
   'hiking': 'hiking',
   'golf': 'golf',
-  'lodging': 'lodging-options',
+  'lodging options': 'lodging-options',
   'adventure': 'adventure',
-  'nightlife': 'places-to-drink',
   'places to drink': 'places-to-drink',
   'waterfalls': 'waterfalls',
-  'farm': 'farm-visits',
-  'museum': 'museums',
-  'nordic': 'nordic-ski',
+  'farm visits': 'farm-visits',
+  'museum experience': 'museums',
   'nordic ski': 'nordic-ski',
-  'cheese': 'cheese',
-  'bridges': 'bridges',
+  'cheese shops': 'cheese',
   'covered bridges': 'bridges',
-  'cafe': 'cafe',
-  'bakery': 'cafe',
+  'bakery & cafes': 'cafe',
   'ski clubs': 'ski-clubs',
-  'climbing': 'climbing',
   'rock climbing': 'climbing',
-  'snowmobile': 'snowmobile',
-  'spa': 'spa',
-  'paddle': 'sup',
-  'sup': 'sup',
-  'maple': 'maple',
-  'grocery': 'grocery',
-  'ev': 'ev-charging',
+  'snowmobile tours': 'snowmobile',
+  'spa day': 'spa',
+  'paddle board': 'sup',
+  'maple sugar': 'maple',
+  'grocery markets': 'grocery',
   'ev charging': 'ev-charging',
 }
 
@@ -84,33 +75,132 @@ function getImage(listing) {
 
 const PAGE_SIZE = 18
 
+// Map component loaded dynamically to avoid SSR issues with Leaflet
+function ListingsMap({ listings }) {
+  const mapRef = useRef(null)
+  const mapInstanceRef = useRef(null)
+  const markersRef = useRef([])
+
+  useEffect(() => {
+    if (!mapRef.current) return
+
+    function loadScript(src, id) {
+      return new Promise((resolve, reject) => {
+        if (document.getElementById(id)) { resolve(); return }
+        const s = document.createElement('script')
+        s.id = id; s.src = src; s.onload = resolve; s.onerror = reject
+        document.head.appendChild(s)
+      })
+    }
+
+    function loadCss(href, id) {
+      if (document.getElementById(id)) return
+      const l = document.createElement('link')
+      l.id = id; l.rel = 'stylesheet'; l.href = href
+      document.head.appendChild(l)
+    }
+
+    const init = async () => {
+      loadCss('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', 'leaflet-css')
+      await loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', 'leaflet-js')
+
+      const L = window.L
+      if (!L || !mapRef.current) return
+
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove()
+        mapInstanceRef.current = null
+      }
+
+      const map = L.map(mapRef.current).setView([43.62, -72.79], 9)
+      mapInstanceRef.current = map
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 18,
+      }).addTo(map)
+
+      const mappable = listings.filter(l => l.lat && l.lng)
+      markersRef.current = mappable.map(listing => {
+        const slug = getSlug(listing)
+        const img = getImage(listing)
+        return L.marker([listing.lat, listing.lng])
+          .addTo(map)
+          .bindPopup(`
+            <div style="min-width:180px;font-family:sans-serif">
+              ${img ? `<img src="${img}" alt="${listing.name}" style="width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px"/>` : ''}
+              <strong style="font-size:13px;display:block;margin-bottom:4px">${listing.name}</strong>
+              ${listing.address ? `<p style="font-size:11px;color:#666;margin:0 0 6px">${listing.address}</p>` : ''}
+              <a href="/listings/${slug}" style="font-size:12px;color:#00B4D8;font-weight:bold;text-decoration:none">View Details →</a>
+            </div>
+          `, { maxWidth: 220 })
+      })
+
+      if (mappable.length > 0) {
+        const group = L.featureGroup(markersRef.current)
+        map.fitBounds(group.getBounds().pad(0.1))
+      }
+    }
+
+    init()
+
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove()
+        mapInstanceRef.current = null
+      }
+    }
+  }, [listings])
+
+  const mappable = listings.filter(l => l.lat && l.lng)
+  const unmapped = listings.length - mappable.length
+
+  return (
+    <div className="flex flex-col gap-2">
+      {unmapped > 0 && (
+        <p className="text-xs text-gray-400">
+          Showing {mappable.length} of {listings.length} listings on map ({unmapped} have no address).
+        </p>
+      )}
+      <div ref={mapRef} style={{ height: '600px', borderRadius: '16px', overflow: 'hidden', border: '1px solid #e5e7eb' }} />
+    </div>
+  )
+}
+
 export default function ListingsPage() {
   const [activeCategory, setActiveCategory] = useState('all')
+  const [activeSeason, setActiveSeason]     = useState(null) // 'summer' | 'winter' | null
   const [search, setSearch]                 = useState('')
   const [searchInput, setSearchInput]       = useState('')
   const [page, setPage]                     = useState(1)
+  const [view, setView]                     = useState('grid') // 'grid' | 'map'
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     if (params.get('category')) setActiveCategory(params.get('category'))
+    if (params.get('season')) setActiveSeason(params.get('season'))
+    if (params.get('search')) { setSearch(params.get('search')); setSearchInput(params.get('search')) }
   }, [])
 
   const filtered = allListings.filter((l) => {
     const matchCat = activeCategory === 'all' || getListingSlugs(l).includes(activeCategory)
+    const matchSeason = !activeSeason || (l.categories || []).some(c => c.toLowerCase() === activeSeason)
     const matchSearch = search === '' ||
       l.name.toLowerCase().includes(search.toLowerCase()) ||
       (l.address || '').toLowerCase().includes(search.toLowerCase())
-    return matchCat && matchSearch
+    return matchCat && matchSeason && matchSearch
   })
 
-  const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
-  const paginated  = filtered.slice(0, page * PAGE_SIZE)
-  const hasMore    = page * PAGE_SIZE < filtered.length
+  const paginated = filtered.slice(0, page * PAGE_SIZE)
+  const hasMore   = page * PAGE_SIZE < filtered.length
 
-  const activeCategoryLabel = CATEGORIES.find(c => c.slug === activeCategory)?.name ?? 'All Listings'
+  const activeCategoryLabel = activeSeason
+    ? (activeSeason === 'summer' ? 'Summer Activities' : 'Winter Activities')
+    : (CATEGORIES.find(c => c.slug === activeCategory)?.name ?? 'All Listings')
 
   function handleCategoryChange(slug) {
     setActiveCategory(slug)
+    setActiveSeason(null)
     setPage(1)
   }
 
@@ -133,7 +223,7 @@ export default function ListingsPage() {
             {filtered.length} {filtered.length === 1 ? 'listing' : 'listings'} in and around Killington, Vermont
           </p>
 
-          {/* Search */}
+          {/* Search + View Toggle */}
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
@@ -150,14 +240,44 @@ export default function ListingsPage() {
             >
               Search
             </button>
-            {(activeCategory !== 'all' || search !== '') && (
+            {(activeCategory !== 'all' || activeSeason || search !== '') && (
               <button
-                onClick={() => { setActiveCategory('all'); setSearch(''); setSearchInput(''); setPage(1); }}
+                onClick={() => { setActiveCategory('all'); setActiveSeason(null); setSearch(''); setSearchInput(''); setPage(1); }}
                 className="text-sm font-semibold px-4 py-2.5 rounded-lg border border-gray-200 text-gray-500 hover:border-gray-400 transition-colors"
               >
                 Clear
               </button>
             )}
+
+            {/* View Toggle */}
+            <div className="flex rounded-lg border border-gray-200 overflow-hidden flex-shrink-0">
+              <button
+                onClick={() => setView('grid')}
+                title="Grid view"
+                className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold transition-colors ${
+                  view === 'grid' ? 'text-white' : 'text-gray-500 hover:bg-gray-50'
+                }`}
+                style={view === 'grid' ? { backgroundColor: '#00B4D8' } : {}}
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                </svg>
+                Grid
+              </button>
+              <button
+                onClick={() => setView('map')}
+                title="Map view"
+                className={`flex items-center gap-1.5 px-4 py-2.5 text-sm font-semibold transition-colors border-l border-gray-200 ${
+                  view === 'map' ? 'text-white' : 'text-gray-500 hover:bg-gray-50'
+                }`}
+                style={view === 'map' ? { backgroundColor: '#00B4D8' } : {}}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                </svg>
+                Map
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -192,7 +312,7 @@ export default function ListingsPage() {
           ))}
         </aside>
 
-        {/* Grid */}
+        {/* Main content */}
         <div className="flex-1 min-w-0">
 
           {/* Mobile category pills */}
@@ -222,13 +342,15 @@ export default function ListingsPage() {
               <p className="text-xl font-bold text-gray-700 mb-2">No listings found</p>
               <p className="text-gray-400 mb-6">Try a different category or search term.</p>
               <button
-                onClick={() => { setActiveCategory('all'); setSearch(''); setSearchInput(''); setPage(1); }}
+                onClick={() => { setActiveCategory('all'); setActiveSeason(null); setSearch(''); setSearchInput(''); setPage(1); }}
                 className="text-white font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
                 style={{ backgroundColor: '#00B4D8' }}
               >
                 Clear Filters
               </button>
             </div>
+          ) : view === 'map' ? (
+            <ListingsMap listings={filtered} />
           ) : (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
