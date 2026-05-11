@@ -1,13 +1,9 @@
-'use client'
-
-import dynamic from 'next/dynamic'
-import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import allListings from '../../../listings.json'
 
-const ListingMap = dynamic(() => import('../../components/ListingMap'), { ssr: false })
+import ListingMapClient from '../../components/ListingMapClient'
 
 function getSlug(listing) {
   const url = listing.url || ''
@@ -20,8 +16,14 @@ function getImage(listing) {
   return listing.localImage || listing.image || null
 }
 
-export default function ListingDetailPage() {
-  const { slug } = useParams()
+export function generateStaticParams() {
+  return allListings.map((listing) => ({
+    slug: getSlug(listing),
+  }))
+}
+
+export default async function ListingDetailPage({ params }) {
+  const { slug } = await params
   const listing = allListings.find(l => getSlug(l) === slug)
 
   if (!listing) {
@@ -145,7 +147,7 @@ export default function ListingDetailPage() {
                 </p>
               )}
               
-              <ListingMap listing={listing} />
+              <ListingMapClient listing={listing} />
             </div>
           </div>
 

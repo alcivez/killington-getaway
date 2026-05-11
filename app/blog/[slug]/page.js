@@ -1,6 +1,3 @@
-'use client'
-
-import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
@@ -612,8 +609,14 @@ const CATEGORY_COLORS = {
   'Gear': '#EA580C',
 }
 
-export default function BlogPostPage() {
-  const { slug } = useParams()
+export function generateStaticParams() {
+  return Object.keys(BLOG_POSTS).map((slug) => ({
+    slug: slug,
+  }))
+}
+
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params
   const post = BLOG_POSTS[slug]
 
   if (!post) {
