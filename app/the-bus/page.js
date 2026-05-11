@@ -28,7 +28,7 @@ const ROUTES = [
   },
   {
     name: 'Route 3 – Rutland / White River Junction',
-    color: '#059669',
+    color: '#2d94e3',
     description: 'Connects Rutland to White River Junction with stops in Woodstock, Quechee, and West Hartford. Connects to Amtrak Vermonter service.',
     stops: [
       { stop: 'Rutland Transit Hub', time: '—' },
@@ -176,7 +176,7 @@ export default function TheBusPage() {
                 body: 'The Amtrak Vermonter runs daily between New York Penn Station and St. Albans, VT with a stop at White River Junction. Route 3 connects White River Junction to Rutland.',
                 link: 'https://www.amtrak.com/vermonter-train',
                 label: 'Amtrak Schedule →',
-                color: '#2D936C',
+                color: '#2d94e3',
               },
               {
                 title: 'Park & Ride Lots',

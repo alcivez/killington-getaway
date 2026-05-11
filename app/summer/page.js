@@ -120,18 +120,18 @@ const SUMMER_ACTIVITIES = [
 ]
 
 const TAG_COLORS = {
-  'Top Pick': '#2D936C',
+  'Top Pick': '#2d94e3',
   'Outdoors': '#3498DB',
   'Water': '#3498DB',
   'Scenic': '#0B1619',
-  'Sport': '#2D936C',
+  'Sport': '#2d94e3',
   'Family': '#3498DB',
   'Local': '#D97706',
   'Culture': '#7C3AED',
   'Arts': '#EA580C',
   'Thrill': '#DC2626',
   'Seasonal': '#D97706',
-  'Explore': '#2D936C',
+  'Explore': '#2d94e3',
 }
 
 export default function SummerPage() {

@@ -27,7 +27,7 @@ const SWAG_ITEMS = [
     name: 'Summit 5-Panel Hat',
     price: '$42',
     tag: 'Spring 26',
-    tagColor: '#059669',
+    tagColor: '#2d94e3',
     color: 'Navy / White',
     desc: 'Structured 5-panel with curved brim. Embroidered KG mark on front, "Killington, VT" on side tape. Adjustable closure.',
     img: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80',

@@ -34,7 +34,7 @@ const WEBCAMS = [
 ]
 
 const TAG_COLORS = {
-  'Summit': '#2D936C',
+  'Summit': '#2d94e3',
   'Base': '#3498DB',
   'Road': '#D97706',
   'Advanced': '#0B1619',
@@ -67,7 +67,7 @@ export default function WebcamsPage() {
                 <div className="flex items-center gap-4 mb-4 md:mb-0">
                   <span
                     className="text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg"
-                    style={{ backgroundColor: TAG_COLORS[cam.tag] || '#2D936C' }}
+                    style={{ backgroundColor: TAG_COLORS[cam.tag] || '#2d94e3' }}
                   >
                     {cam.tag}
                   </span>
@@ -126,7 +126,7 @@ export default function WebcamsPage() {
                 desc: "Killington Resort's own webcam network with views across all six peaks and base lodges.",
                 href: 'https://www.killington.com/mountain/snow-and-weather/webcams',
                 label: 'killington.com →',
-                color: '#2D936C',
+                color: '#2d94e3',
               },
               {
                 title: 'Ski Conditions',

@@ -62,7 +62,7 @@ const EVENTS = [
     subtitle: 'Spring Closing Tradition',
     dates: 'April 2026 (Last Weekend)',
     category: 'Spring Classic',
-    categoryColor: '#059669',
+    categoryColor: '#2d94e3',
     img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
     desc: "A Killington tradition since the 1970s. Contestants ski or ride down a steep run, hit a kicker, and attempt to skim across a pool of icy water at the bottom — in costume. No skill required. Maximum chaos encouraged.",
     highlights: [

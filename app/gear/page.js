@@ -188,7 +188,7 @@ const LEVEL_COLORS = {
   'Expert': '#DC2626',
   'Advanced': '#D97706',
   'Advanced–Expert': '#DC2626',
-  'Intermediate–Advanced': '#2D936C',
+  'Intermediate–Advanced': '#2d94e3',
   'All Levels': '#3498DB',
 }
 

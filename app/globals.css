@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-green: #2D936C;
+  --color-brand-green: #2d94e3;
   --color-brand-blue: #3498DB;
   --color-brand-navy: #0B1619;
   
@@ -54,12 +54,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2D936C;
+  background: #2d94e3;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #257a5a;
+  background: #2376b5;
 }
 
 @keyframes slow-zoom {

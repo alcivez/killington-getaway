@@ -181,7 +181,7 @@ export default function Navbar() {
               autoFocus
               type="text"
               placeholder="Search listings, activities, places…"
-              className="flex-1 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20"
+              className="flex-1 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#2d94e3] focus:ring-2 focus:ring-[#2d94e3]/20"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && e.target.value.trim()) {
                   window.location.href = `/listings?search=${encodeURIComponent(e.target.value.trim())}`
@@ -190,7 +190,7 @@ export default function Navbar() {
             />
             <button
               className="text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#00B4D8' }}
+              style={{ backgroundColor: '#2d94e3' }}
             >
               Search
             </button>

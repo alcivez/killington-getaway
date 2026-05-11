@@ -41,7 +41,7 @@ const DIRECTORY = [
   },
   {
     section: 'Summer Activities',
-    color: '#059669',
+    color: '#2d94e3',
     icon: '🌿',
     categories: [
       { name: 'Mountain Biking', slug: 'adventure', count: 8 },

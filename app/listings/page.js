@@ -132,7 +132,7 @@ function ListingsMap({ listings }) {
               ${img ? `<img src="${img}" alt="${listing.name}" style="width:100%;height:100px;object-fit:cover;border-radius:12px;margin-bottom:12px"/>` : ''}
               <strong style="font-size:14px;display:block;margin-bottom:4px;color:#0B1619">${listing.name}</strong>
               ${listing.address ? `<p style="font-size:12px;color:#666;margin:0 0 10px">${listing.address}</p>` : ''}
-              <a href="/listings/${slug}" style="display:inline-block;font-size:12px;color:#fff;background:#2D936C;padding:6px 12px;border-radius:20px;text-decoration:none;font-weight:bold">View Details →</a>
+              <a href="/listings/${slug}" style="display:inline-block;font-size:12px;color:#fff;background:#2d94e3;padding:6px 12px;border-radius:20px;text-decoration:none;font-weight:bold">View Details →</a>
             </div>
           `, { maxWidth: 240, className: 'premium-popup' })
       })

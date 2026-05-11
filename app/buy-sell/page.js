@@ -64,7 +64,7 @@ const PLATFORMS = [
     name: 'GearTrade',
     category: 'Outdoor Gear',
     icon: '🏕️',
-    color: '#059669',
+    color: '#2d94e3',
     desc: "GearTrade is the outdoor industry's trusted used gear marketplace — with a focus on ski, hiking, and camping equipment from reputable brands. Clean interface, authenticated listings, and buyer-friendly policies.",
     link: 'https://www.geartrade.com',
     linkLabel: 'Browse GearTrade →',

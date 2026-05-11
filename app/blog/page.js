@@ -252,10 +252,10 @@ const BLOG_POSTS = [
 ]
 
 const CATEGORY_COLORS = {
-  'Adventure': '#2D936C',
+  'Adventure': '#2d94e3',
   'Skiing': '#3498DB',
   'Culture': '#0B1619',
-  'Travel': '#2D936C',
+  'Travel': '#2d94e3',
   'News': '#DC2626',
   'Research': '#3498DB',
   'Training': '#D97706',
@@ -294,7 +294,7 @@ export default function BlogPage() {
             </div>
             <div className="lg:w-2/5 p-12 lg:p-16 flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-[10px] font-black px-4 py-1.5 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: CATEGORY_COLORS[featured.category] || '#2D936C' }}>
+                <span className="text-[10px] font-black px-4 py-1.5 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: CATEGORY_COLORS[featured.category] || '#2d94e3' }}>
                   {featured.category}
                 </span>
                 <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{featured.date}</span>

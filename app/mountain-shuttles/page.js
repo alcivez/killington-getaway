@@ -46,7 +46,7 @@ const SHUTTLE_SERVICES = [
   {
     name: 'Green Mountain Transit – Route 11',
     tag: 'Public Bus',
-    tagColor: '#059669',
+    tagColor: '#2d94e3',
     description: 'Public bus service operated by Green Mountain Transit connecting Rutland to Killington. Year-round service with seasonal enhancements during ski season.',
     schedule: [
       { route: 'Rutland Transit Hub → Killington Base', times: ['7:15 AM', '8:15 AM', '9:15 AM', '12:15 PM', '3:15 PM'] },

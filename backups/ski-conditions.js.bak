@@ -37,84 +37,21 @@ export default function SkiConditionsPage() {
         </div>
       </section>
 
-      {/* Mountain Stats Overview */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            {/* Left: Vital Stats */}
-            <div className="lg:col-span-2">
-              <h2 className="text-3xl font-heading font-black text-brand-navy tracking-tight uppercase mb-8 flex items-center gap-3">
-                <span className="w-8 h-1 bg-brand-green rounded-full" />
-                Mountain Facts
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                {[
-                  { label: 'Summit Elevation', value: '4,241 ft', icon: '🏔️' },
-                  { label: 'Base Elevation', value: '1,165 ft', icon: '⛺' },
-                  { label: 'Vertical Drop', value: '3,050 ft', icon: '📉' },
-                  { label: 'Skiable Acreage', value: '1,509 ac', icon: '🗺️' },
-                  { label: 'Number of Trails', value: '155', icon: '⛷️' },
-                  { label: 'Snowmaking', value: '600 ac', icon: '❄️' },
-                ].map((stat) => (
-                  <div key={stat.label} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 group hover:border-brand-green/30 transition-colors">
-                    <span className="text-2xl mb-3 block">{stat.icon}</span>
-                    <p className="text-2xl font-black text-brand-navy leading-none mb-1">{stat.value}</p>
-                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+      {/* Quick stats */}
+      <section className="py-10 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
+          {SNOW_STATS.map((s) => (
+            <div key={s.label} className="bg-gray-50 rounded-2xl py-5 px-3 border border-gray-100">
+              <p className="text-lg font-extrabold text-gray-900">{s.value}</p>
+              <p className="text-xs font-semibold text-gray-600 mt-0.5">{s.label}</p>
+              <p className="text-xs text-gray-400 mt-0.5">{s.sub}</p>
             </div>
-
-            {/* Right: Difficulty & Lifts */}
-            <div className="space-y-8">
-              {/* Difficulty Breakdown */}
-              <div className="bg-brand-navy rounded-3xl p-8 text-white shadow-xl">
-                <h3 className="text-xl font-heading font-black uppercase tracking-tight mb-6">Trail Difficulty</h3>
-                <div className="space-y-4">
-                  {[
-                    { label: 'Beginner', val: '28%', color: 'bg-green-500' },
-                    { label: 'Intermediate', val: '43%', color: 'bg-blue-500' },
-                    { label: 'Expert', val: '29%', color: 'bg-black border border-white/20' },
-                  ].map((d) => (
-                    <div key={d.label}>
-                      <div className="flex justify-between text-xs font-black uppercase tracking-widest mb-2">
-                        <span>{d.label}</span>
-                        <span>{d.val}</span>
-                      </div>
-                      <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className={`h-full ${d.color}`} style={{ width: d.val }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Lift Stats */}
-              <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100">
-                <h3 className="text-xl font-heading font-black text-brand-navy uppercase tracking-tight mb-6">Lift System</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: 'Gondolas', val: '2' },
-                    { label: 'HS Quads', val: '9' },
-                    { label: 'Triples', val: '3' },
-                    { label: 'Surface', val: '4' },
-                  ].map((l) => (
-                    <div key={l.label} className="flex flex-col">
-                      <span className="text-xl font-black text-brand-navy">{l.val}</span>
-                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{l.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-          </div>
+          ))}
         </div>
       </section>
 
       {/* Live Windy map */}
-      <section className="py-12 px-6 bg-gray-50">
+      <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -188,14 +125,14 @@ export default function SkiConditionsPage() {
                 desc: "Killington's own daily report with open trail counts, grooming status, and overnight snow totals.",
                 href: 'https://www.killington.com/mountain/snow-and-weather/snow-report',
                 label: 'View Report →',
-                color: '#2d94e3',
+                color: '#059669',
               },
               {
                 title: 'Trail Map',
                 desc: 'Interactive trail map with real-time open/closed status across all six Killington peaks.',
                 href: 'https://www.killington.com/mountain/trail-map',
                 label: 'Open Trail Map →',
-                color: '#2d94e3',
+                color: '#059669',
               },
               {
                 title: 'Webcams',

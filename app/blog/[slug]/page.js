@@ -602,7 +602,7 @@ const CATEGORY_COLORS = {
   'Adventure': '#00B4D8',
   'Skiing': '#0077A8',
   'Culture': '#6B7280',
-  'Travel': '#059669',
+  'Travel': '#2d94e3',
   'News': '#DC2626',
   'Research': '#7C3AED',
   'Training': '#D97706',

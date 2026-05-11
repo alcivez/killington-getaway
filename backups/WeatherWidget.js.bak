@@ -21,7 +21,7 @@ function getSeason(month) {
   if (month >= 2 && month <= 4)  return 'spring'
   if (month >= 5 && month <= 7)  return 'summer'
   if (month >= 8 && month <= 10) return 'fall'
-  return 'winter'
+  return 'fall'
 }
 
 // Condition bucket from WMO code
@@ -245,7 +245,7 @@ export default function WeatherWidget() {
                   <span className="text-sm font-bold text-gray-500 whitespace-nowrap">{day.dayName}</span>
                   <span className="text-3xl my-1">{dc.icon}</span>
                   {day.snow && (
-                    <span className="text-sm font-bold mb-0.5" style={{ color: '#2d94e3' }}>{day.snow}"</span>
+                    <span className="text-sm font-bold mb-0.5" style={{ color: '#2D936C' }}>{day.snow}"</span>
                   )}
                   <span className="text-lg font-black text-black">{day.high}°</span>
                   <span className="text-sm text-gray-400">{day.low}°</span>

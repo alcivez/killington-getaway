@@ -92,7 +92,7 @@ const WINTER_ACTIVITIES = [
 ]
 
 const TAG_COLORS = {
-  'Most Popular': '#2D936C',
+  'Most Popular': '#2d94e3',
   'Event': '#DC2626',
   'Adventure': '#D97706',
   'Family': '#3498DB',
