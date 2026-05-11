@@ -91,47 +91,56 @@ const PLATFORMS = [
 
 export default function BuySellPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-3" style={{ color: '#00B4D8' }}>Gear Marketplace</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Buy &amp; Sell Gear</h1>
-          <p className="text-gray-400 text-lg">
+      {/* Header */}
+      <section className="bg-white border-b border-gray-100 py-24 px-6 text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Gear Marketplace</p>
+            <span className="w-8 h-[2px] bg-brand-green" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-brand-navy mb-8 tracking-tight uppercase">Buy & <span className="text-brand-green">Sell Gear</span></h1>
+          <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto leading-relaxed">
             The best platforms for buying and selling ski gear, mountain bikes, and outdoor equipment in and around the Killington area.
           </p>
         </div>
       </section>
 
       {/* Platforms */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col gap-8">
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-5xl mx-auto flex flex-col gap-12">
           {PLATFORMS.map((p) => (
-            <div key={p.name} className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow duration-200">
-              <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+            <div key={p.name} className="bg-white rounded-[3rem] overflow-hidden shadow-premium border border-gray-50 transition-all duration-500 hover:shadow-2xl group">
+              <div className="flex flex-col lg:flex-row items-start gap-10 p-10 md:p-12">
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+                  className="w-20 h-20 rounded-[1.5rem] flex items-center justify-center text-4xl flex-shrink-0 shadow-sm transition-transform group-hover:scale-110"
                   style={{ backgroundColor: p.color + '18' }}
                 >
                   {p.icon}
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1 flex-wrap">
-                    <h2 className="text-lg font-extrabold text-gray-900">{p.name}</h2>
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full text-white" style={{ backgroundColor: p.color }}>
-                      {p.category}
-                    </span>
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <div className="flex flex-col gap-2">
+                      <h2 className="text-2xl font-heading font-black text-brand-navy uppercase tracking-tight">{p.name}</h2>
+                      <span className="text-[10px] font-black px-4 py-1.5 rounded-full text-white uppercase tracking-widest self-start shadow-sm" style={{ backgroundColor: p.color }}>
+                        {p.category}
+                      </span>
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-500 leading-relaxed mb-4">{p.desc}</p>
+                  <p className="text-gray-400 font-medium leading-relaxed text-lg mb-10">{p.desc}</p>
 
-                  <div className="mb-4">
-                    <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Local Tips</p>
-                    <ul className="flex flex-col gap-1.5">
+                  <div className="bg-gray-50/50 rounded-[2rem] p-8 border border-gray-100/50 mb-10">
+                    <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                       <span className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
+                       Local Insights & Tips
+                    </p>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {p.tips.map((tip) => (
-                        <li key={tip} className="text-xs text-gray-500 flex items-start gap-2">
-                          <span className="mt-0.5 flex-shrink-0" style={{ color: p.color }}>→</span>
+                        <li key={tip} className="text-xs font-bold text-brand-navy/60 flex items-start gap-3">
+                          <span className="text-lg leading-none" style={{ color: p.color }}>•</span>
                           {tip}
                         </li>
                       ))}
@@ -142,10 +151,11 @@ export default function BuySellPage() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity"
+                    className="inline-flex items-center gap-3 text-white font-black px-10 py-4 rounded-full hover:opacity-90 transition-all shadow-xl uppercase tracking-widest text-xs group/btn"
                     style={{ backgroundColor: p.color }}
                   >
                     {p.linkLabel}
+                    <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                   </a>
                 </div>
               </div>
@@ -155,21 +165,27 @@ export default function BuySellPage() {
       </section>
 
       {/* Safety tips */}
-      <section className="bg-gray-50 border-t border-gray-100 py-14 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-xl font-extrabold text-gray-900 mb-6">Safe Trading Tips</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">Safe <span className="text-brand-green">Trading Tips</span></h2>
+            <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto">Follow these guidelines for a safe and successful marketplace experience.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: '📍', tip: 'Meet in public places — the Rutland Market 32 or Killington Resort base lodge parking lots are the local standard.' },
               { icon: '💵', tip: 'Cash is king for local pickup. Venmo/PayPal accepted for shipped items, but watch for scam accounts.' },
               { icon: '🎿', tip: 'Test ski boots in the shop before buying — fit matters more than brand or price. Bring your own liners if needed.' },
               { icon: '🚵', tip: 'Inspect bikes thoroughly. Check the fork seals, drivetrain, and brake bleed — these are expensive to fix post-purchase.' },
               { icon: '🔍', tip: "Check gear serial numbers on Bike Index (bikes) or Stolen 911 (skis) to verify it hasn't been reported stolen." },
-              { icon: '📧', tip: "If a deal seems too good to be true on Craigslist or Marketplace, it usually is. Trust your gut and don't ship first." },
+              { icon: '📧', tip: "If a deal seems too good to be true, it usually is. Trust your gut and don't ship items before payment." },
             ].map((s) => (
-              <div key={s.tip} className="bg-white border border-gray-100 rounded-xl px-4 py-3 flex items-start gap-3">
-                <span className="text-lg flex-shrink-0">{s.icon}</span>
-                <p className="text-xs text-gray-500 leading-relaxed">{s.tip}</p>
+              <div key={s.tip} className="bg-gray-50/50 rounded-[2.5rem] p-8 border border-gray-100 flex flex-col gap-6 hover:border-brand-green/30 transition-all group">
+                <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
+                  {s.icon}
+                </div>
+                <p className="text-brand-navy font-bold leading-relaxed">{s.tip}</p>
               </div>
             ))}
           </div>

@@ -2,6 +2,7 @@
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const SWAG_ITEMS = [
   {
@@ -80,48 +81,41 @@ const SWAG_ITEMS = [
 
 export default function SwagPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-3" style={{ color: '#00B4D8' }}>Killington Getaway</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">The Drop</h1>
-          <p className="text-gray-400 text-lg">Seasonal gear and apparel from Killington Getaway. Built for the mountain. Worn everywhere else too.</p>
-        </div>
-      </section>
+      <Hero title="The Drop" subtitle="Seasonal gear and apparel from Killington Getaway. Built for the mountain. Worn everywhere else." />
 
       {/* Product grid */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-24 px-6 bg-gray-50/30">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {SWAG_ITEMS.map((item) => (
             <div
               key={item.name}
-              className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col group"
+              className="bg-white border border-gray-50 rounded-[3rem] overflow-hidden hover:shadow-premium hover:-translate-y-2 transition-all duration-500 flex flex-col group relative"
             >
-              <div className="relative h-56 overflow-hidden bg-gray-50">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/5 rounded-full -mr-12 -mt-12 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative h-72 overflow-hidden bg-gray-50">
                 <img
                   src={item.img}
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-3 left-3">
-                  <span className="text-white text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: item.tagColor }}>
+                <div className="absolute top-6 left-6">
+                  <span className="text-[10px] font-black px-4 py-2 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: item.tagColor }}>
                     {item.tag}
                   </span>
                 </div>
               </div>
-              <div className="p-5 flex flex-col flex-1">
-                <div className="flex items-start justify-between mb-1">
-                  <h3 className="text-sm font-bold text-gray-900 leading-tight flex-1 pr-2">{item.name}</h3>
-                  <span className="text-base font-extrabold flex-shrink-0" style={{ color: '#00B4D8' }}>{item.price}</span>
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-lg font-heading font-black text-brand-navy leading-tight flex-1 pr-2 uppercase tracking-tight">{item.name}</h3>
+                  <span className="text-xl font-heading font-black text-brand-green flex-shrink-0">{item.price}</span>
                 </div>
-                <p className="text-xs text-gray-400 mb-2">{item.color}</p>
-                <p className="text-xs text-gray-500 leading-relaxed flex-1 mb-4">{item.desc}</p>
+                <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-4">{item.color}</p>
+                <p className="text-gray-400 font-medium text-sm leading-relaxed flex-1 mb-8">{item.desc}</p>
                 <button
-                  className="w-full text-center text-white text-xs font-bold py-2.5 rounded-xl hover:opacity-90 transition-opacity cursor-not-allowed opacity-70"
-                  style={{ backgroundColor: '#00B4D8' }}
+                  className="w-full text-center bg-brand-navy/5 text-brand-navy/40 font-black py-4 rounded-full uppercase tracking-widest text-[10px] cursor-not-allowed border border-brand-navy/5"
                   disabled
                 >
                   Coming Soon
@@ -133,27 +127,29 @@ export default function SwagPage() {
       </section>
 
       {/* Notify me */}
-      <section className="bg-gray-50 border-t border-gray-100 py-16 px-6">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Be First in Line</h2>
-          <p className="text-gray-400 mb-6 text-sm">
-            The KG store drops seasonally. Enter your email and we'll notify you when orders open — no spam, just the actual drop date.
+      <section className="py-24 px-6 bg-brand-navy relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 rounded-full -mr-64 -mt-64 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-blue/5 rounded-full -ml-64 -mb-64 blur-3xl" />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-heading font-black text-white mb-6 tracking-tight uppercase">Be First <span className="text-brand-green">In Line</span></h2>
+          <p className="text-white/40 text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+            The KG store drops seasonally. Enter your email and we&apos;ll notify you when orders open — no spam, just the actual drop date.
           </p>
-          <form className="flex gap-3 max-w-sm mx-auto" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-[#00B4D8] transition-colors"
+              className="flex-1 px-8 py-5 bg-white/5 border border-white/10 rounded-full text-white font-bold focus:outline-none focus:border-brand-green focus:ring-4 focus:ring-brand-green/10 transition-all placeholder:text-white/20"
             />
             <button
               type="submit"
-              className="text-white text-sm font-bold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#00B4D8' }}
+              className="bg-brand-green text-white font-black px-12 py-5 rounded-full hover:bg-brand-green/90 transition-all shadow-xl uppercase tracking-widest text-xs whitespace-nowrap"
             >
               Notify Me
             </button>
           </form>
-          <p className="text-xs text-gray-400 mt-4">No spam. Unsubscribe anytime. Usually one email per season.</p>
+          <p className="text-[10px] font-black text-white/20 mt-8 uppercase tracking-[0.2em]">Usually one email per season. Unsubscribe anytime.</p>
         </div>
       </section>
 

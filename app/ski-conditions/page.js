@@ -2,6 +2,8 @@
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
+import WeatherWidget from '../components/WeatherWidget'
 
 const SNOW_STATS = [
   { label: 'Base Depth', value: 'See Report', sub: 'Updated daily' },
@@ -17,14 +19,21 @@ export default function SkiConditionsPage() {
     <main className="min-h-screen bg-white font-sans">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-3" style={{ color: '#00B4D8' }}>Live Mountain Data</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Ski Conditions</h1>
-          <p className="text-gray-400 text-lg">
-            Real-time weather, snowfall, and mountain conditions for Killington Resort — before you pack the car.
-          </p>
+      <Hero 
+        title="Ski Conditions" 
+        subtitle="Real-time weather, snowfall, and mountain conditions for Killington Resort — before you pack the car."
+      />
+
+      {/* Seasonal Disclaimer */}
+      <section className="bg-amber-50 border-b border-amber-100 py-6 px-6">
+        <div className="max-w-4xl mx-auto flex items-start gap-4">
+          <span className="text-2xl mt-1">☀️</span>
+          <div>
+            <h3 className="font-heading font-black text-amber-900 text-lg uppercase tracking-wider mb-1">Summer & Autumn Operations Notice</h3>
+            <p className="text-amber-800 font-medium">
+              The mountain transforms during the warmer months! Ski slopes and most winter lifts are currently closed. However, scenic gondola rides, the Killington Bike Park, and hiking trails remain open with specific seasonal hours. Stay tuned for the exciting 2026-2027 Winter Season!
+            </p>
+          </div>
         </div>
       </section>
 
@@ -97,24 +106,11 @@ export default function SkiConditionsPage() {
         </div>
       </section>
 
-      {/* 7-day weather widget */}
+      {/* Weather widget */}
       <section className="py-12 px-6 bg-gray-50 border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-6">7-Day Mountain Forecast</h2>
-          <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white" style={{ minHeight: '220px' }}>
-            <iframe
-              src="https://forecast7.com/en/43d60n72d82/killington/?unit=us"
-              title="Killington 7-day Forecast"
-              className="w-full border-0"
-              style={{ height: '245px' }}
-            />
-          </div>
-          <p className="text-xs text-gray-400 mt-3 text-center">
-            7-day forecast powered by{' '}
-            <a href="https://forecast7.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" style={{ color: '#00B4D8' }}>
-              Forecast7.com
-            </a>
-          </p>
+          <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Mountain Forecast</h2>
+          <WeatherWidget />
         </div>
       </section>
 
@@ -129,7 +125,7 @@ export default function SkiConditionsPage() {
                 desc: "Killington's own daily report with open trail counts, grooming status, and overnight snow totals.",
                 href: 'https://www.killington.com/mountain/snow-and-weather/snow-report',
                 label: 'View Report →',
-                color: '#00B4D8',
+                color: '#059669',
               },
               {
                 title: 'Trail Map',

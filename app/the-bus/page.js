@@ -70,52 +70,55 @@ const ROUTES = [
 
 export default function TheBusPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-3" style={{ color: '#00B4D8' }}>Public Transit</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">The Bus</h1>
-          <p className="text-gray-400 text-lg">Green Mountain Transit routes connecting Killington to Rutland, Woodstock, and the wider Vermont public transit network.</p>
+      {/* Header */}
+      <section className="bg-white border-b border-gray-100 py-24 px-6 text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Public Transit</p>
+            <span className="w-8 h-[2px] bg-brand-green" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-brand-navy mb-8 tracking-tight uppercase">The <span className="text-brand-green">Bus</span></h1>
+          <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto">Green Mountain Transit routes connecting Killington to Rutland, Woodstock, and the wider Vermont public transit network.</p>
           <a
             href="https://www.thebus.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity text-sm"
-            style={{ backgroundColor: '#00B4D8' }}
+            className="inline-block mt-10 bg-brand-navy text-white font-black px-10 py-4 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
           >
-            Real-Time Tracker at thebus.com →
+            Real-Time Tracker ↗
           </a>
         </div>
       </section>
 
       {/* Route cards */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col gap-12">
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-5xl mx-auto flex flex-col gap-16">
           {ROUTES.map((r) => (
-            <div key={r.name} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+            <div key={r.name} className="bg-white rounded-[3rem] overflow-hidden shadow-premium border border-gray-50 transition-all duration-500 hover:shadow-2xl">
               {/* Route header */}
-              <div className="px-6 pt-6 pb-4 border-b border-gray-100" style={{ borderLeftWidth: '4px', borderLeftColor: r.color, borderLeftStyle: 'solid' }}>
-                <h2 className="text-xl font-extrabold text-gray-900 mb-1">{r.name}</h2>
-                <p className="text-sm text-gray-500">{r.description}</p>
+              <div className="px-10 pt-10 pb-8 border-b border-gray-50" style={{ borderTop: `8px solid ${r.color}` }}>
+                <h2 className="text-2xl font-heading font-black text-brand-navy uppercase tracking-tight mb-2">{r.name}</h2>
+                <p className="text-gray-400 font-medium leading-relaxed">{r.description}</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
                 {/* Stops */}
-                <div className="px-6 py-5">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Stops</h3>
-                  <div className="flex flex-col gap-2">
+                <div className="p-10">
+                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300 mb-8">Route Stops</h3>
+                  <div className="flex flex-col gap-0">
                     {r.stops.map((s, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="flex flex-col items-center">
-                          <div className="w-3 h-3 rounded-full border-2 flex-shrink-0" style={{ borderColor: r.color, backgroundColor: i === 0 || i === r.stops.length - 1 ? r.color : 'white' }} />
-                          {i < r.stops.length - 1 && <div className="w-0.5 h-5 mt-0.5" style={{ backgroundColor: '#e5e7eb' }} />}
+                      <div key={i} className="flex items-start gap-6 group">
+                        <div className="flex flex-col items-center pt-1">
+                          <div className="w-4 h-4 rounded-full border-4 flex-shrink-0 transition-all group-hover:scale-125" style={{ borderColor: r.color, backgroundColor: i === 0 || i === r.stops.length - 1 ? r.color : 'white' }} />
+                          {i < r.stops.length - 1 && <div className="w-[2px] h-10 mt-1" style={{ backgroundColor: '#f3f4f6' }} />}
                         </div>
-                        <div className="flex items-center justify-between flex-1 pb-2">
-                          <span className="text-sm text-gray-700">{s.stop}</span>
-                          <span className="text-xs font-mono text-gray-400">{s.time}</span>
+                        <div className="flex items-center justify-between flex-1 pb-6 border-b border-transparent group-hover:border-gray-50 transition-colors">
+                          <span className="text-brand-navy font-bold">{s.stop}</span>
+                          <span className="text-[10px] font-black font-mono text-gray-300 uppercase tracking-widest bg-gray-50 px-3 py-1 rounded-lg">{s.time}</span>
                         </div>
                       </div>
                     ))}
@@ -123,32 +126,38 @@ export default function TheBusPage() {
                 </div>
 
                 {/* Schedule */}
-                <div className="px-6 py-5">
-                  <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Departures from Origin</h3>
-                  <div className="mb-5">
-                    <p className="text-xs font-semibold text-gray-600 mb-2">↑ Toward Resort</p>
-                    <div className="flex flex-wrap gap-2">
+                <div className="p-10 bg-gray-50/30">
+                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300 mb-8">Origin Departures</h3>
+                  <div className="mb-10">
+                    <p className="text-[10px] font-black text-brand-navy uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand-green" />
+                      Toward Resort
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {r.departures.northbound.map((t) => (
-                        <span key={t} className="text-xs font-mono font-semibold px-2.5 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-gray-700">
+                        <span key={t} className="text-[11px] font-black font-mono text-center px-4 py-2.5 rounded-xl bg-white border border-gray-100 text-brand-navy/60 shadow-sm hover:border-brand-green hover:text-brand-green transition-all">
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="mb-5">
-                    <p className="text-xs font-semibold text-gray-600 mb-2">↓ Return to Rutland</p>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-10">
+                    <p className="text-[10px] font-black text-brand-navy uppercase tracking-widest mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand-blue" />
+                      Return to Origin
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                       {r.departures.southbound.map((t) => (
-                        <span key={t} className="text-xs font-mono font-semibold px-2.5 py-1.5 rounded-lg bg-gray-50 border border-gray-200 text-gray-700">
+                        <span key={t} className="text-[11px] font-black font-mono text-center px-4 py-2.5 rounded-xl bg-white border border-gray-100 text-brand-navy/60 shadow-sm hover:border-brand-green hover:text-brand-green transition-all">
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-col gap-1.5 text-xs text-gray-500 border-t border-gray-100 pt-4 mt-2">
-                    <p><span className="font-semibold text-gray-700">Frequency:</span> {r.frequency}</p>
-                    <p><span className="font-semibold text-gray-700">Fare:</span> {r.fare}</p>
-                    <p><span className="font-semibold text-gray-700">Season:</span> {r.season}</p>
+                  <div className="flex flex-col gap-4 text-xs text-gray-400 border-t border-gray-100 pt-8">
+                    <p className="flex justify-between items-center"><span className="font-black uppercase tracking-widest text-brand-navy">Frequency</span> {r.frequency}</p>
+                    <p className="flex justify-between items-center"><span className="font-black uppercase tracking-widest text-brand-navy">Fare</span> {r.fare}</p>
+                    <p className="flex justify-between items-center"><span className="font-black uppercase tracking-widest text-brand-navy">Season</span> {r.season}</p>
                   </div>
                 </div>
               </div>
@@ -158,48 +167,56 @@ export default function TheBusPage() {
       </section>
 
       {/* Info panels */}
-      <section className="bg-gray-50 border-t border-gray-100 py-14 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
-            {
-              title: 'Amtrak Connection',
-              body: 'The Amtrak Vermonter runs daily between New York Penn Station and St. Albans, VT with a stop at White River Junction. Route 3 connects White River Junction to Rutland (Killington gateway).',
-              link: 'https://www.amtrak.com/vermonter-train',
-              label: 'Amtrak Schedule →',
-            },
-            {
-              title: 'Park & Ride Lots',
-              body: "Free Park & Ride facilities at the Rutland Transit Hub (Merchant's Row) and the Rte 4 Rutland lot. Leave your car and ride in — especially useful on peak powder days when parking at the resort fills fast.",
-              link: 'https://www.thebus.com/park-and-ride',
-              label: 'Park & Ride Info →',
-            },
-            {
-              title: 'Accessibility',
-              body: 'All Green Mountain Transit buses are ADA accessible with wheelchair ramps, kneeling capability, and audio/visual stop announcements. Service animals welcome. Contact dispatch for assistance.',
-              link: 'https://www.thebus.com/accessibility',
-              label: 'Accessibility Info →',
-            },
-          ].map((c) => (
-            <div key={c.title} className="bg-white border border-gray-100 rounded-2xl p-6 flex flex-col">
-              <h3 className="font-bold text-gray-900 mb-2">{c.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-4">{c.body}</p>
-              <a href={c.link} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold hover:opacity-70 transition-opacity" style={{ color: '#00B4D8' }}>
-                {c.label}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Amtrak Connection',
+                body: 'The Amtrak Vermonter runs daily between New York Penn Station and St. Albans, VT with a stop at White River Junction. Route 3 connects White River Junction to Rutland.',
+                link: 'https://www.amtrak.com/vermonter-train',
+                label: 'Amtrak Schedule →',
+                color: '#2D936C',
+              },
+              {
+                title: 'Park & Ride Lots',
+                body: "Free Park & Ride facilities at the Rutland Transit Hub (Merchant's Row) and the Rte 4 Rutland lot. Leave your car and ride in — especially useful on peak powder days.",
+                link: 'https://www.thebus.com/park-and-ride',
+                label: 'Park & Ride Info →',
+                color: '#3498DB',
+              },
+              {
+                title: 'Accessibility',
+                body: 'All Green Mountain Transit buses are ADA accessible with wheelchair ramps, kneeling capability, and audio/visual stop announcements. Service animals welcome.',
+                link: 'https://www.thebus.com/accessibility',
+                label: 'Accessibility Info →',
+                color: '#0B1619',
+              },
+            ].map((c) => (
+              <div key={c.title} className="bg-white border border-gray-100 rounded-[2.5rem] p-10 flex flex-col hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2">
+                <h3 className="font-heading font-black text-brand-navy text-xl mb-4 uppercase tracking-tight">{c.title}</h3>
+                <p className="text-gray-400 font-medium leading-relaxed flex-1 mb-8">{c.body}</p>
+                <a href={c.link} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase tracking-widest hover:gap-3 flex items-center transition-all" style={{ color: c.color }}>
+                  {c.label}
+                </a>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-24">
+            <div className="bg-gray-50 rounded-[4rem] py-16 px-10 border border-gray-100 max-w-4xl mx-auto">
+              <p className="text-gray-400 text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+                For real-time tracking, alerts, and full system maps, please visit the official Green Mountain Transit website.
+              </p>
+              <a
+                href="https://www.thebus.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-navy text-white font-black px-12 py-5 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
+              >
+                Visit thebus.com
               </a>
             </div>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <p className="text-sm text-gray-400 mb-3">For real-time tracking, alerts, and full system maps</p>
-          <a
-            href="https://www.thebus.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity text-sm"
-            style={{ backgroundColor: '#00B4D8' }}
-          >
-            thebus.com
-          </a>
+          </div>
         </div>
       </section>
 

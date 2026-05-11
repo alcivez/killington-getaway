@@ -58,61 +58,70 @@ const FAQS = [
 
 export default function CertifiedBCorpPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100 py-14 px-6">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      {/* Header */}
+      <section className="bg-white border-b border-gray-100 py-24 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
           <div className="flex-1">
-            <p className="uppercase tracking-widest text-xs font-semibold mb-3" style={{ color: '#00B4D8' }}>Our Commitment</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">Certified B Corporation</h1>
-            <p className="text-gray-500 text-lg leading-relaxed mb-5">
+            <div className="inline-flex items-center gap-3 mb-6">
+              <span className="w-8 h-[2px] bg-brand-green" />
+              <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Our Commitment</p>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-heading font-black text-brand-navy mb-8 tracking-tight uppercase leading-tight">Certified <span className="text-brand-green">B Corp</span></h1>
+            <p className="text-gray-400 text-xl font-medium leading-relaxed mb-10">
               Killington Getaway is a Certified B Corporation — meaning we've passed an independent audit verifying that our business meets rigorous standards for social and environmental performance, accountability, and transparency.
             </p>
             <a
               href="https://www.bcorporation.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-white font-bold px-6 py-3 rounded-full hover:opacity-90 transition-opacity text-sm"
-              style={{ backgroundColor: '#00B4D8' }}
+              className="inline-block bg-brand-navy text-white font-black px-10 py-4 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
             >
-              About B Corporations →
+              About B Corporations ↗
             </a>
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative">
+            <div className="absolute inset-0 bg-brand-green/20 blur-[100px] rounded-full animate-pulse" />
             <div
-              className="w-44 h-44 rounded-3xl flex flex-col items-center justify-center border-4"
-              style={{ borderColor: '#00B4D8' }}
+              className="relative w-64 h-64 rounded-[3rem] flex flex-col items-center justify-center border-8 border-white bg-white shadow-premium z-10"
             >
-              <div className="text-5xl font-extrabold" style={{ color: '#00B4D8' }}>B</div>
-              <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mt-1">Certified</div>
-              <div className="text-xs text-gray-400 mt-0.5">Corporation</div>
-              <div className="mt-3 text-xs font-semibold text-gray-400">Score: 108.4</div>
+              <div className="text-8xl font-heading font-black text-brand-navy leading-none">B</div>
+              <div className="text-[10px] font-black text-gray-300 uppercase tracking-[0.3em] mt-2">Certified</div>
+              <div className="text-[10px] text-gray-300 uppercase tracking-widest">Corporation</div>
+              <div className="mt-6 bg-brand-green/10 px-4 py-1.5 rounded-full text-[10px] font-black text-brand-green uppercase tracking-widest">Score: 108.4</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Score breakdown */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Our B Impact Assessment</h2>
-            <p className="text-gray-400 text-sm">Scored across five categories by independent B Lab auditors. Minimum passing score is 80.</p>
-            <p className="text-xl font-extrabold mt-3" style={{ color: '#00B4D8' }}>Total Score: 108.4 / 200</p>
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">Our B Impact <span className="text-brand-green">Assessment</span></h2>
+            <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto mb-8">Scored across five categories by independent B Lab auditors. Minimum passing score is 80.</p>
+            <div className="inline-flex items-center gap-4 bg-white px-8 py-4 rounded-[2rem] shadow-sm border border-gray-100">
+              <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Overall Score</span>
+              <span className="text-3xl font-heading font-black text-brand-green leading-none">108.4</span>
+              <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">/ 200</span>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {PILLARS.map((p) => (
-              <div key={p.title} className="bg-white border border-gray-100 rounded-2xl p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-2xl">{p.icon}</span>
-                    <h3 className="font-bold text-gray-900">{p.title}</h3>
+              <div key={p.title} className="bg-white rounded-[2.5rem] p-10 shadow-premium border border-gray-50 group hover:-translate-y-2 transition-all">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">
+                      {p.icon}
+                    </div>
+                    <h3 className="font-heading font-black text-brand-navy text-xl uppercase tracking-tight">{p.title}</h3>
                   </div>
-                  <span className="text-xs font-bold px-2 py-1 rounded-lg bg-gray-50 text-gray-600">{p.score}</span>
+                  <div className="text-[10px] font-black px-4 py-2 rounded-xl bg-brand-green/5 text-brand-green uppercase tracking-widest">{p.score}</div>
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed">{p.desc}</p>
+                <p className="text-gray-400 font-medium leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -120,10 +129,12 @@ export default function CertifiedBCorpPage() {
       </section>
 
       {/* What this means */}
-      <section className="bg-gray-50 border-t border-gray-100 py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center">What This Means for You</h2>
-          <div className="flex flex-col gap-4">
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">What This <span className="text-brand-green">Means for You</span></h2>
+          </div>
+          <div className="flex flex-col gap-6">
             {[
               'Recommendations on this site are never influenced by paid placement',
               'A percentage of affiliate revenue goes to Vermont nonprofits',
@@ -131,9 +142,11 @@ export default function CertifiedBCorpPage() {
               'We can\'t be acquired by a buyer whose practices don\'t meet B-Corp standards without disclosure',
               'Our team is treated fairly, paid fairly, and included in major business decisions',
             ].map((item) => (
-              <div key={item} className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-gray-100">
-                <span className="text-base font-bold mt-0.5 flex-shrink-0" style={{ color: '#00B4D8' }}>✓</span>
-                <p className="text-sm text-gray-600">{item}</p>
+              <div key={item} className="flex items-center gap-6 bg-gray-50/50 rounded-[2.5rem] p-8 border border-gray-100 group hover:border-brand-green/30 transition-all">
+                <div className="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <p className="text-brand-navy font-bold text-lg">{item}</p>
               </div>
             ))}
           </div>
@@ -141,14 +154,16 @@ export default function CertifiedBCorpPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
-          <div className="flex flex-col gap-5">
+      <section className="py-24 px-6 bg-gray-50/50 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">B Corp <span className="text-brand-green">FAQ</span></h2>
+          </div>
+          <div className="flex flex-col gap-8">
             {FAQS.map((faq) => (
-              <div key={faq.q} className="border-b border-gray-100 pb-5">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="bg-white rounded-[2.5rem] p-10 border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <h3 className="text-xl font-heading font-black text-brand-navy mb-4 uppercase tracking-tight">{faq.q}</h3>
+                <p className="text-gray-400 font-medium leading-relaxed text-lg">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -156,14 +171,18 @@ export default function CertifiedBCorpPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gray-50 border-t border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Learn More About Our Mission</h2>
-          <div className="flex gap-4 justify-center flex-wrap mt-6">
-            <Link href="/giving-back" className="inline-block text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity" style={{ backgroundColor: '#00B4D8' }}>
+      <section className="py-24 px-6 text-center">
+        <div className="max-w-4xl mx-auto bg-brand-navy rounded-[4rem] py-16 px-10 border border-brand-navy shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full -mr-32 -mt-32" />
+          <h2 className="text-4xl md:text-5xl font-heading font-black text-white mb-4 tracking-tight uppercase relative z-10">Learn More About <span className="text-brand-green">Our Mission</span></h2>
+          <p className="text-white/60 text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed relative z-10">
+            Discover how we're working to protect the Green Mountains and support the local Killington community.
+          </p>
+          <div className="flex gap-6 justify-center flex-wrap relative z-10">
+            <Link href="/giving-back" className="bg-brand-green text-white font-black px-12 py-5 rounded-full hover:bg-brand-green/90 transition-all shadow-xl uppercase tracking-widest text-sm">
               Giving Back
             </Link>
-            <Link href="/our-story" className="inline-block font-bold px-8 py-3 rounded-full border-2 hover:opacity-70 transition-opacity" style={{ color: '#00B4D8', borderColor: '#00B4D8' }}>
+            <Link href="/our-story" className="bg-white text-brand-navy font-black px-12 py-5 rounded-full hover:bg-gray-100 transition-all shadow-xl uppercase tracking-widest text-sm">
               Our Story
             </Link>
           </div>

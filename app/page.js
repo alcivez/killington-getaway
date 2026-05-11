@@ -48,60 +48,109 @@ const AIRBNB_LISTINGS = [
   { id: "1034742959619811054",  label: "Rental in Killington · ★4.85 · 1 bd · 1 bed · 1 ba",      params: "check_in=2024-12-11&check_out=2024-12-16&guests=1&adults=2&s=66&source=embed_widget" },
 ]
 
-const CARD_W = 450  // px
+const CARD_W = 280  // px
 const CARD_GAP = 24 // px — gap-6
 const CARD_STRIDE = CARD_W + CARD_GAP
 
 // Deals: all from Backcountry.com, all partner brands
+// Deals: all from Backcountry.com, all partner brands
 const DEALS = [
   {
-    name: "Imperial Puffy Jacket",
-    brand: "Helly Hansen",
-    price: "$299.95",
-    url: "https://www.backcountry.com/helly-hansen-imperial-puffy-jacket-womens",
-    img: "https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=300&q=80&fit=crop",
+    name: "Osito Jacket - Women's",
+    brand: "The North Face",
+    price: "$55.00",
+    url: "https://www.backcountry.com/the-north-face-osito-jacket-womens",
+    img: "/images/deals/osito-jacket-isolated.png",
+    rating: 5,
   },
   {
-    name: "Ripstick 96 Black Edition Ski",
-    brand: "Elan",
-    price: "$699.95",
-    url: "https://www.backcountry.com/elan-ripstick-96-black-edition-ski-2025",
-    img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=300&q=80&fit=crop",
+    name: "Odyssey Multi Short - Men's",
+    brand: "Outdoor Research",
+    price: "$59.00",
+    url: "https://www.backcountry.com/outdoor-research-odyssey-multi-short-mens?skid=ODRZ937-WILATO",
+    img: "/images/deals/odyssey-short-isolated.png",
+    rating: 4.5,
   },
   {
-    name: "Gea RS Alpine Touring Boot",
-    brand: "Scarpa",
-    price: "$799.95",
-    url: "https://www.backcountry.com/scarpa-gea-rs-alping-touring-boot-2024-womens",
-    img: "https://images.unsplash.com/photo-1482877730737-bd2c9bb42f9f?w=300&q=80&fit=crop",
+    name: "SB120 C2 GX Eagle Mountain Bike",
+    brand: "Yeti Cycles",
+    price: "$3,775.00",
+    url: "https://www.backcountry.com/yeti-cycles-sb120-c2-gx-eagle-mountain-bike",
+    img: "/images/deals/yeti-sb120-isolated.png",
+    rating: 5,
   },
   {
-    name: "Accel MIPS Helmet",
+    name: "Freerider Pro Cycling Shoe - Men's",
+    brand: "Five Ten",
+    price: "$119.95",
+    url: "https://www.backcountry.com/five-ten-freerider-pro-cycling-shoe-mens?skid=FVTZ145-CAOFWHCOBL",
+    img: "/images/deals/five-ten-shoes-isolated.png",
+    rating: 5,
+  },
+  {
+    name: "Shift Split MAG ChromaPop Sunglasses",
     brand: "Smith",
-    price: "$149.95",
-    url: "https://www.backcountry.com/smith-accel-mips-helmet?skid=SMIZ9IY-MAGRBLMEGE",
-    img: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=300&q=80&fit=crop",
+    price: "$165.00",
+    url: "https://www.backcountry.com/smith-shift-split-mag-chromapop-sunglasses",
+    img: "/images/deals/smith-sunglasses-isolated.png",
+    rating: 4.5,
   },
   {
-    name: "I/O Mag ChromaPop Goggles",
+    name: "Kortal Helmet",
+    brand: "POC",
+    price: "$120.97",
+    url: "https://www.backcountry.com/poc-kortal-helmet",
+    img: "/images/deals/poc-kortal.png",
+    rating: 4.5,
+  },
+  // Duplicate set to reach 12 for smooth scrolling
+  {
+    name: "Osito Jacket - Women's",
+    brand: "The North Face",
+    price: "$55.00",
+    url: "https://www.backcountry.com/the-north-face-osito-jacket-womens",
+    img: "/images/deals/osito-jacket-isolated.png",
+    rating: 5,
+  },
+  {
+    name: "Odyssey Multi Short - Men's",
+    brand: "Outdoor Research",
+    price: "$59.00",
+    url: "https://www.backcountry.com/outdoor-research-odyssey-multi-short-mens?skid=ODRZ937-WILATO",
+    img: "/images/deals/odyssey-short-isolated.png",
+    rating: 4.5,
+  },
+  {
+    name: "SB120 C2 GX Eagle Mountain Bike",
+    brand: "Yeti Cycles",
+    price: "$3,775.00",
+    url: "https://www.backcountry.com/yeti-cycles-sb120-c2-gx-eagle-mountain-bike",
+    img: "/images/deals/yeti-sb120-isolated.png",
+    rating: 5,
+  },
+  {
+    name: "Freerider Pro Cycling Shoe - Men's",
+    brand: "Five Ten",
+    price: "$119.95",
+    url: "https://www.backcountry.com/five-ten-freerider-pro-cycling-shoe-mens?skid=FVTZ145-CAOFWHCOBL",
+    img: "/images/deals/five-ten-shoes-isolated.png",
+    rating: 5,
+  },
+  {
+    name: "Shift Split MAG ChromaPop Sunglasses",
     brand: "Smith",
-    price: "$249.95",
-    url: "https://www.backcountry.com/smith-i-o-mag-chromapop-goggles",
-    img: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=300&q=80&fit=crop",
+    price: "$165.00",
+    url: "https://www.backcountry.com/smith-shift-split-mag-chromapop-sunglasses",
+    img: "/images/deals/smith-sunglasses-isolated.png",
+    rating: 4.5,
   },
   {
-    name: "Alpha 4.0 Jacket",
-    brand: "Helly Hansen",
-    price: "$449.95",
-    url: "https://www.backcountry.com/helly-hansen-alpha-4.0-jacket-mens?skid=HYHZ89F-RED",
-    img: "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?w=300&q=80&fit=crop",
-  },
-  {
-    name: "Metal Machine Decon Snowboard",
-    brand: "Arbor",
-    price: "$499.95",
-    url: "https://www.backcountry.com/arbor-metal-machine-decon-snowboard-2026-mens",
-    img: "https://images.unsplash.com/photo-1548191194-b3d4f051fd7d?w=300&q=80&fit=crop",
+    name: "Kortal Helmet",
+    brand: "POC",
+    price: "$120.97",
+    url: "https://www.backcountry.com/poc-kortal-helmet",
+    img: "/images/deals/poc-kortal.png",
+    rating: 4.5,
   },
 ]
 
@@ -141,17 +190,35 @@ const BLOG_POSTS = [
 ]
 
 const BLOG_COLORS = {
-  Adventure: '#00B4D8',
+  Adventure: 'var(--color-brand-green)',
   Skiing:    '#0077A8',
   Culture:   '#6B7280',
   Travel:    '#059669',
-  Blog:      '#00B4D8',
+  Blog:      'var(--color-brand-green)',
 }
+
+const SEASONS = [
+  { img: "/images/hero/killington-k1.jpg", label: "Killington K-1" },
+  { img: "/images/hero/killington-mountains.png", label: "Killington Green Mountains" },
+  { img: "/images/hero/killington-aerial.jpg", label: "Killington Aerial View" },
+  { img: "/images/hero/killington-water.jpg", label: "Killington Paddleboard and Water Adventures" },
+  { img: "/images/hero/killington-bikers.jpg", label: "Killington Bikers Hiking Experience" },
+]
 
 export default function Home() {
   const sliderRef    = useRef(null)
+  const dealsRef     = useRef(null)
   const isPausedRef  = useRef(false)
   const [activeDot, setActiveDot] = useState(0)
+  const [seasonIdx, setSeasonIdx] = useState(0)
+
+  // ── Hero Season auto-slide ──────────────────────────────────────────────────
+  useEffect(() => {
+    const int = setInterval(() => {
+      setSeasonIdx(s => (s + 1) % SEASONS.length)
+    }, 6000)
+    return () => clearInterval(int)
+  }, [])
 
   // ── Airbnb auto-slide every 5 s, pauses on hover ──────────────────────────
   useEffect(() => {
@@ -168,6 +235,23 @@ export default function Home() {
         setActiveDot((d) => Math.min(d + 1, AIRBNB_LISTINGS.length - 1))
       }
     }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  // ── Deals auto-slide every 4 s, pauses on hover ───────────────────────────
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (isPausedRef.current) return
+      const el = dealsRef.current
+      if (!el) return
+      const maxScroll = el.scrollWidth - el.clientWidth
+      if (el.scrollLeft >= maxScroll - 10) {
+        el.scrollTo({ left: 0, behavior: 'smooth' })
+      } else {
+        // Stride for deals (card width 208px + gap 20px = 228px)
+        el.scrollBy({ left: 228, behavior: 'smooth' })
+      }
+    }, 4000)
     return () => clearInterval(interval)
   }, [])
 
@@ -191,35 +275,39 @@ export default function Home() {
 
         {/* ── SECTION 2: HERO ── */}
         <section
-          className="relative flex flex-col items-center justify-center overflow-hidden"
-          style={{ height: 'calc(100vh - 40px)' }}
+          className="relative flex flex-col items-center justify-center overflow-hidden min-h-[800px] pb-16"
         >
-          <img
-            src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
-            alt="Killington Vermont skiing"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+          {SEASONS.map((season, i) => (
+            <img
+              key={season.label}
+              src={season.img}
+              alt={`Killington Vermont ${season.label}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === seasonIdx ? 'opacity-100 scale-105' : 'opacity-0 scale-100'} animate-slow-zoom`}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70 z-0" />
 
           <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto w-full">
-            <p className="uppercase tracking-widest text-sm font-semibold mb-5 text-white">
+            <p className="uppercase tracking-widest text-sm font-semibold mb-5 text-white/80">
               Killington, Vermont
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 leading-tight tracking-tight">
-              Your Ultimate<br />Adventure Getaway
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight drop-shadow-lg">
+              Your Ultimate<br /><span style={{ color: 'var(--color-brand-green)' }}>Adventure</span> Getaway
             </h1>
-            <p className="text-gray-200 text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-white text-lg md:text-xl mb-10 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
               Discover the best restaurants, breweries, ski shops, hiking trails and more in the heart of Vermont.
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link
                 href="/listings"
-                className="text-white font-bold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-xl"
-                style={{ backgroundColor: '#00B4D8' }}
+                className="text-white font-bold px-10 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-xl uppercase tracking-wider"
+                style={{ backgroundColor: 'var(--color-brand-green)' }}
               >
                 Browse All Listings
               </Link>
             </div>
+            
+            
           </div>
         </section>
 
@@ -234,10 +322,10 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="What are you looking for"
-                className="flex-1 min-w-0 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 shadow-sm"
+                className="flex-1 min-w-0 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[var(--color-brand-green)] focus:ring-2 focus:ring-[var(--color-brand-green)]/20 shadow-sm"
               />
               <select
-                className="flex-1 min-w-0 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 cursor-pointer shadow-sm"
+                className="flex-1 min-w-0 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[var(--color-brand-green)] focus:ring-2 focus:ring-[var(--color-brand-green)]/20 cursor-pointer shadow-sm"
                 defaultValue=""
                 onChange={(e) => {
                   if (e.target.value) window.location.href = `/listings?category=${e.target.value}`
@@ -253,11 +341,11 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="Town or ZIP code"
-                className="flex-1 min-w-0 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[#00B4D8] focus:ring-2 focus:ring-[#00B4D8]/20 shadow-sm"
+                className="flex-1 min-w-0 border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white focus:outline-none focus:border-[var(--color-brand-green)] focus:ring-2 focus:ring-[var(--color-brand-green)]/20 shadow-sm"
               />
               <button
                 className="flex-shrink-0 text-white font-bold px-8 py-3 rounded-lg text-sm tracking-widest uppercase hover:opacity-90 transition-opacity shadow-sm"
-                style={{ backgroundColor: '#00B4D8' }}
+                style={{ backgroundColor: 'var(--color-brand-green)' }}
               >
                 SEARCH
               </button>
@@ -283,10 +371,10 @@ export default function Home() {
                 <Link
                   key={cat.slug}
                   href={`/listings?category=${cat.slug}`}
-                  className="flex flex-col items-center justify-center gap-3 border border-gray-100 rounded-2xl py-7 px-3 text-center group bg-white hover:shadow-md hover:border-[#00B4D8] transition-all duration-200"
+                  className="flex flex-col items-center justify-center gap-3 border border-gray-100 rounded-2xl py-7 px-3 text-center group bg-white hover:shadow-md hover:border-[var(--color-brand-green)] transition-all duration-200"
                 >
                   <span className="text-4xl">{cat.emoji}</span>
-                  <span className="text-sm font-semibold text-gray-700 group-hover:text-[#00B4D8] leading-tight transition-colors">
+                  <span className="text-sm font-semibold text-gray-700 group-hover:text-[var(--color-brand-green)] leading-tight transition-colors">
                     {cat.name}
                   </span>
                   <span className="text-xs text-gray-400">{cat.count} listings</span>
@@ -298,7 +386,7 @@ export default function Home() {
               <Link
                 href="/listings"
                 className="inline-block text-white font-bold px-10 py-4 rounded-full text-base hover:opacity-90 transition-opacity shadow-md"
-                style={{ backgroundColor: '#00B4D8' }}
+                style={{ backgroundColor: 'var(--color-brand-green)' }}
               >
                 Browse All Listings
               </Link>
@@ -336,7 +424,7 @@ export default function Home() {
                     data-id={id}
                     data-view="home"
                     data-hide-price="true"
-                    style={{ width: `${CARD_W}px`, height: '300px', margin: '0' }}
+                    style={{ width: `${CARD_W}px`, height: '270px', margin: '0' }}
                   >
                     <a href={href}>View On Airbnb</a>
                     <a href={href} rel="nofollow">{label}</a>
@@ -360,7 +448,7 @@ export default function Home() {
                 style={{
                   width: i === activeDot ? '24px' : '10px',
                   height: '10px',
-                  backgroundColor: i === activeDot ? '#00B4D8' : '#D1D5DB',
+                  backgroundColor: i === activeDot ? 'var(--color-brand-green)' : '#D1D5DB',
                   flexShrink: 0,
                 }}
               />
@@ -373,9 +461,9 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-3 tracking-tight">
-                Weather Forecast
+                Weather Conditions
               </h2>
-              <p className="text-gray-400 text-lg">Live conditions at Killington, Vermont</p>
+              <p className="text-gray-400 text-lg">Current conditions at Killington, Vermont</p>
             </div>
             <WeatherWidget />
           </div>
@@ -430,7 +518,10 @@ export default function Home() {
             </div>
           </div>
           <div
+            ref={dealsRef}
             className="flex gap-5 overflow-x-auto pb-4"
+            onMouseEnter={() => { isPausedRef.current = true }}
+            onMouseLeave={() => { isPausedRef.current = false }}
             style={{
               paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
               paddingRight: '1.5rem',
@@ -438,33 +529,49 @@ export default function Home() {
               msOverflowStyle: 'none',
             }}
           >
-            {DEALS.map((deal) => (
+            {DEALS.map((deal, idx) => (
               <a
-                key={deal.url}
+                key={`${deal.url}-${idx}`}
                 href={deal.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 w-52 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md hover:border-[#00B4D8] transition-all duration-200 group"
+                className="flex-shrink-0 w-72 bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group"
               >
-                <div className="w-full h-40 bg-gray-50 overflow-hidden">
+                <div className="w-full h-64 bg-gray-50/50 flex items-center justify-center p-8 overflow-hidden relative">
+                   {/* Background brand accent */}
+                   <div className="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center text-4xl font-black uppercase tracking-tighter">
+                     {deal.brand}
+                   </div>
                   <img
                     src={deal.img}
                     alt={`${deal.brand} ${deal.name}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-                <div className="p-4 text-center">
-                  <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: '#00B4D8' }}>
+                <div className="p-8 text-center">
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2" style={{ color: 'var(--color-brand-green)' }}>
                     {deal.brand}
                   </p>
-                  <p className="text-sm font-semibold text-gray-800 mb-1 leading-tight">{deal.name}</p>
-                  <p className="text-base font-bold text-red-500 mb-3">{deal.price}</p>
-                  <span
-                    className="inline-block text-xs font-bold px-4 py-2 rounded-full text-white group-hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: '#00B4D8' }}
+                  <h3 className="text-base font-bold text-gray-900 mb-2 leading-tight h-10 line-clamp-2">{deal.name}</h3>
+                  
+                  {/* Rating Stars */}
+                  <div className="flex justify-center gap-0.5 mb-4 text-amber-400 text-xs">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i}>{i < Math.floor(deal.rating) ? '★' : '☆'}</span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-center gap-3 mb-6">
+                    <span className="text-2xl font-black text-gray-900">{deal.price}</span>
+                  </div>
+
+                  <div
+                    className="inline-flex items-center gap-2 text-[10px] font-black px-8 py-4 rounded-full text-white transition-all shadow-lg group-hover:shadow-brand-green/20"
+                    style={{ backgroundColor: 'var(--color-brand-green)' }}
                   >
-                    Shop Now →
-                  </span>
+                    SHOP NOW 
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
                 </div>
               </a>
             ))}
@@ -498,7 +605,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-2">
                       <span
                         className="text-xs font-bold px-2.5 py-1 rounded-full text-white"
-                        style={{ backgroundColor: BLOG_COLORS[post.category] || '#00B4D8' }}
+                        style={{ backgroundColor: BLOG_COLORS[post.category] || 'var(--color-brand-green)' }}
                       >
                         {post.category}
                       </span>
@@ -510,7 +617,7 @@ export default function Home() {
                     <p className="text-xs text-gray-500 mb-4 line-clamp-2 flex-1 leading-relaxed">
                       {post.excerpt}
                     </p>
-                    <span className="text-xs font-semibold hover:underline" style={{ color: '#00B4D8' }}>
+                    <span className="text-xs font-semibold hover:underline" style={{ color: 'var(--color-brand-green)' }}>
                       Read More →
                     </span>
                   </div>

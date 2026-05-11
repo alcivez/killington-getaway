@@ -120,65 +120,73 @@ const SUMMER_ACTIVITIES = [
 ]
 
 const TAG_COLORS = {
-  'Top Pick': '#00B4D8',
-  'Outdoors': '#059669',
-  'Water': '#0077A8',
-  'Scenic': '#6B7280',
-  'Sport': '#374151',
-  'Family': '#059669',
+  'Top Pick': '#2D936C',
+  'Outdoors': '#3498DB',
+  'Water': '#3498DB',
+  'Scenic': '#0B1619',
+  'Sport': '#2D936C',
+  'Family': '#3498DB',
   'Local': '#D97706',
   'Culture': '#7C3AED',
   'Arts': '#EA580C',
-  'Thrill': '#7C3AED',
-  'Seasonal': '#DC2626',
-  'Explore': '#00B4D8',
+  'Thrill': '#DC2626',
+  'Seasonal': '#D97706',
+  'Explore': '#2D936C',
 }
 
 export default function SummerPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative h-96 flex items-end overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-[550px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
           alt="Killington summer hiking"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-12 w-full">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-2" style={{ color: '#00B4D8' }}>May – October</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-3">Summer in Killington</h1>
-          <p className="text-gray-200 text-lg max-w-2xl">The mountain transforms — bike parks, hiking trails, golf, waterfalls, farm visits, and New England's most spectacular fall foliage.</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 w-full">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <p className="uppercase tracking-[0.3em] text-xs font-black text-white/60">May – October</p>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tight mb-6">Summer in <span className="text-brand-green">Killington</span></h1>
+          <p className="text-white/80 text-xl font-medium max-w-2xl leading-relaxed">The mountain transforms — bike parks, hiking trails, golf, waterfalls, farm visits, and New England's most spectacular fall foliage.</p>
         </div>
       </section>
 
       {/* Activities grid */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-2">Things To Do This Summer</h2>
-            <p className="text-gray-400">Killington is a four-season destination — here's everything the warm months have to offer</p>
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-6 tracking-tight uppercase">Things To Do <span className="text-brand-green">This Summer</span></h2>
+            <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto">Killington is a four-season destination — here's everything the warm months have to offer</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {SUMMER_ACTIVITIES.map((act) => (
               <Link
                 key={act.title}
                 href={act.href}
-                className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200 group flex flex-col"
+                className="bg-white rounded-[2.5rem] overflow-hidden shadow-premium hover:shadow-2xl transition-all duration-500 group flex flex-col transform hover:-translate-y-2 border border-gray-50"
               >
-                <div className="relative h-44 overflow-hidden">
-                  <img src={act.img} alt={act.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-white text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: TAG_COLORS[act.tag] || '#00B4D8' }}>
+                <div className="relative h-60 overflow-hidden">
+                  <img src={act.img} alt={act.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-white/90 backdrop-blur-md text-brand-navy text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
                       {act.tag}
                     </span>
                   </div>
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <h3 className="font-bold text-gray-900 text-base mb-2 group-hover:text-[#00B4D8] transition-colors">{act.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{act.desc}</p>
+                <div className="p-8 lg:p-10 flex flex-col flex-1">
+                  <h3 className="font-heading font-black text-brand-navy text-xl mb-4 group-hover:text-brand-green transition-colors leading-tight">{act.title}</h3>
+                  <p className="text-gray-400 font-medium leading-relaxed flex-1 mb-8">{act.desc}</p>
+                  <div className="flex items-center gap-2 text-brand-green font-black text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                    Explore Activity
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -186,12 +194,15 @@ export default function SummerPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gray-50 border-t border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Ready to Explore?</h2>
-          <p className="text-gray-400 mb-6">Browse our full directory of summer activities, restaurants, and experiences near Killington.</p>
-          <Link href="/listings" className="inline-block text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity" style={{ backgroundColor: '#00B4D8' }}>
+      {/* CTA Section */}
+      <section className="py-24 px-6 text-center">
+        <div className="max-w-4xl mx-auto bg-gray-50 rounded-[4rem] py-16 px-10 border border-gray-100">
+          <h2 className="text-4xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">Ready to <span className="text-brand-green">Explore?</span></h2>
+          <p className="text-gray-400 text-xl font-medium mb-12 max-w-2xl mx-auto">Browse our full directory of summer activities, restaurants, and experiences near Killington.</p>
+          <Link 
+            href="/listings" 
+            className="bg-brand-navy text-white font-black px-12 py-5 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
+          >
             Browse All Listings
           </Link>
         </div>

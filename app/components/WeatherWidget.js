@@ -37,36 +37,36 @@ function getCondBucket(code) {
 // Season × condition → Unsplash photo ID
 const BG = {
   spring: {
-    clear:  'photo-1490750967868-88df5691cc11', // spring blossom / green meadow
-    cloudy: 'photo-1503236823255-94609f598e71', // spring overcast sky
-    fog:    'photo-1487621167305-5d248087c724', // misty morning green
-    rain:   'photo-1428592953211-077101b2021b', // rain on leaves
-    snow:   'photo-1519970773807-5fbb3e5e9e36', // late-season dusting
-    storm:  'photo-1504384308090-c894fdcc538d', // dramatic spring storm
+    clear:  '/images/hero/killington-aerial.jpg',
+    cloudy: '/images/hero/killington-mountains.png',
+    fog:    '/images/hero/killington-aerial.jpg',
+    rain:   '/images/hero/killington-water.jpg',
+    snow:   '/images/hero/killington-k1.jpg',
+    storm:  '/images/hero/killington-mountains.png',
   },
   summer: {
-    clear:  'photo-1506905925346-21bda4d32df4', // green Vermont mountain summit
-    cloudy: 'photo-1523712999610-f77fbcfc3843', // summer cloud sky
-    fog:    'photo-1476611338391-6f395a0ebc7b', // mountain summer mist
-    rain:   'photo-1473773508845-188df298d2d1', // summer rain street
-    snow:   'photo-1506905925346-21bda4d32df4', // high-altitude snow (rare) — reuse clear
-    storm:  'photo-1605727216801-e27ce1d0cc28', // lightning storm
+    clear:  '/images/hero/killington-water.jpg',
+    cloudy: '/images/hero/killington-mountains.png',
+    fog:    '/images/hero/killington-aerial.jpg',
+    rain:   '/images/hero/killington-water.jpg',
+    snow:   '/images/hero/killington-water.jpg',
+    storm:  '/images/hero/killington-mountains.png',
   },
   fall: {
-    clear:  'photo-1508739773434-c26b3d09e071', // Vermont fall foliage road
-    cloudy: 'photo-1507003211169-0a1dd7228f2d', // overcast autumn
-    fog:    'photo-1474524955719-b9f87c50ce47', // foggy fall forest
-    rain:   'photo-1476611338391-6f395a0ebc7b', // rainy fall scene
-    snow:   'photo-1516592673884-4a382d1124c2', // early-season snowfall on foliage
-    storm:  'photo-1604328698692-f76ea9498e76', // dramatic fall storm sky
+    clear:  '/images/hero/killington-aerial.jpg',
+    cloudy: '/images/hero/killington-mountains.png',
+    fog:    '/images/hero/killington-aerial.jpg',
+    rain:   '/images/hero/killington-aerial.jpg',
+    snow:   '/images/hero/killington-k1.jpg',
+    storm:  '/images/hero/killington-mountains.png',
   },
   winter: {
-    clear:  'photo-1551524559-8af4e6624178',    // ski resort blue-sky day
-    cloudy: 'photo-1516592673884-4a382d1124c2', // ski slopes overcast
-    fog:    'photo-1486915309851-b0cc1f8a0084', // whiteout winter fog
-    rain:   'photo-1476611338391-6f395a0ebc7b', // winter rain (rare)
-    snow:   'photo-1517299321609-52687d1bc55a', // snowboarder in powder
-    storm:  'photo-1549880338-65ddcdfd017b',    // blizzard/whiteout
+    clear:  '/images/hero/killington-k1.jpg',
+    cloudy: '/images/hero/killington-k1.jpg',
+    fog:    '/images/hero/killington-aerial.jpg',
+    rain:   '/images/hero/killington-k1.jpg',
+    snow:   '/images/hero/killington-k1.jpg',
+    storm:  '/images/hero/killington-k1.jpg',
   },
 }
 
@@ -74,8 +74,7 @@ function getBgUrl(code) {
   const month  = new Date().getMonth()
   const season = getSeason(month)
   const bucket = getCondBucket(code)
-  const id     = BG[season]?.[bucket] ?? BG.winter.clear
-  return `https://images.unsplash.com/${id}?w=800&q=80&fit=crop`
+  return BG[season]?.[bucket] ?? BG.winter.clear
 }
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -199,8 +198,7 @@ export default function WeatherWidget() {
       >
         {/* Branded overlay so text stays readable */}
         <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(135deg, rgba(0,40,60,0.78) 0%, rgba(0,95,130,0.65) 50%, rgba(0,150,190,0.55) 100%)' }}
+          className="absolute inset-0 bg-brand-navy/60"
         />
 
         {/* Content */}
@@ -247,7 +245,7 @@ export default function WeatherWidget() {
                   <span className="text-sm font-bold text-gray-500 whitespace-nowrap">{day.dayName}</span>
                   <span className="text-3xl my-1">{dc.icon}</span>
                   {day.snow && (
-                    <span className="text-sm font-bold mb-0.5" style={{ color: '#00B4D8' }}>{day.snow}"</span>
+                    <span className="text-sm font-bold mb-0.5" style={{ color: '#2D936C' }}>{day.snow}"</span>
                   )}
                   <span className="text-lg font-black text-black">{day.high}°</span>
                   <span className="text-sm text-gray-400">{day.low}°</span>

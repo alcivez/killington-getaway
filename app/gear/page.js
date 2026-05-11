@@ -188,77 +188,79 @@ const LEVEL_COLORS = {
   'Expert': '#DC2626',
   'Advanced': '#D97706',
   'Advanced–Expert': '#DC2626',
-  'Intermediate–Advanced': '#059669',
-  'All Levels': '#00B4D8',
+  'Intermediate–Advanced': '#2D936C',
+  'All Levels': '#3498DB',
 }
 
 export default function GearPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative h-80 flex items-end overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative h-[450px] flex items-end overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
           alt="Ski gear 2026"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-12 w-full">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-2" style={{ color: '#00B4D8' }}>2025–26 Season</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-3">Gear Guide</h1>
-          <p className="text-gray-200 text-lg max-w-2xl">
-            The best skis, boots, bindings, and protection for Killington's demanding East Coast conditions — handpicked by people who ski it every week.
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <p className="uppercase tracking-[0.3em] text-xs font-black text-white/60">2025–26 Season</p>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tight uppercase leading-tight">Gear <span className="text-brand-green">Guide</span></h1>
+          <p className="text-white/60 text-xl font-medium max-w-2xl mt-4 leading-relaxed">
+            The best skis, boots, and protection for Killington&apos;s demanding East Coast conditions — handpicked by the locals who ski it every week.
           </p>
         </div>
       </section>
 
       {/* Gear sections */}
-      <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col gap-16">
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col gap-24">
           {GEAR_SECTIONS.map((section) => (
             <div key={section.category}>
-              <div className="flex items-center gap-3 mb-8 pb-4 border-b border-gray-100">
-                <span className="text-3xl">{section.emoji}</span>
-                <h2 className="text-2xl font-extrabold text-gray-900">{section.category}</h2>
+              <div className="flex items-center gap-6 mb-12 pb-6 border-b border-gray-100 group">
+                <span className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">{section.emoji}</span>
+                <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy uppercase tracking-tight">{section.category}</h2>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {section.items.map((item) => (
-                  <div key={item.model} className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200 flex flex-col">
-                    <div className="relative h-44 overflow-hidden">
-                      <img src={item.img} alt={`${item.brand} ${item.model}`} className="w-full h-full object-cover" />
-                      <div className="absolute top-3 left-3 flex gap-2">
-                        <span className="text-white text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: section.color }}>
+                  <div key={item.model} className="bg-gray-50/30 rounded-[3rem] overflow-hidden border border-gray-100 hover:shadow-premium hover:bg-white hover:-translate-y-2 transition-all duration-500 flex flex-col group">
+                    <div className="relative h-64 overflow-hidden">
+                      <img src={item.img} alt={`${item.brand} ${item.model}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <div className="absolute top-6 left-6 flex gap-2">
+                        <span className="text-[10px] font-black px-4 py-2 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: section.color }}>
                           {item.tag}
                         </span>
                       </div>
-                      <div className="absolute top-3 right-3">
-                        <span className="text-white text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: LEVEL_COLORS[item.level] || '#374151' }}>
+                      <div className="absolute top-6 right-6">
+                        <span className="text-[10px] font-black px-4 py-2 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: LEVEL_COLORS[item.level] || '#374151' }}>
                           {item.level}
                         </span>
                       </div>
                     </div>
-                    <div className="p-5 flex flex-col flex-1">
-                      <div className="flex items-start justify-between mb-1">
+                    <div className="p-8 md:p-10 flex flex-col flex-1">
+                      <div className="flex items-start justify-between mb-6">
                         <div>
-                          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{item.brand}</p>
-                          <h3 className="text-base font-extrabold text-gray-900">{item.model}</h3>
+                          <p className="text-[10px] font-black text-brand-green uppercase tracking-[0.2em] mb-1">{item.brand}</p>
+                          <h3 className="text-2xl font-heading font-black text-brand-navy uppercase tracking-tight leading-tight">{item.model}</h3>
                         </div>
                         <div className="text-right">
-                          <p className="text-lg font-extrabold" style={{ color: '#00B4D8' }}>{item.price}</p>
-                          <p className="text-xs text-gray-400">{item.year}</p>
+                          <p className="text-2xl font-heading font-black text-brand-navy leading-none mb-1">{item.price}</p>
+                          <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{item.year}</p>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-500 leading-relaxed flex-1 mt-2 mb-4">{item.desc}</p>
+                      <p className="text-gray-400 font-medium leading-relaxed mb-10 flex-1">{item.desc}</p>
                       <a
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full text-center text-white text-sm font-bold py-2.5 rounded-xl hover:opacity-90 transition-opacity"
-                        style={{ backgroundColor: '#00B4D8' }}
+                        className="w-full text-center bg-brand-navy text-white font-black py-5 rounded-full hover:bg-brand-green transition-all shadow-xl uppercase tracking-widest text-xs"
                       >
-                        Shop Now →
+                        Shop Full Specs
                       </a>
                     </div>
                   </div>
@@ -270,10 +272,14 @@ export default function GearPage() {
       </section>
 
       {/* Affiliate disclosure */}
-      <section className="bg-gray-50 border-t border-gray-100 py-10 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs text-gray-400 leading-relaxed">
-            <strong className="text-gray-600">Affiliate Disclosure:</strong> Killington Getaway may earn a commission when you purchase through links on this page. This never affects our recommendations — we only feature gear our team has personally tested or reviewed from trusted sources. Prices and availability are subject to change.
+      <section className="py-12 px-6 bg-gray-50/50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-navy/40 leading-relaxed">Affiliate Disclosure</p>
+          </div>
+          <p className="text-xs font-medium text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            Killington Getaway may earn a commission when you purchase through links on this page. This never affects our recommendations — we only feature gear our team has personally tested or reviewed from trusted sources. Prices and availability are subject to change.
           </p>
         </div>
       </section>

@@ -115,84 +115,101 @@ export default function RacesEventsPage() {
   const rest = EVENTS.slice(1)
 
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-white border-b border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-3" style={{ color: '#00B4D8' }}>Killington Events</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Races &amp; Events</h1>
-          <p className="text-gray-400 text-lg">From World Cup slalom to pond skimming — the full calendar of events that make Killington more than just a ski resort.</p>
+      {/* Header */}
+      <section className="bg-white border-b border-gray-100 py-24 px-6 text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Killington Events</p>
+            <span className="w-8 h-[2px] bg-brand-green" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-brand-navy mb-8 tracking-tight uppercase">Races & <span className="text-brand-green">Events</span></h1>
+          <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto">From World Cup slalom to pond skimming — the full calendar of events that make Killington more than just a ski resort.</p>
         </div>
       </section>
 
       {/* Featured Event */}
-      <section className="py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#00B4D8' }}>Featured Event</p>
+      <section className="py-24 px-6 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-3 mb-10">
+            <span className="text-brand-green font-black text-[10px] uppercase tracking-widest">Featured Event</span>
+            <div className="flex-1 h-[1px] bg-gray-200" />
+          </div>
+          
           <a
             href={featured.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col md:flex-row gap-0 bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            className="group flex flex-col lg:flex-row bg-white rounded-[3rem] overflow-hidden shadow-premium hover:shadow-2xl transition-all duration-500 border border-gray-50"
           >
-            <div className="md:w-1/2 h-72 md:h-auto overflow-hidden">
-              <img src={featured.img} alt={featured.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="lg:w-1/2 h-[400px] lg:h-auto overflow-hidden">
+              <img src={featured.img} alt={featured.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
-            <div className="md:w-1/2 p-8 flex flex-col justify-center">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-bold px-3 py-1 rounded-full text-white" style={{ backgroundColor: featured.categoryColor }}>
+            <div className="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-[10px] font-black px-4 py-1.5 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: featured.categoryColor }}>
                   {featured.category}
                 </span>
-                <span className="text-xs text-gray-400">{featured.dates}</span>
+                <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{featured.dates}</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 group-hover:text-[#00B4D8] transition-colors">
+              <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-2 group-hover:text-brand-green transition-colors leading-tight">
                 {featured.name}
               </h2>
-              <p className="text-sm text-gray-400 font-semibold mb-3">{featured.subtitle}</p>
-              <p className="text-gray-500 leading-relaxed mb-5 text-sm">{featured.desc}</p>
-              <ul className="flex flex-col gap-1.5 mb-5">
+              <p className="text-lg font-heading font-black text-gray-300 mb-6 uppercase tracking-tight">{featured.subtitle}</p>
+              <p className="text-gray-400 font-medium leading-relaxed mb-8">{featured.desc}</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
                 {featured.highlights.map((h) => (
-                  <li key={h} className="text-xs text-gray-500 flex items-start gap-2">
-                    <span className="mt-0.5 flex-shrink-0" style={{ color: '#00B4D8' }}>✓</span>
+                  <li key={h} className="text-xs font-medium text-gray-400 flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-brand-green/10 flex items-center justify-center text-brand-green text-[10px] flex-shrink-0">✓</span>
                     {h}
                   </li>
                 ))}
               </ul>
-              <span className="text-sm font-semibold" style={{ color: '#00B4D8' }}>Event Details →</span>
+              <div className="flex items-center gap-3 text-brand-green font-black text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                Event Details
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </div>
             </div>
           </a>
         </div>
       </section>
 
       {/* All Events */}
-      <section className="py-6 px-6 pb-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl font-extrabold text-gray-900 mb-6">Full Calendar</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-between mb-16">
+            <h2 className="text-2xl md:text-4xl font-heading font-black text-brand-navy uppercase tracking-tight">Full <span className="text-brand-green">Calendar</span></h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {rest.map((ev) => (
               <a
                 key={ev.name}
                 href={ev.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-200 group flex flex-col"
+                className="bg-white rounded-[2.5rem] overflow-hidden shadow-premium hover:shadow-2xl transition-all duration-500 group flex flex-col transform hover:-translate-y-2 border border-gray-50"
               >
-                <div className="relative h-44 overflow-hidden">
-                  <img src={ev.img} alt={ev.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-white text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: ev.categoryColor }}>
+                <div className="relative h-60 overflow-hidden">
+                  <img src={ev.img} alt={ev.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-6 left-6">
+                    <span className="text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg" style={{ backgroundColor: ev.categoryColor }}>
                       {ev.category}
                     </span>
                   </div>
                 </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <p className="text-xs text-gray-400 mb-1">{ev.dates}</p>
-                  <h3 className="text-base font-bold text-gray-900 mb-0.5 group-hover:text-[#00B4D8] transition-colors">{ev.name}</h3>
-                  <p className="text-xs font-semibold text-gray-400 mb-2">{ev.subtitle}</p>
-                  <p className="text-xs text-gray-500 leading-relaxed flex-1 mb-3 line-clamp-3">{ev.desc}</p>
-                  <span className="text-xs font-semibold" style={{ color: '#00B4D8' }}>Learn More →</span>
+                <div className="p-8 lg:p-10 flex flex-col flex-1">
+                  <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-2">{ev.dates}</p>
+                  <h3 className="text-xl font-heading font-black text-brand-navy mb-1 group-hover:text-brand-green transition-colors leading-tight">{ev.name}</h3>
+                  <p className="text-xs font-black text-gray-300 uppercase tracking-widest mb-4">{ev.subtitle}</p>
+                  <p className="text-gray-400 font-medium leading-relaxed flex-1 mb-8 line-clamp-3">{ev.desc}</p>
+                  <div className="flex items-center gap-2 text-brand-green font-black text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
+                    Learn More
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </div>
                 </div>
               </a>
             ))}
@@ -201,18 +218,17 @@ export default function RacesEventsPage() {
       </section>
 
       {/* Official calendar CTA */}
-      <section className="bg-gray-50 border-t border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Full Events Calendar</h2>
-          <p className="text-gray-400 mb-6 text-sm">
-            Killington Resort maintains a full calendar of events updated throughout the season — concerts, races, festivals, and closing day celebrations.
+      <section className="py-24 px-6 text-center">
+        <div className="max-w-4xl mx-auto bg-gray-50 rounded-[4rem] py-16 px-10 border border-gray-100">
+          <h2 className="text-4xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">Full Events <span className="text-brand-green">Calendar</span></h2>
+          <p className="text-gray-400 text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
+            Killington Resort maintains a full calendar of events updated throughout the season — concerts, races, festivals, and celebrations.
           </p>
           <a
             href="https://www.killington.com/events"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity"
-            style={{ backgroundColor: '#00B4D8' }}
+            className="bg-brand-navy text-white font-black px-12 py-5 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
           >
             View Official Calendar →
           </a>

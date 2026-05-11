@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -28,10 +29,12 @@ export default function Footer() {
 
       {/* 4-Column Grid */}
       <div style={{ backgroundColor: '#121D21' }} className="px-6 py-12 border-b border-gray-700">
-        <div className="max-w-5xl mx-auto grid grid-cols-4 gap-10">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
 
-          <div className="flex flex-col gap-3 items-center">
-            <img src="/logo-white.png" alt="Killington Getaway" style={{ width: '120px', marginTop: '-30px' }} />
+          <div className="flex flex-col gap-3 items-center md:items-start">
+            <Link href="/">
+              <img src="/logo-white.png" alt="Killington Getaway" style={{ width: '120px', marginTop: '-30px' }} className="hover:opacity-80 transition-opacity cursor-pointer" />
+            </Link>
             <div className="flex gap-3 items-center" style={{ marginTop: '-5px' }}>
               <a href="https://facebook.com/killingtongetaway" className="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
               <a href="https://instagram.com/official_killingtongetaway" className="text-gray-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
@@ -43,7 +46,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center md:items-start">
             <p className="text-white font-bold text-sm uppercase tracking-wider mb-2">More Info</p>
             <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
             <a href="/terms-of-use" className="text-gray-400 hover:text-white text-sm">Terms of Service</a>
@@ -51,7 +54,7 @@ export default function Footer() {
             <a href="/certified-b-corp" className="text-gray-400 hover:text-white text-sm">Sustainability</a>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center md:items-start">
             <p className="text-white font-bold text-sm uppercase tracking-wider mb-2">For Locals</p>
             <a href="/local-contractors" className="text-gray-400 hover:text-white text-sm">Find A Contractor</a>
             <a href="https://www.indeed.com/l-Killington,-VT-jobs.html" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm">Jobs</a>
@@ -59,7 +62,7 @@ export default function Footer() {
             <a href="https://www.pinkbike.com/buysell/list/?region=3&q=Vermont" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm">Buy / Sell</a>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 items-center md:items-start">
             <p className="text-white font-bold text-sm uppercase tracking-wider mb-2">Company</p>
             <a href="/our-team" className="text-gray-400 hover:text-white text-sm">Our Team</a>
             <a href="/contact-us" className="text-gray-400 hover:text-white text-sm">Contact Us</a>

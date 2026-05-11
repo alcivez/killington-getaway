@@ -21,8 +21,8 @@ const NAV_LEFT = [
   {
     label: 'Things To Do',
     dropdown: [
-      { label: 'Summer Activities', href: '/listings?season=summer' },
-      { label: 'Winter Activities', href: '/listings?season=winter' },
+      { label: 'Summer Activities', href: '/summer' },
+      { label: 'Winter Activities', href: '/winter' },
     ],
   },
   { label: 'Food', href: '/listings?category=places-to-eat' },
@@ -103,40 +103,40 @@ export default function Navbar() {
   const [openMobile, setOpenMobile]  = useState(null)
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm">
-
-      {/* ── Top tagline ── */}
-      <div className="hidden md:block border-b border-gray-100 py-3 text-center">
-        <p className="font-black uppercase text-gray-900" style={{ fontSize: '36px', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+    <>
+      {/* ── Top tagline (Non-sticky) ── */}
+      <div className="hidden md:block border-b border-gray-100 py-3 text-center bg-brand-navy">
+        <p className="font-black uppercase text-white tracking-[0.2em] text-xs md:text-sm">
           Discover the Best of Killington, Vermont
         </p>
       </div>
 
-      {/* ── Main nav row ── */}
-      <div className="border-b border-gray-100 relative">
-        <div className="max-w-screen-xl mx-auto px-5 flex items-center h-16">
+      <header className="bg-white sticky top-0 z-50 shadow-sm">
+        {/* ── Main nav row ── */}
+        <div className="border-b border-gray-100 relative">
+          <div className="max-w-screen-xl mx-auto px-5 flex items-center h-24">
 
-          {/* Left nav group */}
-          <div className="hidden lg:flex items-center flex-1 gap-0.5">
+          {/* Left nav group (hugs the logo) */}
+          <div className="hidden lg:flex items-center flex-1 justify-end pr-12 gap-1 lg:gap-2">
             {NAV_LEFT.map((item) => (
               <DesktopItem key={item.label} item={item} />
             ))}
           </div>
 
           {/* Center logo — absolute on desktop so it's truly centered */}
-          <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block">
+          <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block z-10">
             <Link href="/">
-              <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '52px' }} />
+              <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '63px' }} />
             </Link>
           </div>
 
           {/* Mobile: logo left-aligned */}
           <Link href="/" className="lg:hidden flex-shrink-0">
-            <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '44px' }} />
+            <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '48px' }} />
           </Link>
 
-          {/* Right nav group */}
-          <div className="hidden lg:flex items-center flex-1 justify-end gap-0.5">
+          {/* Right nav group (hugs the logo) */}
+          <div className="hidden lg:flex items-center flex-1 justify-start pl-12 gap-1 lg:gap-2">
             {NAV_RIGHT.map((item) => (
               <DesktopItem key={item.label} item={item} />
             ))}
@@ -247,5 +247,6 @@ export default function Navbar() {
       )}
 
     </header>
+    </>
   )
 }

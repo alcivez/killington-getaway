@@ -4,151 +4,134 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-const MILESTONES = [
-  { year: '2016', label: 'Founded in Vermont', desc: 'Killington Getaway launched as a simple lodging directory built by locals for visitors who wanted better local knowledge than the resort website could offer.' },
-  { year: '2018', label: 'Expanded to Full Guide', desc: 'Added dining, activities, and gear categories. The team grew to include year-round locals across restaurants, ski patrol, and the service industry.' },
-  { year: '2020', label: 'Community Focus', desc: 'Launched the Giving Back program, formalizing partnerships with YES (Youth Enrichment Services) and local Vermont nonprofits.' },
-  { year: '2022', label: 'B-Corp Certification', desc: 'Became a Certified B Corporation — joining the global movement of businesses using profit as a force for good.' },
-  { year: '2024', label: 'Platform Rebuild', desc: 'Launched the current platform with a full listings database, editorial content, and interactive tools for planning the perfect Vermont mountain trip.' },
-]
-
-const VALUES = [
+const GUIDE_SECTIONS = [
   {
-    icon: '🏔️',
-    title: 'Local First',
-    desc: "We live here. Every recommendation on Killington Getaway comes from people who ski Killington every week, eat at these restaurants every month, and call Vermont home year-round.",
+    icon: '🍽️',
+    title: 'Restaurants, Cafés & Bars',
+    desc: "Explore our handpicked selection of Killington's finest dining — from après-ski classics and craft cocktail bars to cozy Vermont farm-to-table spots. Every recommendation comes from people who eat here regularly.",
   },
   {
-    icon: '🌿',
-    title: 'Sustainability',
-    desc: "Vermont's mountains and communities deserve to be here for the next generation. Our B-Corp certification isn't a marketing label — it's a commitment we renew every year through audit.",
+    icon: '🍺',
+    title: 'Local Breweries',
+    desc: "Dive into Vermont's thriving craft beer scene. Long Trail, Outer Limits, River Roost, and dozens of regional breweries offer a diverse range of artisanal brews crafted with passion and precision.",
   },
   {
-    icon: '🤝',
-    title: 'Community',
-    desc: "A percentage of every affiliate partnership goes back to Vermont nonprofits. We measure success not just by traffic, but by how much we give back to the community that powers this place.",
+    icon: '🏛️',
+    title: 'Museums & Culture',
+    desc: "Immerse yourself in Killington's rich arts and culture scene. Visit museums and galleries showcasing the region's history and heritage — from the American Precision Museum to the Billings Farm.",
   },
   {
-    icon: '🎯',
-    title: 'Honest Information',
-    desc: "We don't take payment for positive reviews. If a restaurant is good, we say so. If it's not, we leave it off the list. That's the only way a local guide stays worth reading.",
+    icon: '🧗',
+    title: 'Adventure',
+    desc: "For thrill-seekers, Killington delivers: ziplines, whitewater rafting, rock climbing, ATV tours, snowmobile excursions, and the most challenging ski terrain in the East.",
+  },
+  {
+    icon: '🥾',
+    title: 'Hiking & Outdoors',
+    desc: "The Green Mountains offer hundreds of miles of trails, from easy walks through covered bridges to summit hikes at Killington Peak with views stretching to New Hampshire.",
+  },
+  {
+    icon: '🏠',
+    title: 'Lodging',
+    desc: "From ski-in/ski-out slopeside condos to cozy B&Bs in Woodstock and the full Grand Hotel — we cover every lodging option in and around Killington for every budget and group size.",
   },
 ]
 
 export default function OurStoryPage() {
   return (
-    <main className="min-h-screen bg-white font-sans">
+    <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative h-80 flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80"
-          alt="Vermont mountains"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-12 w-full">
-          <p className="uppercase tracking-widest text-xs font-semibold mb-2" style={{ color: '#00B4D8' }}>About Us</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-3">Our Story</h1>
-          <p className="text-gray-200 text-lg max-w-2xl">A local guide built by the people who actually live here — for the visitors who want to experience Killington the right way.</p>
+      {/* Header */}
+      <section className="bg-white border-b border-gray-100 py-24 px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Our Story</p>
+            <span className="w-8 h-[2px] bg-brand-green" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-brand-navy mb-8 tracking-tight">
+            Discover the Splendors of <br /><span className="text-brand-green">Killington Getaway</span>
+          </h1>
+          <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto">
+            Your ultimate travel guide — built by locals, for everyone who wants to experience Vermont&apos;s greatest mountain region the right way.
+          </p>
+        </div>
+      </section>
+
+      {/* Main description */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-gray-50 rounded-[3rem] p-12 lg:p-20 mb-24 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-green/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+            <div className="relative z-10">
+              <p className="text-brand-navy font-bold text-2xl lg:text-3xl leading-relaxed mb-10">
+                Our comprehensive guide is designed to help you make the most of your visit to Killington, Vermont. Whether you&apos;re planning a winter ski weekend, a summer mountain bike trip, or a fall foliage drive through the Green Mountains, we&apos;ve curated everything you need in one place.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <p className="text-gray-500 text-lg font-medium leading-relaxed">
+                  Explore our handpicked selection of Killington&apos;s finest restaurants, cafés, and bars — satisfying your culinary cravings with mouthwatering Vermont-grown delights. For beer enthusiasts, dive into the thriving craft beer scene at local breweries, where you can savor a diverse range of artisanal brews crafted with passion and precision.
+                </p>
+                <p className="text-gray-500 text-lg font-medium leading-relaxed">
+                  Immerse yourself in Killington&apos;s rich arts and culture scene by visiting museums and galleries that showcase the region&apos;s history and heritage. And for adventure seekers, Killington offers thrilling experiences at adventure centers — where you can zipline through treetops, navigate rapids on whitewater rafting trips, or challenge yourself with rock climbing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy tracking-tight uppercase">What Our Guide <span className="text-brand-green">Covers</span></h2>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {GUIDE_SECTIONS.map((s) => (
+              <div key={s.title} className="bg-white border border-gray-100 rounded-[2.5rem] p-10 hover:shadow-premium transition-all duration-300 transform hover:-translate-y-2 group">
+                <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-4xl mb-6 group-hover:bg-brand-green/10 transition-colors">
+                  {s.icon}
+                </div>
+                <h3 className="font-heading font-black text-brand-navy text-xl mb-4 group-hover:text-brand-green transition-colors">{s.title}</h3>
+                <p className="text-gray-400 font-medium leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-extrabold text-gray-900 mb-5 leading-tight">We Built the Guide We Wished Existed</h2>
-            <div className="flex flex-col gap-4 text-gray-600 text-sm leading-relaxed">
-              <p>Killington Getaway started as a side project. A few local skiers, frustrated that every "Killington guide" online was either written by someone who visited once or produced by a content farm in another state, decided to build something different.</p>
-              <p>The premise was simple: if you're going to trust a source for where to stay, eat, and ski in Killington, that source should actually live there. The team behind Killington Getaway includes year-round Vermont residents, former ski instructors, local restaurant owners, and people who ski Killington 50+ days a season.</p>
-              <p>We've grown into the most comprehensive guide to the Killington region — covering lodging, dining, activities, gear, mountain conditions, and the local events calendar. But the core principle hasn't changed: honest recommendations from people with real stakes in getting it right.</p>
-            </div>
+      <section className="bg-brand-navy py-24 px-6 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-green to-transparent opacity-20" />
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <span className="w-8 h-[2px] bg-brand-green" />
+            <h2 className="text-xl font-heading font-black text-white uppercase tracking-[0.2em]">Our Mission</h2>
+            <span className="w-8 h-[2px] bg-brand-green" />
           </div>
-          <div className="bg-gray-50 rounded-2xl p-8">
-            <h3 className="font-bold text-gray-900 mb-6 text-lg">What We Cover</h3>
-            <div className="flex flex-col gap-3">
-              {[
-                { icon: '🏠', label: 'Lodging', count: '80+ properties' },
-                { icon: '🍽️', label: 'Restaurants & Bars', count: '60+ listings' },
-                { icon: '🎿', label: 'Ski & Gear Shops', count: '25+ shops' },
-                { icon: '🚵', label: 'Activities', count: '100+ experiences' },
-                { icon: '📝', label: 'Editorial Articles', count: '50+ guides' },
-                { icon: '📍', label: 'Local Businesses', count: '300+ total listings' },
-              ].map((item) => (
-                <div key={item.label} className="flex items-center justify-between py-2 border-b border-gray-200 last:border-0">
-                  <span className="flex items-center gap-2 text-sm text-gray-700">
-                    <span>{item.icon}</span>
-                    {item.label}
-                  </span>
-                  <span className="text-xs font-semibold" style={{ color: '#00B4D8' }}>{item.count}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="text-white font-bold text-2xl md:text-3xl leading-relaxed mb-10">
+            At Killington Getaway, we strive to be your trusted companion on your journey. Our meticulously curated travel guide and directory provide up-to-date information and recommendations, ensuring a memorable and hassle-free experience.
+          </p>
+          <p className="text-white/40 text-xl font-medium leading-relaxed">
+            Whether you&apos;re a first-time visitor or a frequent traveler, let us unlock the wonders of Killington so you can create cherished memories in this scenic paradise.
+          </p>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="bg-gray-50 border-t border-gray-100 py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-10 text-center">What We Stand For</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {VALUES.map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl p-6 border border-gray-100">
-                <div className="text-3xl mb-3">{v.icon}</div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">{v.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-10 text-center">How We Got Here</h2>
-          <div className="flex flex-col gap-0">
-            {MILESTONES.map((m, i) => (
-              <div key={m.year} className="flex gap-6">
-                <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-extrabold flex-shrink-0" style={{ backgroundColor: '#00B4D8' }}>
-                    {m.year.slice(2)}
-                  </div>
-                  {i < MILESTONES.length - 1 && <div className="w-0.5 flex-1 my-2" style={{ backgroundColor: '#e5e7eb' }} />}
-                </div>
-                <div className={`pb-8 ${i < MILESTONES.length - 1 ? 'pb-10' : ''}`}>
-                  <p className="text-xs font-bold uppercase tracking-wider mb-0.5" style={{ color: '#00B4D8' }}>{m.year}</p>
-                  <h3 className="font-bold text-gray-900 mb-1">{m.label}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{m.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team CTA */}
-      <section className="bg-gray-50 border-t border-gray-100 py-14 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Meet the Team</h2>
-          <p className="text-gray-400 mb-6 text-sm">The locals behind the guide — skiers, snowboarders, hikers, and year-round Vermonters.</p>
-          <div className="flex gap-4 justify-center flex-wrap">
+      {/* CTA */}
+      <section className="py-24 px-6 text-center">
+        <div className="max-w-4xl mx-auto bg-gray-50 rounded-[4rem] py-16 px-10 border border-gray-100">
+          <h2 className="text-4xl md:text-5xl font-heading font-black text-brand-navy mb-4 tracking-tight uppercase">Have <span className="text-brand-green">Questions?</span></h2>
+          <p className="text-gray-400 text-xl font-medium mb-12 max-w-2xl mx-auto">Our team is made up of year-round Vermonters who ski Killington every week. We&apos;re here to help you plan the perfect trip.</p>
+          <div className="flex gap-6 justify-center flex-wrap">
             <Link
-              href="/our-team"
-              className="inline-block text-white font-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#00B4D8' }}
+              href="/contact-us"
+              className="bg-brand-green text-white font-black px-12 py-5 rounded-full hover:bg-brand-green/90 transition-all shadow-xl uppercase tracking-widest text-sm"
             >
-              Our Team
+              Contact Us
             </Link>
             <Link
-              href="/how-it-started"
-              className="inline-block font-bold px-8 py-3 rounded-full border-2 hover:opacity-70 transition-opacity"
-              style={{ color: '#00B4D8', borderColor: '#00B4D8' }}
+              href="/our-team"
+              className="bg-brand-navy text-white font-black px-12 py-5 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
             >
-              How It Started
+              Meet the Team
             </Link>
           </div>
         </div>
