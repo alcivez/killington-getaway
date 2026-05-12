@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const SUMMER_ACTIVITIES = [
   {
@@ -139,23 +140,11 @@ export default function SummerPage() {
     <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-[550px] flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
-          alt="Killington summer hiking"
-          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 w-full">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-brand-green" />
-            <p className="uppercase tracking-[0.3em] text-xs font-black text-white/60">May – October</p>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tight mb-6">Summer in <span className="text-brand-green">Killington</span></h1>
-          <p className="text-white/80 text-xl font-medium max-w-2xl leading-relaxed">The mountain transforms — bike parks, hiking trails, golf, waterfalls, farm visits, and New England's most spectacular fall foliage.</p>
-        </div>
-      </section>
+      <Hero 
+        title="Summer in Killington" 
+        subtitle="Mountain biking, golf, and adventure await under the summer sun."
+        image="/images/hero/summer-hero.jpg" 
+      />
 
       {/* Activities grid */}
       <section className="py-24 px-6 bg-gray-50/50">

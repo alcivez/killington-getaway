@@ -2,6 +2,7 @@
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const ROUTES = [
   {
@@ -73,26 +74,12 @@ export default function TheBusPage() {
     <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Header */}
-      <section className="bg-white border-b border-gray-100 py-24 px-6 text-center overflow-hidden">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-brand-green" />
-            <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Public Transit</p>
-            <span className="w-8 h-[2px] bg-brand-green" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-brand-navy mb-8 tracking-tight uppercase">The <span className="text-brand-green">Bus</span></h1>
-          <p className="text-gray-400 text-xl font-medium max-w-2xl mx-auto">Green Mountain Transit routes connecting Killington to Rutland, Woodstock, and the wider Vermont public transit network.</p>
-          <a
-            href="https://www.thebus.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-10 bg-brand-navy text-white font-black px-10 py-4 rounded-full hover:bg-brand-navy/90 transition-all shadow-xl uppercase tracking-widest text-sm"
-          >
-            Real-Time Tracker ↗
-          </a>
-        </div>
-      </section>
+      <Hero 
+        title="The Bus" 
+        subtitle="Green Mountain Transit routes connecting Killington to the wider Vermont network."
+        image="/images/hero/the-bus-main.png" 
+        opacity={1.1}
+      />
 
       {/* Route cards */}
       <section className="py-24 px-6 bg-gray-50/50">

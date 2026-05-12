@@ -2,6 +2,7 @@
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const GEAR_SECTIONS = [
   {
@@ -197,25 +198,11 @@ export default function GearPage() {
     <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-[450px] flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
-          alt="Ski gear 2026"
-          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-brand-green" />
-            <p className="uppercase tracking-[0.3em] text-xs font-black text-white/60">2025–26 Season</p>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tight uppercase leading-tight">Gear <span className="text-brand-green">Guide</span></h1>
-          <p className="text-white/60 text-xl font-medium max-w-2xl mt-4 leading-relaxed">
-            The best skis, boots, and protection for Killington&apos;s demanding East Coast conditions — handpicked by the locals who ski it every week.
-          </p>
-        </div>
-      </section>
+      <Hero 
+        title="Gear Guide" 
+        subtitle="The best picks from our crew for the 2025–2026 season — handpicked by the locals who ski Killington every week."
+        image="https://images.unsplash.com/photo-1551698618-1fed5d975506?w=1600&q=80" 
+      />
 
       {/* Gear sections */}
       <section className="py-24 px-6 bg-white">

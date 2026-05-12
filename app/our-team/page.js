@@ -5,11 +5,36 @@ import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 
 const TEAM = [
-  { name: 'Jonas', role: 'Founder & Ski Expert', img: '/images/team/jonas-headshot.png' },
-  { name: 'Marc',  role: 'Local Guide', img: '/images/team/marc-headshot.png'  },
-  { name: 'Jorge', role: 'Adventure Coordinator', img: '/images/team/jorge-headshot.png' },
-  { name: 'Paul',  role: 'Content Strategist', img: '/images/team/paul-headshot.png'  },
-  { name: 'John',  role: 'Logistics', img: '/images/team/john-headshot.png'  },
+  { 
+    name: 'Jonas Adler', 
+    role: 'Founder', 
+    img: '/images/team/jonas-headshot.png',
+    bio: "Jonas is an entrepreneur and a lover of all things snow. He attended college in Vermont, and ever since 2006, has owned a cozy ski house in Killington. After years of exploring the slopes at countless ski resorts around the world, he couldn't help but notice there was a real need for a website that could simplify the lives of out-of-town skiers and riders. KillingtonGetaway.com was born. His mission is simple yet powerful: to create an online platform that not only connects fellow skiers and riders with businesses but also provides them with all the essential information they need to have an unforgettable skiing experience - less time searching and more time skiing!"
+  },
+  { 
+    name: 'Paul Savage', 
+    role: 'Advisor', 
+    img: '/images/team/paul-headshot.png',
+    bio: "Meet Paul Savage who hails from the mighty mountains of Ireland and learned to snowboard in the German and Austrian alps. He is proud \"honorary Vermonter\" who owns a ski home in Vermont and aims for 30+ days on the slopes. He is a beer aficionado and loves all things Apre' and tech. Paul has helped to run and advise a good number of tech start-ups in Boston and cooks an amazing eggs benedict."
+  },
+  { 
+    name: 'Marc Sullivan', 
+    role: 'Ambassador', 
+    img: '/images/team/marc-headshot.png',
+    bio: "Marc (aka “Sully”) is seasoned skier, proud Vermonter, and number-crunching aficionado. When he is not busy ripp’n trees at Killington or Pico you can find him mountain biking with his family or spending time with his dogs. Over the years, Marc has had the incredible opportunity to work at some of Vermont's top-ranked resorts. From managing budgets to ensuring financial stability, he thrives on helping businesses reach their full potential. His precision is unmatched - whether it's analyzing financial data or crafting the perfect slope strategy."
+  },
+  { 
+    name: 'Jorge Jaramillo', 
+    role: 'Web Developer', 
+    img: '/images/team/jorge-headshot.png',
+    bio: "Jorge is a web developer extraordinaire with a knack for quick thinking and cutting-edge tech skills. Admittedly he has never really strapped on a pair of skis or hopped on a snowboard, but that hasn't stopped him from carving his own path in the digital world. As a founding team member of Killington Getaway, he has been instrumental in bringing our vision to life and earned a spot on the team."
+  },
+  { 
+    name: 'John Eidson', 
+    role: 'Public Relations', 
+    img: '/images/team/john-headshot.png',
+    bio: "John is a content editor, media manager, and public relations guru, with a passion for helping startups find their voice and make an impact. When he is not busy shaping brands, you can find him at his family ski house nestled in the picturesque mountains of Vermont. John thrives on helping businesses better define their mission on a deeper level and of course always looking for those deeper powder stashes."
+  },
 ]
 
 export default function OurTeamPage() {
@@ -31,10 +56,10 @@ export default function OurTeamPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {TEAM.map((member) => (
-              <div key={member.name} className="bg-white rounded-3xl p-8 shadow-premium border border-gray-100 group hover:border-brand-green/30 transition-all text-center">
-                <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-50 shadow-inner group-hover:scale-105 transition-transform duration-500">
+              <div key={member.name} className="bg-white rounded-[3rem] p-10 shadow-premium border border-gray-50 group hover:border-brand-green/30 transition-all flex flex-col items-center text-center h-full">
+                <div className="w-48 h-48 mb-8 rounded-full overflow-hidden border-8 border-gray-50 shadow-inner group-hover:scale-105 transition-transform duration-500">
                   <img
                     src={member.img}
                     alt={member.name}
@@ -42,7 +67,11 @@ export default function OurTeamPage() {
                   />
                 </div>
                 <h3 className="text-2xl font-heading font-black text-brand-navy uppercase tracking-tight mb-2">{member.name}</h3>
-                <p className="text-brand-green font-bold text-xs uppercase tracking-widest">{member.role}</p>
+                <p className="text-brand-green font-bold text-xs uppercase tracking-widest mb-6">{member.role}</p>
+                <div className="w-10 h-1 bg-gray-100 mb-6 rounded-full group-hover:w-20 transition-all duration-500" />
+                <p className="text-gray-400 font-medium leading-relaxed text-sm">
+                  {member.bio}
+                </p>
               </div>
             ))}
           </div>

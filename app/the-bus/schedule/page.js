@@ -12,17 +12,17 @@ export default function BusSchedulePage() {
       <Hero 
         title="Bus Schedule" 
         subtitle="Daily departure times and seasonal operating hours."
-        image="/images/hero/killington-k1.jpg" 
+        image="/images/hero/the-bus-schedule.png" 
       />
 
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-black text-brand-navy tracking-tight uppercase mb-6">
-              Plan Your Trip
+              Official Timetables
             </h2>
             <p className="text-gray-500 text-xl leading-relaxed">
-              Buses run daily during the winter season. Please arrive at your stop 5 minutes early.
+              Buses run daily during the winter season. For the most up-to-date and detailed schedules, please visit the official Green Mountain Transit website.
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export default function BusSchedulePage() {
 
           <div className="text-center">
             <p className="text-gray-400 mb-10 text-lg leading-relaxed">
-              For detailed, up-to-the-minute timetables for each specific stop, please refer to the official Green Mountain Transit system map.
+              Visit the official Green Mountain Transit site for detailed schedules for each specific route.
             </p>
             <a 
               href="https://www.thebus.com/schedules" 
@@ -52,7 +52,7 @@ export default function BusSchedulePage() {
               rel="noopener noreferrer"
               className="inline-block bg-brand-navy text-white font-black px-12 py-5 rounded-full uppercase tracking-widest hover:bg-brand-green transition-all shadow-xl"
             >
-              Download PDF Schedule
+              The Bus Official Site
             </a>
           </div>
         </div>

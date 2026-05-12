@@ -11,9 +11,15 @@ const NAV_LEFT = [
       { label: 'Lodging Options',       href: '/listings?category=lodging-options' },
       { label: 'Woodward Terrain Park', href: '/woodward-terrain-park' },
       { label: 'Ski Lessons',           href: '/ski-lessons' },
-      { label: 'The Bus',               href: '/the-bus' },
-      { label: 'The Bus Routes',        href: '/the-bus/routes' },
-      { label: 'The Bus Schedule',      href: '/the-bus/schedule' },
+      { 
+        label: 'The Bus', 
+        href: '/the-bus',
+        dropdown: [
+          { label: 'Overview', href: '/the-bus' },
+          { label: 'Routes',   href: '/the-bus/routes' },
+          { label: 'Schedule', href: '/the-bus/schedule' },
+        ]
+      },
       { label: 'Ski Lift Tickets',      href: '/ski-lift-tickets' },
       { label: 'Ski Conditions',        href: '/ski-conditions' },
     ],
@@ -49,7 +55,7 @@ const NAV_RIGHT = [
     ],
   },
   { label: 'Blog',               href: '/blog' },
-  { label: 'Swag',               href: '/swag' },
+  { label: 'Swag',               href: 'https://skitheeast.net/' },
   { label: 'Best Gear For 2026', href: '/gear' },
 ]
 
@@ -63,6 +69,19 @@ function Chevron() {
 
 function DesktopItem({ item }) {
   if (!item.dropdown) {
+    const isExternal = item.href.startsWith('http')
+    if (isExternal) {
+      return (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-3 py-1.5 text-sm text-gray-700 hover:text-gray-900 whitespace-nowrap font-medium transition-colors"
+        >
+          {item.label}
+        </a>
+      )
+    }
     return (
       <Link
         href={item.href}
@@ -82,15 +101,41 @@ function DesktopItem({ item }) {
       <div className="absolute top-full left-0 w-full h-2" />
       <div className="absolute top-[calc(100%+0.5rem)] left-0 hidden group-hover:block z-50 min-w-[192px]">
         <div className="bg-white border border-gray-100 rounded-xl shadow-xl py-1.5">
-          {item.dropdown.map((sub) => (
-            <Link
-              key={sub.label + sub.href}
-              href={sub.href}
-              className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors whitespace-nowrap"
-            >
-              {sub.label}
-            </Link>
-          ))}
+          {item.dropdown.map((sub) => {
+            if (sub.dropdown) {
+              return (
+                <div key={sub.label} className="relative group/sub px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors cursor-pointer flex items-center justify-between">
+                  <span>{sub.label}</span>
+                  <svg className="w-3 h-3 -rotate-90 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                  {/* Nested side menu */}
+                  <div className="absolute left-[calc(100%-0.5rem)] top-0 hidden group-hover/sub:block pl-2 z-50 min-w-[160px]">
+                    <div className="bg-white border border-gray-100 rounded-xl shadow-xl py-1.5">
+                      {sub.dropdown.map((ss) => (
+                        <Link
+                          key={ss.label + ss.href}
+                          href={ss.href}
+                          className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors whitespace-nowrap"
+                        >
+                          {ss.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+            return (
+              <Link
+                key={sub.label + sub.href}
+                href={sub.href}
+                className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors whitespace-nowrap"
+              >
+                {sub.label}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </div>
@@ -101,6 +146,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen]  = useState(false)
   const [searchOpen, setSearchOpen]  = useState(false)
   const [openMobile, setOpenMobile]  = useState(null)
+  const [openSubMobile, setOpenSubMobile] = useState(null)
 
   return (
     <>
@@ -220,26 +266,75 @@ export default function Navbar() {
                   {openMobile === item.label && (
                     <div className="bg-gray-50 pb-2">
                       {item.dropdown.map((sub) => (
-                        <Link
-                          key={sub.label + sub.href}
-                          href={sub.href}
-                          onClick={() => setMobileOpen(false)}
-                          className="block px-8 py-2.5 text-sm text-gray-600 hover:text-gray-900"
-                        >
-                          {sub.label}
-                        </Link>
+                        <div key={sub.label + sub.href}>
+                          {sub.dropdown ? (
+                            <>
+                              <button
+                                className="w-full flex items-center justify-between px-8 py-2.5 text-sm text-gray-600 hover:text-gray-900"
+                                onClick={() => setOpenSubMobile(openSubMobile === sub.label ? null : sub.label)}
+                              >
+                                {sub.label}
+                                <svg
+                                  className={`w-3 h-3 text-gray-400 transition-transform ${openSubMobile === sub.label ? 'rotate-180' : ''}`}
+                                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              {openSubMobile === sub.label && (
+                                <div className="bg-gray-100/50 pb-1">
+                                  {sub.dropdown.map((ss) => (
+                                    <Link
+                                      key={ss.label + ss.href}
+                                      href={ss.href}
+                                      onClick={() => setMobileOpen(false)}
+                                      className="block px-12 py-2 text-xs text-gray-500 hover:text-gray-900"
+                                    >
+                                      {ss.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
+                            </>
+                          ) : (
+                            <Link
+                              href={sub.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="block px-8 py-2.5 text-sm text-gray-600 hover:text-gray-900"
+                            >
+                              {sub.label}
+                            </Link>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}
                 </>
               ) : (
-                <Link
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-5 py-3.5 text-sm font-medium text-gray-700 hover:text-gray-900"
-                >
-                  {item.label}
-                </Link>
+                (() => {
+                  const isExternal = item.href && item.href.startsWith('http')
+                  if (isExternal) {
+                    return (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-5 py-3.5 text-sm font-medium text-gray-700 hover:text-gray-900"
+                      >
+                        {item.label}
+                      </a>
+                    )
+                  }
+                  return (
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-5 py-3.5 text-sm font-medium text-gray-700 hover:text-gray-900"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                })()
               )}
             </div>
           ))}

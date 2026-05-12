@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const WAYS_TO_SUPPORT = [
   { icon: '💻', label: 'Donate Online', desc: 'Contribute directly to YES through their secure online portal.' },
@@ -18,25 +19,11 @@ export default function GivingBackPage() {
     <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero with YES-KG image */}
-      <section className="relative flex items-end overflow-hidden" style={{ minHeight: '550px' }}>
-        <img
-          src="/images/yes-kg.png"
-          alt="YES — Youth Enrichment Services × Killington Getaway"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-slow-zoom"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 w-full">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-brand-green" />
-            <p className="uppercase tracking-[0.3em] text-xs font-black text-white/60">Community Impact</p>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tight mb-6 uppercase leading-tight">Giving <span className="text-brand-green">Back</span></h1>
-          <p className="text-white/80 text-xl font-medium max-w-2xl leading-relaxed">
-            At Killington Getaway, we love to ski — and we love to help others experience the beauty of the slopes with enjoyment, adrenaline, and passion.
-          </p>
-        </div>
-      </section>
+      <Hero 
+        title="Giving Back" 
+        subtitle="At Killington Getaway, we love to ski — and we love to help others experience the beauty of the slopes with enjoyment, adrenaline, and passion."
+        image="/images/hero/giving-back-hero.jpg" 
+      />
 
       {/* YES Partnership */}
       <section className="py-24 px-6 bg-white overflow-hidden">
