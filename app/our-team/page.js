@@ -57,6 +57,7 @@ export default function OurTeamPage() {
       <Hero 
         title="Our Team" 
         subtitle="The People Behind the Guide"
+        image="/images/team/team-hero.jpg"
       />
 
       <section className="py-24 px-6 bg-gray-50">

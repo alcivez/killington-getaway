@@ -7,102 +7,132 @@ import Hero from '../components/Hero'
 
 const WINTER_ACTIVITIES = [
   {
-    title: 'Skiing & Snowboarding',
-    desc: 'Killington offers 140 trails across 1,509 acres with 22 lifts including two express gondolas. The Beast of the East lives up to its name with terrain for every level, from gentle beginner runs at Snowshed to the infamous Outer Limits mogul field.',
-    img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
+    title: 'Skiing',
+    desc: 'Killington provides skiers and riders of all ability levels a choice of wide-open groomed cruisers, narrow classic New England runs, moguls, steeps and trees all serviced by 22 lifts including two express gondolas and a high-speed six-person bubble chair.',
+    img: '/images/activities/winter/skiing.png',
     href: '/killington-resort',
     tag: 'Most Popular',
   },
   {
-    title: 'Women\'s FIS World Cup',
-    desc: 'One of the top three events on the Women\'s FIS World Cup tour, held annually over Thanksgiving weekend on the Superstar trail. Tens of thousands of fans line the course for world-class giant slalom racing.',
-    img: 'https://images.unsplash.com/photo-1516592673884-4a382d1124c2?w=600&q=80',
-    href: '/races-events',
-    tag: 'Event',
+    title: 'Hiking',
+    desc: 'Great hiking trails for all fitness levels. From casual and gradual to steep and challenging terrain that crosses the Appalachian Trail. There are 8 moderate trails in Woodstock ranging from 1.6 to 4.8 miles and from 692 to 2,450 feet above sea level.',
+    img: '/images/activities/winter/hiking.png',
+    href: '/listings?category=outdoor-recreation',
+    tag: 'Outdoor',
   },
   {
-    title: 'Snowmobile Tours',
-    desc: 'Custom-guided snowmobile tours through the Green Mountains. Snowmobile Vermont offers fully guided excursions across pristine backcountry trails — a completely different way to experience the winter landscape.',
-    img: 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&q=80',
-    href: '/listings?category=snowmobile',
-    tag: 'Adventure',
+    title: 'Exploring',
+    desc: 'Shopping in Woodstock, Vermont if you are looking for amazing cheese, Vermont maple syrup, great craft beer, homespun goods, and fun shopping, Woodstock has it all and more. Gillingham’s General Store is exactly what you would expect from a Vermont general store.',
+    img: '/images/activities/winter/exploring.png',
+    href: '/listings?category=places-to-shop',
+    tag: 'Culture',
   },
   {
-    title: 'Nordic Skiing & Snowshoeing',
-    desc: 'Mountain Meadows Nordic Center and the Viking Nordic Center offer groomed cross-country trails through Vermont\'s most scenic terrain. Perfect for families and those looking for a quieter alternative to the downhill scene.',
-    img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
-    href: '/listings?category=nordic-ski',
+    title: 'Maple Sugaring',
+    desc: 'Vermont is the nation’s leading producer of maple syrup. Producing over 2 million gallons of syrup in 2020, Vermont generated over 50 percent of the country’s maple syrup coming from more than 1,500 sugar houses statewide.',
+    img: '/images/activities/winter/maple-sugaring.png',
+    href: '/listings?category=local-flavor',
+    tag: 'Local',
+  },
+  {
+    title: 'Glass Blowing',
+    desc: 'Simon Pearce is a world-renowned maker of fine handblown glass dinnerware and decor, as well as handcrafted pottery collections. Each expertly hand-crafted piece is made from the highest quality material in a simple yet elegant style that translates easily from everyday use to elegant entertaining.',
+    img: '/images/activities/winter/glass-blowing.png',
+    href: '/listings?category=arts-and-culture',
+    tag: 'Arts',
+  },
+  {
+    title: 'Science Museum',
+    desc: 'The Montshire is an award-winning hands-on science museum. You’ll experience over 140 exciting exhibits relating to the natural and physical sciences, ecology, and technology. As a 110-acre museum on the Connecticut River, there’s always plenty to explore, both indoors and out!',
+    img: '/images/activities/winter/science-museum.png',
+    href: '/listings?category=museums',
     tag: 'Family',
   },
   {
+    title: 'Snowshoeing',
+    desc: 'Snowshoe centers offer hundreds of miles of groomed trails or for the more adventurous, back-country trails offer challenging and solitary excursions. Guided and self-guided snowshoeing tours and guides are abundant in Vermont.',
+    img: '/images/activities/winter/snowshoeing.png',
+    href: '/listings?category=nordic-ski',
+    tag: 'Adventure',
+  },
+  {
+    title: 'Snowmobile Tours',
+    desc: 'Let the excitement begin with a custom-guided snowmobile tour of the Killington Mountains. No clutch or shifting just hit the throttle and go! Experienced guides are there to show you the way, taking you to breathtaking views and a variety of the Killington’s peaks.',
+    img: '/images/activities/winter/snowmobile-tours.png',
+    href: '/listings?category=snowmobile',
+    tag: 'Thrill',
+  },
+  {
     title: 'Dog Sledding',
-    desc: 'Braeburn Siberians offers 30 to 90-minute dog sledding rides through Vermont\'s snow-covered forests. An unforgettable experience for the whole family — the dogs are as excited as you are.',
-    img: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80',
+    desc: 'Have a one-of-a-kind experience with a ride through the snow. Braeburn Siberians offers 30-minute and 90-minute excursions with 43 purebred Siberian huskies located in the Upper Valley between i-89 and i-91. (~1.25 hrs away)',
+    img: '/images/activities/winter/dog-sledding.png',
     href: '/listings',
     tag: 'Family',
   },
   {
     title: 'Mountain Coaster',
-    desc: 'The 4,800-foot-long alpine coaster twists and turns down the mountain at speeds you control. Open all winter and one of the most-talked-about non-ski experiences at Killington.',
-    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    desc: 'Next to skiing or riding, the Beast Mountain Coaster is the ultimate thrill. Located at Snowshed Lodge, this 4,800-foot-long alpine coaster twists and turns through the woods with 360-degree corkscrews and all-age excitement.',
+    img: '/images/activities/winter/mountain-coaster.png',
     href: '/listings?category=adventure',
     tag: 'Thrill',
   },
   {
-    title: 'Snow Tubing',
-    desc: 'Killington\'s tubing park offers lift-served runs for all ages. No skill required — just hold on. A great option for non-skiers in your group or a fun break from the slopes mid-afternoon.',
-    img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80',
-    href: '/listings?category=adventure',
-    tag: 'Family',
-  },
-  {
-    title: 'Ski Lessons',
-    desc: 'Killington\'s ski and snowboard school offers lessons for every age and ability — from first-timers on the bunny hill to advanced clinics with race coaches. Book ahead during peak weeks.',
-    img: 'https://images.unsplash.com/photo-1605719124347-9d5b4f0a7edb?w=600&q=80',
-    href: '/listings?category=ski-shops',
-    tag: 'Learn',
-  },
-  {
-    title: 'Après-Ski & Nightlife',
-    desc: 'Killington Road turns into a mountain town after 3pm. The Wobbly Barn, Pickle Barrel, and The Foundry are legendary. Bar shuttles run on weekends so you don\'t have to worry about driving.',
-    img: 'https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80',
-    href: '/listings?category=places-to-drink',
-    tag: 'Nightlife',
-  },
-  {
-    title: 'Ledgewood Yurt Dining',
-    desc: 'A ski-in, ski-out restaurant and bar tucked into the mountain. Five-course dinners by candlelight in a heated yurt — one of the most unique dining experiences in Vermont winter sports.',
-    img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',
-    href: '/listings?category=places-to-eat',
-    tag: 'Dining',
-  },
-  {
     title: 'Brewery Tours',
-    desc: 'Vermont\'s craft beer scene doesn\'t slow down in winter. Long Trail, Harpoon at Riverbend, Foley Brothers, and Hermit Thrush are all within an easy drive from Killington. Perfect for a mountain rest day.',
-    img: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80',
+    desc: 'Long Trail Brewing Company is a regional brewery in Bridgewater Corners, Vermont. Founded in 1989 in the basement of the Bridgewater Woolen Mill, the company relocated to its current brewing facility and visitor center.',
+    img: '/images/activities/winter/brewery-tours.png',
     href: '/listings?category=breweries',
     tag: 'Local',
   },
   {
-    title: 'Bear Mountain Mogul Challenge',
-    desc: 'An annual spring celebration held each April on Bear Mountain — the Beast\'s signature mogul event. A pilgrimage for hard-core bump skiers from across the Northeast.',
-    img: 'https://images.unsplash.com/photo-1544191696-102dbdaeeaa0?w=600&q=80',
+    title: 'Sleigh Rides',
+    desc: 'Woodstock offers plenty of opportunities for people of all ages and abilities. With advance notice, you can book a private sleigh ride through the winter wonderland. Bring along your warm drink and take in the scenic views.',
+    img: '/images/activities/winter/sleigh-rides.png',
+    href: '/listings',
+    tag: 'Family',
+  },
+  {
+    title: 'Explore Covered Bridges',
+    desc: 'There are just over 100 authentic covered bridges in Vermont, giving the state the highest number of covered bridges per square mile in the United States. Perfect for a scenic winter drive.',
+    img: '/images/activities/winter/covered-bridges.png',
+    href: '/listings?category=sightseeing',
+    tag: 'Sightseeing',
+  },
+  {
+    title: 'Tubing',
+    desc: 'The Killington Tubing Park is located at the Clubhouse on East Mountain Road across from the Killington Grand Resort Hotel and offers a multi-lane, lift-serviced good time for everyone. Great for hosting birthday parties for all ages.',
+    img: '/images/activities/winter/tubing.png',
+    href: '/listings?category=adventure',
+    tag: 'Family',
+  },
+  {
+    title: 'Dine at Ledgewood Yurt',
+    desc: 'Tucked away, the Ledgewood Yurt is a ski-in-ski-out restaurant and bar. Accessible by snowshoe or an after-hours snowcat-drawn sleigh ride, ending with a gourmet five-course dinner.',
+    img: '/images/activities/winter/yurt-dining.png',
+    href: '/listings?category=places-to-eat',
+    tag: 'Dining',
+  },
+  {
+    title: "Women's FIS World Cup",
+    desc: 'Killington Cup is a festival of skiing for fans and athletes, and over the last four years has become one of the top three events on the Women\'s FIS World Cup tour, inspiring the next generation of ski racers.',
+    img: '/images/activities/winter/world-cup.png',
     href: '/races-events',
     tag: 'Event',
   },
+  {
+    title: 'Bear Mountain Mogul Challenge',
+    desc: 'The Bear Mountain Mogul Challenge is more than a bump comp—it’s an excuse for a party. Coming each year in April, it is the unofficial end-of-season celebration for the hard-core bump skiers.',
+    img: '/images/activities/winter/mogul-challenge.png',
+    href: '/races-events',
+    tag: 'Event',
+  },
+  {
+    title: 'Fat Tire Mountain Biking',
+    desc: 'Alpine Bike Works operates the winter Fat Bike Vermont rental program, working with Mountain Meadows XC Center and Killington Resort to build out a network of groomed singletrack.',
+    img: '/images/activities/winter/fat-biking.png',
+    href: '/listings?category=adventure',
+    tag: 'Adventure',
+  },
 ]
-
-const TAG_COLORS = {
-  'Most Popular': '#2d94e3',
-  'Event': '#DC2626',
-  'Adventure': '#D97706',
-  'Family': '#3498DB',
-  'Thrill': '#7C3AED',
-  'Learn': '#3498DB',
-  'Nightlife': '#0B1619',
-  'Dining': '#EA580C',
-  'Local': '#D97706',
-}
 
 export default function WinterPage() {
   return (
@@ -167,7 +197,7 @@ export default function WinterPage() {
                 </div>
                 <div className="p-8 lg:p-10 flex flex-col flex-1">
                   <h3 className="font-heading font-black text-brand-navy text-xl mb-4 group-hover:text-brand-green transition-colors leading-tight">{act.title}</h3>
-                  <p className="text-gray-400 font-medium leading-relaxed flex-1 mb-8">{act.desc}</p>
+                  <p className="text-gray-400 font-medium leading-relaxed flex-1 mb-8 line-clamp-4">{act.desc}</p>
                   <div className="flex items-center gap-2 text-brand-green font-black text-xs uppercase tracking-widest group-hover:gap-3 transition-all">
                     Explore Experience
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>

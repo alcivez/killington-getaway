@@ -20,8 +20,8 @@ export default function SkiConditionsPage() {
       <Navbar />
 
       <Hero 
-        title="Ski Conditions" 
-        subtitle="Real-time weather, snowfall, and mountain conditions for Killington Resort — before you pack the car."
+        title={<><span className="text-brand-blue">Ski</span> Conditions</>} 
+        subtitle={<>Real-time weather, snowfall, and <span className="text-brand-blue">conditions for Killington Resort</span> — before you pack the car.</>}
         image="/images/hero/ski-conditions-hero.png"
       />
 
@@ -187,30 +187,30 @@ export default function SkiConditionsPage() {
               {
                 title: 'Official Snow Report',
                 desc: "Killington's own daily report with open trail counts, grooming status, and overnight snow totals.",
-                href: 'https://www.killington.com/mountain/snow-and-weather/snow-report',
+                href: 'https://www.killington.com/the-mountain/conditions-weather/current-conditions-weather/',
                 label: 'View Report →',
                 color: '#2d94e3',
               },
               {
                 title: 'Trail Map',
                 desc: 'Interactive trail map with real-time open/closed status across all six Killington peaks.',
-                href: 'https://www.killington.com/mountain/trail-map',
+                href: 'https://www.killington.com/the-mountain/trail-area-maps/killington-app/',
                 label: 'Open Trail Map →',
                 color: '#2d94e3',
               },
               {
                 title: 'Webcams',
                 desc: 'Live camera feeds from the summit, base lodges, and key trails across the mountain.',
-                href: '/webcams',
+                href: 'https://www.killington.com/the-mountain/conditions-weather/webcam/',
                 label: 'View Webcams →',
-                color: '#0077A8',
+                color: '#2d94e3',
               },
               {
                 title: 'Lift Status',
                 desc: 'Real-time lift open/closed status and wait times updated throughout the day.',
-                href: 'https://www.killington.com/mountain/snow-and-weather/lift-status',
+                href: 'https://www.killington.com/the-mountain/conditions-weather/lifts-trails-report/',
                 label: 'Check Lifts →',
-                color: '#D97706',
+                color: '#2d94e3',
               },
               {
                 title: 'NOAA Mountain Forecast',

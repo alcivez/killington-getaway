@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const GUIDE_SECTIONS = [
   {
@@ -41,6 +42,12 @@ export default function OurStoryPage() {
   return (
     <main className="min-h-screen bg-white font-body">
       <Navbar />
+
+      <Hero 
+        title="Our Story" 
+        subtitle="The mission, the mountain, and the locals behind Killington Getaway."
+        image="/images/hero/our-story-hero.png"
+      />
 
       {/* Header */}
       <section className="bg-white border-b border-gray-100 py-24 px-6 text-center">

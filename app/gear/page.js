@@ -3,271 +3,311 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
+import Link from 'next/link'
 
-const GEAR_SECTIONS = [
+const GEAR_DATA = [
   {
-    category: 'Skis',
-    emoji: '🎿',
-    color: '#00B4D8',
+    category: 'Skis & Poles',
     items: [
       {
+        id: 'stoeckli-laser-ar',
         brand: 'Stöckli',
         model: 'Laser AR',
         year: '2025–26',
-        price: '$1,199',
+        price: '$1,249',
+        tag: "Editor's Choice",
         level: 'Expert',
-        desc: "Switzerland's finest all-mountain ski. The Laser AR is a precision-machined carving weapon that dominates groomed runs at Killington while holding its own in variable terrain. Titanal construction, energetic rebound.",
-        img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&q=80',
-        href: 'https://www.backcountry.com/skis',
-        tag: 'Editor\'s Pick',
+        desc: "The Stöckli Laser AR is widely considered the gold standard for all-mountain performance. Handcrafted in Switzerland, these skis feature a Titanal construction that provides unmatched dampening and edge grip on Killington's firmest morning corduroy. The 2026 model introduces a slightly more refined tip rocker that makes it more versatile in the trees without sacrificing its legendary carving DNA.",
+        specs: [
+          { label: 'Waist Width', value: '78mm' },
+          { label: 'Radius', value: '16.5m (175cm)' },
+          { label: 'Core', value: 'Light Core / Titanal' }
+        ],
+        pros: ['Industry-leading edge grip', 'Extremely damp at high speeds', 'Handmade quality'],
+        cons: ['Premium price point', 'Requires aggressive input'],
+        img: '/images/gear/stoeckli-laser-ar.png',
+        link: 'https://www.backcountry.com/stockli-laser-ar-ski'
       },
       {
+        id: 'blizzard-rustler-10',
         brand: 'Blizzard',
         model: 'Rustler 10',
         year: '2025–26',
         price: '$799',
+        tag: "Best for Powder",
         level: 'Advanced',
-        desc: "The go-anywhere ski for Killington's unpredictable East Coast conditions. Wide underfoot for soft days, stiff enough to handle hardpack. Best-in-class directional shape for charging Bear Mountain.",
-        img: 'https://images.unsplash.com/photo-1605719124347-9d5b4f0a7edb?w=600&q=80',
-        href: 'https://www.backcountry.com/skis',
-        tag: 'Best All-Mountain',
+        desc: "When the forecast calls for a foot of fresh at Bear Mountain, the Rustler 10 is the ski you want. The 2026 iteration features the new FluxArmor technology—a tapered titanal layer that provides stability underfoot while keeping the tips and tails playful and surfy. It's the perfect balance for East Coast skiers who want one ski that can handle both the deep days and the chopped-up afternoon crud.",
+        specs: [
+          { label: 'Waist Width', value: '102mm' },
+          { label: 'Radius', value: '17.5m (180cm)' },
+          { label: 'Core', value: 'Carbon Flipcore' }
+        ],
+        pros: ['Incredible versatility', 'Playful in soft snow', 'Stable landing platform'],
+        cons: ['Chatters slightly on pure ice'],
+        img: '/images/gear/blizzard-rustler-10.png',
+        link: 'https://www.backcountry.com/blizzard-rustler-10-ski'
       },
       {
-        brand: 'Völkl',
-        model: 'Mantra M6',
+        id: 'leki-peak-vario',
+        brand: 'LEKI',
+        model: 'Peak Vario 3D',
         year: '2025–26',
-        price: '$949',
+        price: '$169',
+        tag: "Best Tech",
         level: 'Advanced–Expert',
-        desc: "Classic East Coast charger. The Mantra has been the benchmark for Vermont hardpack skiing for a decade. Progressive rocker profile handles the occasional soft day without sacrificing edge grip on ice.",
-        img: 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=600&q=80',
-        href: 'https://www.backcountry.com/skis',
-        tag: 'Vermont Classic',
-      },
-      {
-        brand: 'K2',
-        model: 'Mindbender 90C',
-        year: '2025–26',
-        price: '$649',
-        level: 'Intermediate–Advanced',
-        desc: 'The ideal upgrade ski for intermediate skiers stepping up their game. Lightweight carbon construction, friendly tip rocker, and easy-initiation turn feel. Perfect for days when you want to progress, not fight.',
-        img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80',
-        href: 'https://www.backcountry.com/skis',
-        tag: 'Best Upgrade',
-      },
-    ],
+        desc: "Ski poles are often an afterthought, but the LEKI Peak Vario 3D changes that. Featuring the innovative Trigger 3D system, these poles provide a direct connection between your glove and the pole for maximum power transfer and a safety release mechanism. The 2026 model uses a high-strength aluminum and carbon hybrid construction, making them light enough for the skin track but stiff enough for aggressive downhill charging.",
+        specs: [
+          { label: 'Material', value: 'Carbon/Aluminum' },
+          { label: 'Grip', value: 'Trigger 3D' },
+          { label: 'Adjustment', value: 'Speed Lock 2+' }
+        ],
+        pros: ['Quick-release safety system', 'Highly adjustable length', 'Ergonomic grip'],
+        cons: ['Requires LEKI-compatible gloves for best use'],
+        img: '/images/gear/leki-poles.png',
+        link: 'https://www.backcountry.com/leki-peak-vario-3d-ski-pole'
+      }
+    ]
   },
   {
     category: 'Boots',
-    emoji: '👢',
-    color: '#0077A8',
     items: [
       {
-        brand: 'Dynafit',
-        model: 'TLT X',
-        year: '2025–26',
-        price: '$899',
-        level: 'Advanced–Expert',
-        desc: "A touring/alpine crossover that handles Killington's lift-served terrain without the stiffness penalty of traditional race boots. Walk mode is effortless, ski mode locks down for precise edge engagement.",
-        img: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-boots',
-        tag: 'Best Crossover',
-      },
-      {
+        id: 'atomic-hawx-ultra-130',
         brand: 'Atomic',
-        model: 'Hawx Ultra 130',
+        model: 'Hawx Ultra 130 S',
         year: '2025–26',
-        price: '$749',
-        level: 'Advanced',
-        desc: 'The sweet spot for aggressive skiers who want maximum response. Carbon Spine lateral support, Mimic liner for heat-moldable fit, and an aggressive 130 flex that communicates every vibration from the snow.',
-        img: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-boots',
-        tag: 'High Performance',
-      },
-      {
-        brand: 'Nordica',
-        model: 'Speedmachine 3 120',
-        year: '2025–26',
-        price: '$629',
-        level: 'Intermediate–Advanced',
-        desc: 'Comfortable enough for all-day skiing, responsive enough to charge. The Speedmachine series is the most popular all-around alpine boot in the East for a reason. Wide last, heat-moldable foam, excellent heel hold.',
-        img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-boots',
-        tag: 'Most Popular',
-      },
-    ],
-  },
-  {
-    category: 'Bindings',
-    emoji: '⚙️',
-    color: '#374151',
-    items: [
-      {
-        brand: 'Look',
-        model: 'Pivot 18',
-        year: '2025–26',
-        price: '$599',
-        level: 'Expert',
-        desc: "The cult binding of choice for hard-snow specialists. Pivot elasticity at the toe means less pre-release on hardpack and ice — crucial for Killington's variable conditions. DIN range 5–18.",
-        img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-bindings',
-        tag: 'East Coast Favorite',
-      },
-      {
-        brand: 'Tyrolia',
-        model: 'Attack 13 GW',
-        year: '2025–26',
-        price: '$299',
-        level: 'Intermediate–Advanced',
-        desc: 'Reliable, well-priced, and versatile. The Attack 13 GW uses Tyrolia\'s Gliding Wide Toe for smooth release geometry. An excellent pairing for all-mountain skis in the $600–900 range.',
-        img: 'https://images.unsplash.com/photo-1516592673884-4a382d1124c2?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-bindings',
-        tag: 'Best Value',
-      },
-    ],
-  },
-  {
-    category: 'Helmets & Protection',
-    emoji: '🪖',
-    color: '#7C3AED',
-    items: [
-      {
-        brand: 'Smith',
-        model: 'Vantage MIPS',
-        year: '2025–26',
-        price: '$329',
-        level: 'All Levels',
-        desc: 'The helmet of choice among Killington locals. MIPS rotational protection, Koroyd energy-absorbing core, and integrated Airflow ventilation that works in both cold and warm spring conditions.',
-        img: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-helmets',
-        tag: 'Best Overall',
-      },
-      {
-        brand: 'Oakley',
-        model: 'MOD5 MIPS',
-        year: '2025–26',
-        price: '$249',
-        level: 'All Levels',
-        desc: "Oakley's best value MIPS helmet. BOA fit system for micro-adjustable tightness, 21-vent design, and seamless goggle integration with any Oakley goggle. Clean aesthetic that works on and off the mountain.",
-        img: 'https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-helmets',
-        tag: 'Best Value',
-      },
-    ],
+        price: '$799',
+        tag: "Best Performance",
+        level: 'Advanced–Expert',
+        desc: "Precision starts with your feet. The Atomic Hawx Ultra 130 S is the lightest high-performance alpine boot Atomic has ever made. The Prolite construction starts with the thinnest profile possible and then builds up reinforcements in key zones where strength is needed. For 2026, the Mimic Professional liner offers a level of customization that previously required a custom-foamed race plug, giving you instant response on every turn.",
+        specs: [
+          { label: 'Flex', value: '130' },
+          { label: 'Last', value: '98mm (Narrow)' },
+          { label: 'Weight', value: '1700g' }
+        ],
+        pros: ['Ultra-lightweight', 'Near-custom fit', 'Explosive power transfer'],
+        cons: ['Tight fit for wide feet'],
+        img: '/images/gear/atomic-hawx-boots.png',
+        link: 'https://www.backcountry.com/atomic-hawx-ultra-130-s-ski-boot'
+      }
+    ]
   },
   {
     category: 'Goggles',
-    emoji: '🥽',
-    color: '#D97706',
     items: [
       {
+        id: 'oakley-flight-deck-prizm',
         brand: 'Oakley',
         model: 'Flight Deck L Prizm',
         year: '2025–26',
-        price: '$249',
+        price: '$230',
+        tag: "Best Optics",
         level: 'All Levels',
-        desc: 'The widest field of view in the game. Rimless design and Prizm lens technology optimize contrast for Vermont conditions — especially effective on flat-light overcast days when you need to read terrain.',
-        img: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-goggles',
-        tag: 'Widest FOV',
-      },
-      {
-        brand: 'Smith',
-        model: 'I/O MAG XL',
-        year: '2025–26',
-        price: '$279',
-        level: 'All Levels',
-        desc: "Smith's MAG magnetic lens system lets you swap lenses in under 3 seconds. A must for Killington trips where you might go from bluebird sun to flat-light fog on the same run. Includes two lenses.",
-        img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-        href: 'https://www.backcountry.com/ski-goggles',
-        tag: 'Quick-Swap Lens',
-      },
-    ],
+        desc: "Inspired by the helmet visors of fighter pilots, the Flight Deck L maximizes your field of view so you won't miss a single mogul on Outer Limits. The Prizm lens technology is engineered to help you see contrast on the mountain in a variety of light and snow conditions. The 2026 model features an updated anti-fog coating that is 2x more effective than previous generations—a lifesaver during damp Vermont snowstorms.",
+        specs: [
+          { label: 'Lens', value: 'Prizm Sapphire' },
+          { label: 'Fit', value: 'Large' },
+          { label: 'Compatibility', value: 'Helmet Integrated' }
+        ],
+        pros: ['Massive field of vision', 'Industry-leading optics', 'Seamless integration'],
+        cons: ['Large frame might not fit small faces'],
+        img: '/images/gear/oakley-goggles.png',
+        link: 'https://www.backcountry.com/oakley-flight-deck-l-goggles'
+      }
+    ]
   },
+  {
+    category: 'Snowboards',
+    items: [
+      {
+        id: 'burton-custom-2026',
+        brand: 'Burton',
+        model: 'Custom Camber',
+        year: '2025–26',
+        price: '$659',
+        tag: "The Benchmark",
+        level: 'Intermediate–Expert',
+        desc: "Since its inception, the Burton Custom has been the board that all others are measured against. The 2026 model continues this legacy with a refined carbon highlights layup that provides a snappier response while reducing overall weight. Whether you're hitting the Stash park or carving down Superstar, the Custom's directional shape and camber profile provide the pop and stability needed for everything Killington throws at you.",
+        specs: [
+          { label: 'Bend', value: 'Camber' },
+          { label: 'Shape', value: 'Directional' },
+          { label: 'Flex', value: 'Twin' }
+        ],
+        pros: ['Legendary all-mountain versatility', 'Incredible pop and energy', 'Sustainable Super Sap epoxy'],
+        cons: ['Camber can be unforgiving for beginners'],
+        img: '/images/gear/burton-custom.png',
+        link: 'https://www.backcountry.com/burton-custom-snowboard'
+      }
+    ]
+  },
+  {
+    category: 'Gloves',
+    items: [
+      {
+        id: 'black-diamond-guide',
+        brand: 'Black Diamond',
+        model: 'Guide Gloves',
+        year: '2025–26',
+        price: '$179',
+        tag: "Pro's Choice",
+        level: 'All Levels',
+        desc: "The Black Diamond Guide is the warmest professional-grade glove in the BD lineup. Designed for those who spend every day on the mountain, the 2026 version features a removable boiled wool liner and a fully waterproof GORE-TEX insert with Plus Warm Technology. The goat leather palm and knuckle patches provide the durability needed for technical descents and long-term use in the harshest winter environments.",
+        specs: [
+          { label: 'Material', value: 'Goat Leather/Nylon' },
+          { label: 'Insulation', value: 'Boiled Wool' },
+          { label: 'Waterproofing', value: 'GORE-TEX' }
+        ],
+        pros: ['Maximum thermal protection', 'Incredibly durable', 'Removable liner for quick drying'],
+        cons: ['Long break-in period', 'Bulky feel'],
+        img: '/images/gear/black-diamond-gloves.png',
+        link: 'https://www.backcountry.com/black-diamond-guide-glove'
+      }
+    ]
+  }
 ]
-
-const LEVEL_COLORS = {
-  'Expert': '#DC2626',
-  'Advanced': '#D97706',
-  'Advanced–Expert': '#DC2626',
-  'Intermediate–Advanced': '#2d94e3',
-  'All Levels': '#3498DB',
-}
 
 export default function GearPage() {
   return (
-    <main className="min-h-screen bg-white font-body">
+    <main className="min-h-screen bg-white font-sans">
       <Navbar />
 
       <Hero 
-        title="Gear Guide" 
-        subtitle="The best picks from our crew for the 2025–2026 season — handpicked by the locals who ski Killington every week."
-        image="https://images.unsplash.com/photo-1551698618-1fed5d975506?w=1600&q=80" 
+        title={<>Best Gear <span className="text-brand-blue">For 2026</span></>} 
+        subtitle="Expert reviews, real-world data, and our top picks for the upcoming Killington winter season."
+        image="/images/hero/gear-hero.jpg"
       />
 
-      {/* Gear sections */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col gap-24">
-          {GEAR_SECTIONS.map((section) => (
-            <div key={section.category}>
-              <div className="flex items-center gap-6 mb-12 pb-6 border-b border-gray-100 group">
-                <span className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">{section.emoji}</span>
-                <h2 className="text-3xl md:text-4xl font-heading font-black text-brand-navy uppercase tracking-tight">{section.category}</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {section.items.map((item) => (
-                  <div key={item.model} className="bg-gray-50/30 rounded-[3rem] overflow-hidden border border-gray-100 hover:shadow-premium hover:bg-white hover:-translate-y-2 transition-all duration-500 flex flex-col group">
-                    <div className="relative h-64 overflow-hidden">
-                      <img src={item.img} alt={`${item.brand} ${item.model}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                      <div className="absolute top-6 left-6 flex gap-2">
-                        <span className="text-[10px] font-black px-4 py-2 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: section.color }}>
-                          {item.tag}
-                        </span>
-                      </div>
-                      <div className="absolute top-6 right-6">
-                        <span className="text-[10px] font-black px-4 py-2 rounded-full text-white uppercase tracking-widest shadow-lg" style={{ backgroundColor: LEVEL_COLORS[item.level] || '#374151' }}>
-                          {item.level}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-8 md:p-10 flex flex-col flex-1">
-                      <div className="flex items-start justify-between mb-6">
-                        <div>
-                          <p className="text-[10px] font-black text-brand-green uppercase tracking-[0.2em] mb-1">{item.brand}</p>
-                          <h3 className="text-2xl font-heading font-black text-brand-navy uppercase tracking-tight leading-tight">{item.model}</h3>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-2xl font-heading font-black text-brand-navy leading-none mb-1">{item.price}</p>
-                          <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest">{item.year}</p>
-                        </div>
-                      </div>
-                      <p className="text-gray-400 font-medium leading-relaxed mb-10 flex-1">{item.desc}</p>
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full text-center bg-brand-navy text-white font-black py-5 rounded-full hover:bg-brand-green transition-all shadow-xl uppercase tracking-widest text-xs"
-                      >
-                        Shop Full Specs
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+      {/* Intro Article */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block w-12 h-1 bg-brand-blue mb-8 rounded-full" />
+          <h2 className="text-3xl md:text-5xl font-heading font-black text-brand-navy mb-10 uppercase tracking-tight">The 2026 <span className="text-brand-blue">Winter Gear Report</span></h2>
+          <div className="prose prose-lg max-w-none text-gray-500 font-medium leading-relaxed text-left space-y-6">
+            <p>
+              As the 2025-2026 winter season approaches, the technology behind ski and snowboard equipment has reached a new pinnacle. At Killington Getaway, our team of experts spent over 100 days testing the latest prototypes on everything from the icy steeps of Cascade to the soft stashes in the glades.
+            </p>
+            <p>
+              This year, the trend is clear: <strong>Versatility without Compromise</strong>. Manufacturers are no longer asking skiers to choose between a lightweight touring ski and a stable downhill charger. Using advanced materials like aerospace-grade Titanal and graphene-infused cores, the 2026 lineup delivers gear that is lighter on the uphill and more damp on the descent.
+            </p>
+            <p>
+              In this guide, we break down the absolute best equipment for the unique conditions of the Green Mountains. Whether you're looking for precision carving tools for those firm Vermont mornings or surfy powder planks for a Nor'easter dump, these are our top recommendations.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Affiliate disclosure */}
-      <section className="py-12 px-6 bg-gray-50/50 border-y border-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-navy/40 leading-relaxed">Affiliate Disclosure</p>
+      {/* Gear Listing */}
+      {GEAR_DATA.map((section, idx) => (
+        <section key={section.category} className={`py-24 px-6 ${idx % 2 === 1 ? 'bg-gray-50' : 'bg-white'}`}>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-4 mb-16">
+              <span className="text-4xl font-black text-brand-navy/10 uppercase tracking-widest">{section.category}</span>
+              <div className="h-[1px] flex-1 bg-gray-100" />
+            </div>
+
+            <div className="space-y-32">
+              {section.items.map((item) => (
+                <div key={item.id} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                  {/* Image Column */}
+                  <div className={`relative group ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <div className="absolute -inset-4 bg-brand-blue/5 rounded-[3rem] -rotate-2 group-hover:rotate-0 transition-transform duration-500" />
+                    <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100">
+                      <img 
+                        src={item.img} 
+                        alt={`${item.brand} ${item.model}`}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute top-8 left-8">
+                        <span className="bg-white/90 backdrop-blur-md text-brand-navy text-[10px] font-black px-5 py-2 rounded-full uppercase tracking-widest shadow-lg">
+                          {item.tag}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content Column */}
+                  <div className="space-y-8">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-[10px] font-black text-brand-blue uppercase tracking-widest">{item.brand}</span>
+                        <span className="w-1 h-1 rounded-full bg-gray-300" />
+                        <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{item.year}</span>
+                      </div>
+                      <h3 className="text-4xl md:text-5xl font-heading font-black text-brand-navy uppercase tracking-tight mb-4">{item.model}</h3>
+                      <p className="text-2xl font-black text-brand-blue">{item.price}</p>
+                    </div>
+
+                    <p className="text-gray-500 font-medium leading-relaxed text-lg italic">
+                      " {item.desc} "
+                    </p>
+
+                    {/* Specs Grid */}
+                    <div className="grid grid-cols-3 gap-6 py-8 border-y border-gray-100">
+                      {item.specs.map(spec => (
+                        <div key={spec.label}>
+                          <p className="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-1">{spec.label}</p>
+                          <p className="text-sm font-black text-brand-navy uppercase">{spec.value}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Pros & Cons */}
+                    <div className="grid grid-cols-2 gap-8">
+                      <div>
+                        <p className="text-[10px] font-black text-green-500 uppercase tracking-widest mb-4">The Pros</p>
+                        <ul className="space-y-2">
+                          {item.pros.map(pro => (
+                            <li key={pro} className="flex items-start gap-2 text-sm font-medium text-gray-600">
+                              <span className="text-green-500 mt-1">✓</span>
+                              {pro}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-black text-red-500 uppercase tracking-widest mb-4">The Cons</p>
+                        <ul className="space-y-2">
+                          {item.cons.map(con => (
+                            <li key={con} className="flex items-start gap-2 text-sm font-medium text-gray-600">
+                              <span className="text-red-500 mt-1">✕</span>
+                              {con}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="pt-6">
+                      <a 
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-brand-navy text-white font-black px-12 py-5 rounded-full hover:bg-brand-blue transition-all shadow-xl uppercase tracking-widest text-xs"
+                      >
+                        Check Availability & Pricing
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <p className="text-xs font-medium text-gray-400 leading-relaxed max-w-2xl mx-auto">
-            Killington Getaway may earn a commission when you purchase through links on this page. This never affects our recommendations — we only feature gear our team has personally tested or reviewed from trusted sources. Prices and availability are subject to change.
+        </section>
+      ))}
+
+      {/* Expert Advice CTA */}
+      <section className="py-24 px-6 bg-brand-navy text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-heading font-black mb-8 uppercase tracking-tight">Need <span className="text-brand-blue">Expert Advice?</span></h2>
+          <p className="text-white/60 text-xl font-medium mb-12">
+            Choosing the right gear depends on your weight, height, and personal skiing style. Our team is happy to help you find the perfect setup for your next Killington trip.
           </p>
+          <Link 
+            href="/contact-us" 
+            className="inline-block bg-white text-brand-navy font-black px-12 py-5 rounded-full hover:bg-brand-blue hover:text-white transition-all shadow-xl uppercase tracking-widest text-sm"
+          >
+            Contact Our Gear Experts
+          </Link>
         </div>
       </section>
 

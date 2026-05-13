@@ -11,7 +11,7 @@ export default function Hero({
   const baseMultiply = 20 * opacity;
 
   return (
-    <div className="relative w-full pt-40 pb-32 overflow-hidden">
+    <div className="relative w-full pt-52 pb-44 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src={image} 

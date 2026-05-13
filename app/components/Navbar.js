@@ -163,6 +163,51 @@ export default function Navbar() {
         <div className="border-b border-gray-100 relative bg-white">
           <div className="max-w-screen-xl mx-auto px-5 h-20 md:h-24 flex items-center relative">
             
+            {/* 1. MOBILE ONLY: Logo Left, Weather Center, Burger Right */}
+            <div className="lg:hidden flex items-center justify-between w-full h-full relative">
+              {/* Logo Left */}
+              <Link href="/" className="flex-shrink-0 z-20">
+                <img src="/logo-color.png" alt="Killington Getaway" className="h-[44px] md:h-12 object-contain" />
+              </Link>
+
+              {/* Weather Center (Absolute) */}
+              <div className="absolute left-1/2 -translate-x-1/2 flex items-center bg-gray-50/80 px-2.5 py-1.5 rounded-full border border-gray-100 shadow-sm z-10 pointer-events-none">
+                {!loading && weather ? (
+                  <div className="flex items-center gap-1.5 whitespace-nowrap pointer-events-auto">
+                    <div className="flex items-center gap-1">
+                      <span className="text-[12px]">🏔️</span>
+                      <span className="text-[10px] font-black text-brand-navy">{weather.temp}°F</span>
+                    </div>
+                    <div className="w-[1px] h-3 bg-gray-200" />
+                    <div className="flex items-center gap-1">
+                      <span className="text-[12px]">❄️</span>
+                      <span className="text-[10px] font-black text-brand-navy uppercase">
+                        {weather.newSnow > 0 ? `${weather.newSnow}"` : `${weather.snowDepth}"`}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-12 h-3 bg-gray-200 animate-pulse rounded" />
+                )}
+              </div>
+
+              {/* Burger Right */}
+              <button
+                className="p-2 text-gray-600 z-20"
+                onClick={() => setMobileOpen((o) => !o)}
+                aria-label="Toggle menu"
+              >
+                <svg className="w-[26px] h-[26px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  {mobileOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+
+            {/* 2. DESKTOP ONLY (lg+) */}
             {/* Left Nav Group */}
             <div className="hidden lg:flex items-center gap-1 lg:gap-2 flex-1 justify-start">
               {NAV_LEFT.map((item) => (
@@ -173,8 +218,7 @@ export default function Navbar() {
             </div>
 
             {/* Logo Center - Absolute Centered with Sacred Padding */}
-            <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center z-10 pointer-events-none">
-              {/* Invisible spacer to enforce sacred padding around logo */}
+            <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center z-10 pointer-events-none">
               <div className="flex items-center justify-center px-12 lg:px-16 pointer-events-auto">
                 <Link href="/" className="transition-transform hover:scale-105 active:scale-95">
                   <img 
@@ -187,10 +231,8 @@ export default function Navbar() {
             </div>
 
             {/* Right Nav Group + Weather + Search */}
-            <div className="flex items-center gap-1 lg:gap-2 flex-1 justify-end">
-              
-              {/* Desktop Nav Items */}
-              <div className="hidden lg:flex items-center gap-1 lg:gap-2">
+            <div className="hidden lg:flex items-center gap-1 lg:gap-2 flex-1 justify-end">
+              <div className="flex items-center gap-1 lg:gap-2">
                 {NAV_RIGHT.map((item) => (
                   <div key={item.label} className={item.label === 'Swag' ? 'hidden xl:block' : ''}>
                     <DesktopItem item={item} />
@@ -198,8 +240,7 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Weather Stats (Desktop) - Smaller for better fit */}
-              <div className="hidden lg:flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 transition-all shadow-sm">
+              <div className="flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 transition-all shadow-sm">
                 {!loading && weather ? (
                   <>
                     <div className="flex items-center gap-1">
@@ -221,7 +262,6 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Search Toggle */}
               <button
                 onClick={() => setSearchOpen((s) => !s)}
                 className={`p-2 rounded-lg transition-all ${searchOpen ? 'bg-brand-blue text-white shadow-lg' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
@@ -232,36 +272,6 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35" />
                 </svg>
               </button>
-
-              {/* Mobile Weather (Synced) */}
-              <div className="lg:hidden flex items-center bg-gray-50/80 px-2.5 py-1.5 rounded-full border border-gray-100 shadow-sm max-w-[130px]">
-                {!loading && weather ? (
-                  <div className="flex items-center gap-1.5 whitespace-nowrap">
-                    <span className="text-[10px] font-black text-brand-navy">{weather.temp}°F</span>
-                    <div className="w-[1px] h-3 bg-gray-200" />
-                    <span className="text-[9px] font-black text-brand-navy uppercase">
-                      {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="w-12 h-3 bg-gray-200 animate-pulse rounded" />
-                )}
-              </div>
-
-              {/* Burger Menu */}
-              <button
-                className="lg:hidden p-2 text-gray-600"
-                onClick={() => setMobileOpen((o) => !o)}
-              >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  {mobileOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  )}
-                </svg>
-              </button>
-
             </div>
           </div>
         </div>

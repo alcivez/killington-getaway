@@ -21,7 +21,6 @@ const CATEGORIES = [
   { name: "Cheese Shops",      slug: "cheese",           emoji: "🧀", count: 12 },
   { name: "Covered Bridges",   slug: "bridges",          emoji: "🌉", count: 10 },
   { name: "Bakery & Cafes",    slug: "cafe",             emoji: "☕", count: 5  },
-  { name: "Ski Clubs",         slug: "ski-clubs",        emoji: "🏔️", count: 1  },
   { name: "Rock Climbing",     slug: "climbing",         emoji: "🪨", count: 5  },
   { name: "Snowmobile Tours",  slug: "snowmobile",       emoji: "🏂", count: 1  },
   { name: "Spa Day",           slug: "spa",              emoji: "💆", count: 3  },
@@ -405,25 +404,26 @@ export default function Home() {
           {/* Slider */}
           <div
             ref={sliderRef}
-            className="overflow-x-auto pb-4"
+            className="overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar flex"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             onMouseEnter={() => { isPausedRef.current = true }}
             onMouseLeave={() => { isPausedRef.current = false }}
             onScroll={(e) => {
-              setActiveDot(Math.round(e.currentTarget.scrollLeft / CARD_STRIDE))
+              const el = e.currentTarget
+              setActiveDot(Math.round(el.scrollLeft / (el.scrollWidth / AIRBNB_LISTINGS.length)))
             }}
           >
-            <div className="flex gap-6 px-6" style={{ width: 'max-content' }}>
+            <div className="flex gap-6 px-6 md:px-[calc((100vw-80rem)/2+1.5rem)]">
               {AIRBNB_LISTINGS.map(({ id, label, params }) => {
                 const href = `https://www.airbnb.com/rooms/${id}?${params}`
                 return (
                   <div
                     key={id}
-                    className="airbnb-embed-frame flex-shrink-0"
+                    className="airbnb-embed-frame flex-shrink-0 snap-center"
                     data-id={id}
                     data-view="home"
                     data-hide-price="true"
-                    style={{ width: `${CARD_W}px`, height: '270px', margin: '0' }}
+                    style={{ width: 'min(85vw, 280px)', height: '270px', margin: '0' }}
                   >
                     <a href={href}>View On Airbnb</a>
                     <a href={href} rel="nofollow">{label}</a>
@@ -477,7 +477,7 @@ export default function Home() {
               </h2>
               <p className="text-gray-400 text-lg">What visitors are looking for most</p>
             </div>
-            <div className="grid grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
               {[
                 { title: "Grocery Markets",     href: "/listings?category=grocery",         img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80",  alt: "Grocery markets near Killington" },
                 { title: "Ski Shops & Rentals", href: "/listings?category=ski-shops",       img: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80",  alt: "Ski shops near Killington" },
@@ -518,12 +518,12 @@ export default function Home() {
           </div>
           <div
             ref={dealsRef}
-            className="flex gap-5 overflow-x-auto pb-4"
+            className="flex gap-5 overflow-x-auto pb-10 snap-x snap-mandatory hide-scrollbar"
             onMouseEnter={() => { isPausedRef.current = true }}
             onMouseLeave={() => { isPausedRef.current = false }}
             style={{
               paddingLeft: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
-              paddingRight: '1.5rem',
+              paddingRight: 'max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem))',
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
             }}
@@ -534,7 +534,7 @@ export default function Home() {
                 href={deal.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 w-72 bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group"
+                className="flex-shrink-0 w-[min(80vw,18rem)] bg-white rounded-[2.5rem] shadow-sm border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group snap-center"
               >
                 <div className="w-full h-64 bg-gray-50/50 flex items-center justify-center p-8 overflow-hidden relative">
                    {/* Background brand accent */}

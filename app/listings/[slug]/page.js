@@ -109,13 +109,13 @@ export default async function ListingDetailPage({ params }) {
             </div>
 
             {img && (
-              <div className="w-48 lg:w-64 flex-shrink-0 z-10 relative mt-6 md:mt-0">
-                <div className="bg-brand-navy/60 p-1 rounded-2xl shadow-2xl backdrop-blur-sm">
-                  <div className="aspect-[4/3] rounded-xl overflow-hidden bg-white flex items-center justify-center relative">
+              <div className="w-full max-w-lg md:w-[400px] flex-shrink-0 z-10 relative mt-10 md:mt-0">
+                <div className="bg-white/10 p-2 rounded-[2rem] shadow-2xl backdrop-blur-md border border-white/20 transform hover:scale-[1.02] transition-all duration-500">
+                  <div className="rounded-[1.5rem] overflow-hidden bg-white/5 shadow-inner">
                     <img
                       src={img}
                       alt={listing.name}
-                      className="absolute inset-0 w-full h-full object-contain"
+                      className="w-full h-auto object-cover display-block"
                     />
                   </div>
                 </div>

@@ -1,6 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import Link from 'next/link'
+
+export const metadata = {
+  title: 'Contact Us | Killington Getaway',
+  description: 'Have questions or want to update a listing? Reach out to our local Killington experts.',
+}
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -12,9 +17,25 @@ export default function ContactPage() {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSubmitted(true)
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        alert('Something went wrong. Please try again or email us directly.')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Network error. Please try again later.')
+    }
   }
 
   return (

@@ -12,7 +12,7 @@ export default function LiftTicketsPage() {
       <Hero 
         title="Lift Tickets & Passes" 
         subtitle="Secure your access to the Beast of the East."
-        image="/images/hero/killington-mountains.png" 
+        image="/images/hero/lift-tickets-hero.jpg" 
       />
 
       <section className="py-24 px-6">

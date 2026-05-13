@@ -14,7 +14,7 @@ const CATEGORIES = [
   { name: "Hiking Trails",     slug: "hiking",           emoji: "🥾" },
   { name: "Golf Courses",      slug: "golf",             emoji: "⛳" },
   { name: "Lodging Options",   slug: "lodging-options",  emoji: "🏠" },
-  { name: "Adventure",         slug: "adventure",        emoji: "🧗" },
+  { name: "Adventure Experience", slug: "adventure",        emoji: "🧗" },
   { name: "Places to Drink",   slug: "places-to-drink",  emoji: "🥂" },
   { name: "Waterfalls",        slug: "waterfalls",       emoji: "💧" },
   { name: "Farm Visits",       slug: "farm-visits",      emoji: "🌾" },
@@ -23,7 +23,6 @@ const CATEGORIES = [
   { name: "Cheese Shops",      slug: "cheese",           emoji: "🧀" },
   { name: "Covered Bridges",   slug: "bridges",          emoji: "🌉" },
   { name: "Bakery & Cafes",    slug: "cafe",             emoji: "☕" },
-  { name: "Ski Clubs",         slug: "ski-clubs",        emoji: "🏔️" },
   { name: "Rock Climbing",     slug: "climbing",         emoji: "🪨" },
   { name: "Snowmobile Tours",  slug: "snowmobile",       emoji: "🏂" },
   { name: "Spa Day",           slug: "spa",              emoji: "💆" },
@@ -40,7 +39,7 @@ const CAT_MAP = {
   'hiking': 'hiking',
   'golf': 'golf',
   'lodging options': 'lodging-options',
-  'adventure': 'adventure',
+  'adventure experience': 'adventure',
   'places to drink': 'places-to-drink',
   'waterfalls': 'waterfalls',
   'farm visits': 'farm-visits',
@@ -49,7 +48,6 @@ const CAT_MAP = {
   'cheese shops': 'cheese',
   'covered bridges': 'bridges',
   'bakery & cafes': 'cafe',
-  'ski clubs': 'ski-clubs',
   'rock climbing': 'climbing',
   'snowmobile tours': 'snowmobile',
   'spa day': 'spa',
@@ -389,13 +387,21 @@ function ListingsPageInner() {
                             <span className="text-5xl opacity-40">🏔️</span>
                           </div>
                         )}
-                        {listing.categories?.[0] && (
-                          <div className="absolute top-5 left-5">
-                            <span className="bg-white/90 backdrop-blur-md text-brand-navy text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
-                              {listing.categories[0]}
-                            </span>
-                          </div>
-                        )}
+                        {(() => {
+                          // Show the category that matches the active filter if possible
+                          let displayCategory = listing.categories?.[0]
+                          if (activeCategory !== 'all') {
+                            const match = listing.categories?.find(c => CAT_MAP[c.toLowerCase()] === activeCategory)
+                            if (match) displayCategory = match
+                          }
+                          return displayCategory && (
+                            <div className="absolute top-5 left-5">
+                              <span className="bg-white/90 backdrop-blur-md text-brand-navy text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+                                {displayCategory}
+                              </span>
+                            </div>
+                          )
+                        })()}
                         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                       </div>
                       <div className="p-8 flex flex-col flex-1">
