@@ -44,6 +44,9 @@ const NAV_LEFT = [
       { label: 'Ski Shops',  href: '/listings?category=ski-shops' },
     ],
   },
+]
+
+const NAV_RIGHT = [
   {
     label: 'Our Story',
     dropdown: [
@@ -52,9 +55,6 @@ const NAV_LEFT = [
       { label: 'Giving Back',    href: '/giving-back' },
     ],
   },
-]
-
-const NAV_RIGHT = [
   { label: 'Blog',               href: '/blog' },
   { label: 'Swag',               href: 'https://skitheeast.net/' },
   { label: 'Best Gear For 2026', href: '/gear' },
