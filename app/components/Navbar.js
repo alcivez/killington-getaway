@@ -162,33 +162,36 @@ export default function Navbar() {
       <header className="bg-white sticky top-0 z-50 shadow-sm transition-all duration-300">
         {/* ── Main nav row ── */}
         <div className="border-b border-gray-100 relative bg-white">
-          <div className="max-w-screen-xl mx-auto px-5 h-20 md:h-24 flex items-center justify-between">
+          <div className="max-w-screen-xl mx-auto px-5 h-20 md:h-24 flex items-center relative">
             
             {/* Left Nav Group */}
-            <div className="hidden lg:flex items-center gap-1 lg:gap-4 flex-1 justify-start">
-              {NAV_LEFT.map((item, idx) => (
+            <div className="hidden lg:flex items-center gap-1 lg:gap-2 flex-1 justify-start">
+              {NAV_LEFT.map((item) => (
                 <div key={item.label} className={item.label === 'Food' ? 'hidden xl:block' : ''}>
                   <DesktopItem item={item} />
                 </div>
               ))}
             </div>
 
-            {/* Logo Center - with Sacred Padding */}
-            <div className="flex-shrink-0 px-10 lg:px-20 z-10 flex justify-center">
-              <Link href="/" className="transition-transform hover:scale-105 active:scale-95">
-                <img 
-                  src="/logo-color.png" 
-                  alt="Killington Getaway" 
-                  className="h-10 md:h-12 lg:h-[68px] object-contain"
-                />
-              </Link>
+            {/* Logo Center - Absolute Centered with Sacred Padding */}
+            <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center z-10 pointer-events-none">
+              {/* Invisible spacer to enforce sacred padding around logo */}
+              <div className="flex items-center justify-center px-12 lg:px-16 pointer-events-auto">
+                <Link href="/" className="transition-transform hover:scale-105 active:scale-95">
+                  <img 
+                    src="/logo-color.png" 
+                    alt="Killington Getaway" 
+                    className="h-10 md:h-12 lg:h-[65px] object-contain"
+                  />
+                </Link>
+              </div>
             </div>
 
             {/* Right Nav Group + Weather + Search */}
-            <div className="flex items-center gap-2 lg:gap-4 flex-1 justify-end">
+            <div className="flex items-center gap-1 lg:gap-2 flex-1 justify-end">
               
               {/* Desktop Nav Items */}
-              <div className="hidden lg:flex items-center gap-1 lg:gap-4">
+              <div className="hidden lg:flex items-center gap-1 lg:gap-2">
                 {NAV_RIGHT.map((item) => (
                   <div key={item.label} className={item.label === 'Swag' ? 'hidden xl:block' : ''}>
                     <DesktopItem item={item} />
@@ -196,33 +199,33 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Weather Stats (Desktop) */}
-              <div className="hidden lg:flex items-center gap-3 bg-gray-50/50 hover:bg-gray-50 px-4 py-2 rounded-full border border-gray-100 transition-all shadow-sm">
+              {/* Weather Stats (Desktop) - Smaller for better fit */}
+              <div className="hidden lg:flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 transition-all shadow-sm">
                 {!loading && weather ? (
                   <>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-base">🏔️</span>
-                      <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm">🏔️</span>
+                      <span className="text-[9px] font-black text-brand-navy tracking-tight uppercase leading-none">
                         {weather.temp}°F
                       </span>
                     </div>
-                    <div className="w-[1px] h-3 bg-gray-200" />
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-base">❄️</span>
-                      <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
+                    <div className="w-[1px] h-2.5 bg-gray-200" />
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm">❄️</span>
+                      <span className="text-[9px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
                         {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
                       </span>
                     </div>
                   </>
                 ) : (
-                  <div className="w-24 h-4 bg-gray-100 animate-pulse rounded" />
+                  <div className="w-16 h-3 bg-gray-100 animate-pulse rounded" />
                 )}
               </div>
 
               {/* Search Toggle */}
               <button
                 onClick={() => setSearchOpen((s) => !s)}
-                className={`p-2 rounded-xl transition-all ${searchOpen ? 'bg-brand-blue text-white shadow-lg' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
+                className={`p-2 rounded-lg transition-all ${searchOpen ? 'bg-brand-blue text-white shadow-lg' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
                 aria-label="Search"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
