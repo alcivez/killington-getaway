@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { useWeather } from '../hooks/useWeather'
 
 const NAV_LEFT = [
   {
@@ -143,6 +144,7 @@ function DesktopItem({ item }) {
 }
 
 export default function Navbar() {
+  const { weather, loading } = useWeather()
   const [mobileOpen, setMobileOpen]  = useState(false)
   const [searchOpen, setSearchOpen]  = useState(false)
   const [openMobile, setOpenMobile]  = useState(null)
@@ -181,21 +183,24 @@ export default function Navbar() {
             <img src="/logo-color.png" alt="Killington Getaway" className="h-10 md:h-12" />
           </Link>
 
-          {/* Mobile Middle Section (NEW OPTIONS) */}
-          <div className="lg:hidden flex-1 flex justify-center items-center px-4">
-            {/* Option A: Weather Placeholder */}
-            <div className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 shadow-sm">
-              <span className="text-lg">🏔️</span>
-              <span className="text-[10px] font-black text-brand-navy tracking-tighter uppercase leading-none">24°F</span>
-            </div>
-            
-            {/* 
-              Option B: "Book" CTA
-              <button className="bg-brand-blue text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">Book</button>
-              
-              Option C: Search Icon
-              <button onClick={() => setSearchOpen(true)} className="p-2 text-gray-400"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 21l-4.35-4.35M11 11a8 8 0 110-16 8 8 0 010 16z"/></svg></button>
-            */}
+          {/* Mobile Middle Section (Synced Weather) */}
+          <div className="lg:hidden flex-1 flex justify-center items-center px-2">
+            {!loading && weather && (
+              <div className="flex items-center gap-3 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-1">
+                  <span className="text-sm">🏔️</span>
+                  <span className="text-[10px] font-black text-brand-navy tracking-tighter uppercase leading-none">{weather.temp}°F</span>
+                </div>
+                <div className="w-[1px] h-3 bg-gray-200" />
+                <div className="flex items-center gap-1">
+                  <span className="text-sm">❄️</span>
+                  <span className="text-[10px] font-black text-brand-navy tracking-tighter uppercase leading-none">{weather.snowDepth}"</span>
+                </div>
+              </div>
+            )}
+            {loading && (
+              <div className="w-24 h-8 bg-gray-50 animate-pulse rounded-full" />
+            )}
           </div>
 
           {/* Right nav group (hugs the logo) */}

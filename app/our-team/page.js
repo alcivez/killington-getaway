@@ -63,21 +63,22 @@ export default function OurTeamPage() {
         <div className="max-w-6xl mx-auto">
           {/* Team Slider Card */}
           <div className="relative group mb-12">
-            <div className="bg-white rounded-[3rem] shadow-premium border border-gray-100 overflow-hidden transition-all duration-700">
+            <div className="bg-white rounded-[3rem] shadow-premium border border-gray-100 overflow-hidden transition-all duration-700 h-[750px] md:h-[600px]">
               <div className="flex flex-col md:flex-row h-full">
                 {/* Photo Side */}
-                <div className="w-full md:w-1/2 h-[400px] md:h-[600px] relative overflow-hidden">
-                  <img
-                    key={activeMember.name}
-                    src={activeMember.img}
-                    alt={activeMember.name}
-                    className="w-full h-full object-cover animate-fade-in transition-transform duration-[2000ms] group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 to-transparent md:hidden" />
+                <div className="w-full md:w-[35%] relative bg-gray-50 flex items-center justify-center p-8 md:p-12 h-[300px] md:h-full">
+                  <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden shadow-inner border-8 border-white">
+                    <img
+                      key={activeMember.name}
+                      src={activeMember.img}
+                      alt={activeMember.name}
+                      className="w-full h-full object-cover animate-fade-in transition-transform duration-[2000ms] group-hover:scale-105"
+                    />
+                  </div>
                 </div>
 
                 {/* Content Side */}
-                <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                <div className="w-full md:w-[65%] p-10 md:p-16 flex flex-col justify-center">
                   <div className="inline-flex items-center gap-3 mb-6">
                     <span className="w-8 h-[2px] bg-brand-green" />
                     <p className="uppercase tracking-[0.3em] text-xs font-black text-brand-navy/40">Team Member</p>
