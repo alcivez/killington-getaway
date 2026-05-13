@@ -222,6 +222,30 @@ export default function Navbar() {
             {NAV_RIGHT.map((item) => (
               <DesktopItem key={item.label} item={item} />
             ))}
+            
+            {/* Desktop Weather (Synced) */}
+            <div className="ml-4 flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 transition-colors">
+              {!loading && weather ? (
+                <>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm">🏔️</span>
+                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
+                      {weather.temp}°F
+                    </span>
+                  </div>
+                  <div className="w-[1px] h-3 bg-gray-200" />
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm">❄️</span>
+                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
+                      {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <div className="w-20 h-3 bg-gray-100 animate-pulse rounded" />
+              )}
+            </div>
+
             {/* Search */}
             <button
               onClick={() => setSearchOpen((s) => !s)}
