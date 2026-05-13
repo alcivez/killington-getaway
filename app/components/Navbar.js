@@ -150,9 +150,9 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Top tagline (Non-sticky) ── */}
-      <div className="hidden md:block border-b border-gray-100 py-3 text-center bg-brand-navy">
-        <p className="font-black uppercase text-white tracking-[0.2em] text-xs md:text-sm">
+      {/* ── Top tagline (Visible on all devices now) ── */}
+      <div className="border-b border-gray-100 py-2 text-center bg-brand-navy">
+        <p className="font-black uppercase text-white tracking-[0.2em] text-[10px] md:text-sm">
           Discover the Best of Killington, Vermont
         </p>
       </div>
@@ -160,7 +160,7 @@ export default function Navbar() {
       <header className="bg-white sticky top-0 z-50 shadow-sm">
         {/* ── Main nav row ── */}
         <div className="border-b border-gray-100 relative">
-          <div className="max-w-screen-xl mx-auto px-5 flex items-center h-24">
+          <div className="max-w-screen-xl mx-auto px-5 flex items-center h-20 md:h-24">
 
           {/* Left nav group (hugs the logo) */}
           <div className="hidden lg:flex items-center flex-1 justify-end pr-12 gap-1 lg:gap-2">
@@ -178,8 +178,25 @@ export default function Navbar() {
 
           {/* Mobile: logo left-aligned */}
           <Link href="/" className="lg:hidden flex-shrink-0">
-            <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '48px' }} />
+            <img src="/logo-color.png" alt="Killington Getaway" className="h-10 md:h-12" />
           </Link>
+
+          {/* Mobile Middle Section (NEW OPTIONS) */}
+          <div className="lg:hidden flex-1 flex justify-center items-center px-4">
+            {/* Option A: Weather Placeholder */}
+            <div className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 shadow-sm">
+              <span className="text-lg">🏔️</span>
+              <span className="text-[10px] font-black text-brand-navy tracking-tighter uppercase leading-none">24°F</span>
+            </div>
+            
+            {/* 
+              Option B: "Book" CTA
+              <button className="bg-brand-blue text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest shadow-lg">Book</button>
+              
+              Option C: Search Icon
+              <button onClick={() => setSearchOpen(true)} className="p-2 text-gray-400"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 21l-4.35-4.35M11 11a8 8 0 110-16 8 8 0 010 16z"/></svg></button>
+            */}
+          </div>
 
           {/* Right nav group (hugs the logo) */}
           <div className="hidden lg:flex items-center flex-1 justify-start pl-12 gap-1 lg:gap-2">
@@ -201,7 +218,7 @@ export default function Navbar() {
 
           {/* Mobile: hamburger */}
           <button
-            className="lg:hidden ml-auto p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label="Toggle menu"
           >
