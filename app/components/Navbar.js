@@ -162,78 +162,67 @@ export default function Navbar() {
       <header className="bg-white sticky top-0 z-50 shadow-sm transition-all duration-300">
         {/* ── Main nav row ── */}
         <div className="border-b border-gray-100 relative bg-white">
-          <div className="max-w-screen-xl mx-auto px-5 h-20 md:h-24 grid grid-cols-2 lg:grid-cols-3 items-center">
+          <div className="max-w-screen-xl mx-auto px-5 h-20 md:h-24 flex items-center justify-between">
             
-            {/* 1. Left Section (Desktop) */}
-            <div className="hidden lg:flex items-center justify-start gap-1 lg:gap-2">
-              {NAV_LEFT.map((item) => (
-                <DesktopItem key={item.label} item={item} />
+            {/* Left Nav Group */}
+            <div className="hidden lg:flex items-center gap-1 lg:gap-4 flex-1 justify-start">
+              {NAV_LEFT.map((item, idx) => (
+                <div key={item.label} className={item.label === 'Food' ? 'hidden xl:block' : ''}>
+                  <DesktopItem item={item} />
+                </div>
               ))}
             </div>
 
-            {/* 2. Center Section (Logo) */}
-            <div className="flex justify-start lg:justify-center items-center z-10">
-              <Link href="/" className="flex-shrink-0 transition-transform hover:scale-105 active:scale-95">
+            {/* Logo Center - with Sacred Padding */}
+            <div className="flex-shrink-0 px-10 lg:px-20 z-10 flex justify-center">
+              <Link href="/" className="transition-transform hover:scale-105 active:scale-95">
                 <img 
                   src="/logo-color.png" 
                   alt="Killington Getaway" 
-                  className="h-10 md:h-12 lg:h-[63px] object-contain"
+                  className="h-10 md:h-12 lg:h-[68px] object-contain"
                 />
               </Link>
             </div>
 
-            {/* 3. Right Section (Desktop + Mobile Toggle) */}
-            <div className="flex items-center justify-end gap-2 lg:gap-3">
+            {/* Right Nav Group + Weather + Search */}
+            <div className="flex items-center gap-2 lg:gap-4 flex-1 justify-end">
               
-              {/* Mobile Weather (Synced) */}
-              <div className="lg:hidden flex items-center bg-gray-50/80 px-2.5 py-1.5 rounded-full border border-gray-100 shadow-sm overflow-hidden max-w-[140px]">
-                {!loading && weather ? (
-                  <div className="flex items-center gap-1.5 animate-fade-in whitespace-nowrap">
-                    <span className="text-xs font-black text-brand-navy tracking-tight">{weather.temp}°F</span>
-                    <div className="w-[1px] h-3 bg-gray-200" />
-                    <span className="text-[9px] font-black text-brand-navy tracking-tight uppercase leading-none">
-                      {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
-                    </span>
-                  </div>
-                ) : (
-                  <div className="w-12 h-2.5 bg-gray-200 animate-pulse rounded" />
-                )}
-              </div>
-
               {/* Desktop Nav Items */}
-              <div className="hidden lg:flex items-center gap-1 lg:gap-2 mr-2">
+              <div className="hidden lg:flex items-center gap-1 lg:gap-4">
                 {NAV_RIGHT.map((item) => (
-                  <DesktopItem key={item.label} item={item} />
+                  <div key={item.label} className={item.label === 'Swag' ? 'hidden xl:block' : ''}>
+                    <DesktopItem item={item} />
+                  </div>
                 ))}
               </div>
 
-              {/* Desktop Weather (Synced) */}
-              <div className="hidden lg:flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3.5 py-2 rounded-full border border-gray-100 transition-all shadow-sm group/weather">
+              {/* Weather Stats (Desktop) */}
+              <div className="hidden lg:flex items-center gap-3 bg-gray-50/50 hover:bg-gray-50 px-4 py-2 rounded-full border border-gray-100 transition-all shadow-sm">
                 {!loading && weather ? (
                   <>
                     <div className="flex items-center gap-1.5">
-                      <span className="text-sm transform group-hover/weather:scale-110 transition-transform">🏔️</span>
+                      <span className="text-base">🏔️</span>
                       <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
                         {weather.temp}°F
                       </span>
                     </div>
                     <div className="w-[1px] h-3 bg-gray-200" />
                     <div className="flex items-center gap-1.5">
-                      <span className="text-sm transform group-hover/weather:scale-110 transition-transform">❄️</span>
+                      <span className="text-base">❄️</span>
                       <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
                         {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
                       </span>
                     </div>
                   </>
                 ) : (
-                  <div className="w-20 h-3 bg-gray-100 animate-pulse rounded" />
+                  <div className="w-24 h-4 bg-gray-100 animate-pulse rounded" />
                 )}
               </div>
 
               {/* Search Toggle */}
               <button
                 onClick={() => setSearchOpen((s) => !s)}
-                className={`p-2.5 rounded-xl transition-all duration-300 ${searchOpen ? 'bg-brand-blue text-white shadow-lg scale-110' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
+                className={`p-2 rounded-xl transition-all ${searchOpen ? 'bg-brand-blue text-white shadow-lg' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
                 aria-label="Search"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -242,21 +231,33 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              {/* Mobile Hamburger */}
-              <button
-                className="lg:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
-                onClick={() => setMobileOpen((o) => !o)}
-                aria-label="Toggle menu"
-              >
-                {mobileOpen ? (
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+              {/* Mobile Weather (Synced) */}
+              <div className="lg:hidden flex items-center bg-gray-50/80 px-2.5 py-1.5 rounded-full border border-gray-100 shadow-sm max-w-[130px]">
+                {!loading && weather ? (
+                  <div className="flex items-center gap-1.5 whitespace-nowrap">
+                    <span className="text-[10px] font-black text-brand-navy">{weather.temp}°F</span>
+                    <div className="w-[1px] h-3 bg-gray-200" />
+                    <span className="text-[9px] font-black text-brand-navy uppercase">
+                      {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
+                    </span>
+                  </div>
                 ) : (
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
+                  <div className="w-12 h-3 bg-gray-200 animate-pulse rounded" />
                 )}
+              </div>
+
+              {/* Burger Menu */}
+              <button
+                className="lg:hidden p-2 text-gray-600"
+                onClick={() => setMobileOpen((o) => !o)}
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  {mobileOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
               </button>
 
             </div>
