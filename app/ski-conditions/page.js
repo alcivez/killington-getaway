@@ -22,6 +22,7 @@ export default function SkiConditionsPage() {
       <Hero 
         title="Ski Conditions" 
         subtitle="Real-time weather, snowfall, and mountain conditions for Killington Resort — before you pack the car."
+        image="/images/hero/ski-conditions-hero.png"
       />
 
       {/* Seasonal Disclaimer */}

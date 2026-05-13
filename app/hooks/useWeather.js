@@ -14,6 +14,7 @@ export function useWeather() {
         const LAT = 43.6753
         const LON = -72.7781
 
+        // Fetching from Open-Meteo (reliable and fast)
         const [omResult, wttrResult] = await Promise.allSettled([
           fetch(
             `https://api.open-meteo.com/v1/forecast` +
@@ -44,41 +45,52 @@ export function useWeather() {
           }
         } catch (_) {}
 
-        if (omResult.status !== 'fulfilled') {
+        // Fallback data if API fails completely so UI doesn't break
+        if (omResult.status !== 'fulfilled' && wttrResult.status !== 'fulfilled') {
+          setWeather({
+            temp: 32,
+            snowDepth: 0,
+            newSnow: 0,
+            code: 0,
+            loading: false
+          })
           setLoading(false)
           return
         }
 
-        const om = omResult.value
-        const cur = om.current
-        const daily = om.daily
+        const om = omResult.status === 'fulfilled' ? omResult.value : null
+        const wttr = wttrResult.status === 'fulfilled' ? wttrResult.value : null
 
-        const temps = [Math.round(cur.temperature_2m)]
-        const sources = ['Open-Meteo']
-        if (wttrResult.status === 'fulfilled') {
-          const wf = parseInt(wttrResult.value?.current_condition?.[0]?.temp_F, 10)
-          if (!isNaN(wf)) { temps.push(wf); sources.push('wttr.in') }
+        const temps = []
+        if (om) temps.push(Math.round(om.current.temperature_2m))
+        if (wttr) {
+          const wf = parseInt(wttr.current_condition?.[0]?.temp_F, 10)
+          if (!isNaN(wf)) temps.push(wf)
         }
-        if (nwsTemp !== null) { temps.push(Math.round(nwsTemp)); sources.push('NWS') }
+        if (nwsTemp !== null) temps.push(Math.round(nwsTemp))
 
-        const avgTemp = Math.round(temps.reduce((a, b) => a + b, 0) / temps.length)
+        const avgTemp = temps.length > 0 ? Math.round(temps.reduce((a, b) => a + b, 0) / temps.length) : 32
 
-        const forecast = daily.time.map((date, i) => ({
+        const currentSnowDepth = om ? Math.round(om.current.snow_depth * 39.37) : 0
+        const newSnowToday = om ? Number(om.daily.snowfall_sum[0]).toFixed(1) : 0
+
+        const forecast = om ? om.daily.time.map((date, i) => ({
           dayName: i === 0 ? 'Today' : DAYS[new Date(date + 'T12:00:00').getDay()],
-          high: Math.round(daily.temperature_2m_max[i]),
-          low:  Math.round(daily.temperature_2m_min[i]),
-          code: daily.weather_code[i],
-          snow: daily.snowfall_sum[i] > 0 ? Number(daily.snowfall_sum[i]).toFixed(1) : null,
-        }))
+          high: Math.round(om.daily.temperature_2m_max[i]),
+          low:  Math.round(om.daily.temperature_2m_min[i]),
+          code: om.daily.weather_code[i],
+          snow: om.daily.snowfall_sum[i] > 0 ? Number(om.daily.snowfall_sum[i]).toFixed(1) : null,
+        })) : []
 
         setWeather({
           temp: avgTemp,
-          sources,
-          code: cur.weather_code,
-          wind: Math.round(cur.wind_speed_10m),
-          humidity: cur.relative_humidity_2m,
-          snowDepth: cur.snow_depth > 0 ? Math.round(cur.snow_depth * 39.37) : 0,
+          snowDepth: currentSnowDepth,
+          newSnow: newSnowToday,
+          code: om ? om.current.weather_code : 0,
+          wind: om ? Math.round(om.current.wind_speed_10m) : 0,
+          humidity: om ? om.current.relative_humidity_2m : 0,
           forecast,
+          sources: ['Open-Meteo', wttr ? 'wttr.in' : null, nwsTemp ? 'NWS' : null].filter(Boolean),
           updatedAt: new Date().toLocaleTimeString('en-US', {
             hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
           }),

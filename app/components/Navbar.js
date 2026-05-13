@@ -184,23 +184,37 @@ export default function Navbar() {
           </Link>
 
           {/* Mobile Middle Section (Synced Weather) */}
-          <div className="lg:hidden flex-1 flex justify-center items-center px-2">
-            {!loading && weather && (
-              <div className="flex items-center gap-3 bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 shadow-sm">
-                <div className="flex items-center gap-1">
-                  <span className="text-sm">🏔️</span>
-                  <span className="text-[10px] font-black text-brand-navy tracking-tighter uppercase leading-none">{weather.temp}°F</span>
+          <div className="lg:hidden flex-1 flex justify-center items-center px-2 min-w-0 overflow-hidden">
+            <div className="flex items-center gap-2 bg-gray-50/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gray-100 shadow-sm max-w-full">
+              {!loading && weather ? (
+                <div className="flex items-center gap-2 transition-opacity duration-300">
+                  {/* Temp */}
+                  <div className="flex items-center gap-1">
+                    <span className="text-base">🏔️</span>
+                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
+                      {weather.temp}°F
+                    </span>
+                  </div>
+                  
+                  <div className="w-[1px] h-3 bg-gray-200" />
+                  
+                  {/* Snow */}
+                  <div className="flex items-center gap-1">
+                    <span className="text-base">❄️</span>
+                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
+                      {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
+                    </span>
+                  </div>
                 </div>
-                <div className="w-[1px] h-3 bg-gray-200" />
-                <div className="flex items-center gap-1">
-                  <span className="text-sm">❄️</span>
-                  <span className="text-[10px] font-black text-brand-navy tracking-tighter uppercase leading-none">{weather.snowDepth}"</span>
+              ) : (
+                /* Compact Skeleton */
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-3 bg-gray-200 animate-pulse rounded" />
+                  <div className="w-[1px] h-3 bg-gray-200" />
+                  <div className="w-12 h-3 bg-gray-200 animate-pulse rounded" />
                 </div>
-              </div>
-            )}
-            {loading && (
-              <div className="w-24 h-8 bg-gray-50 animate-pulse rounded-full" />
-            )}
+              )}
+            </div>
           </div>
 
           {/* Right nav group (hugs the logo) */}

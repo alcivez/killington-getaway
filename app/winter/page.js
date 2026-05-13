@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Hero from '../components/Hero'
 
 const WINTER_ACTIVITIES = [
   {
@@ -108,23 +109,21 @@ export default function WinterPage() {
     <main className="min-h-screen bg-white font-body">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-[550px] flex items-end overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1600&q=80"
-          alt="Killington winter skiing"
-          className="absolute inset-0 w-full h-full object-cover scale-105 animate-slow-zoom"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-20 w-full">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="w-8 h-[2px] bg-brand-green" />
-            <p className="uppercase tracking-[0.3em] text-xs font-black text-white/60">November – April</p>
+      <Hero 
+        title="Winter in Killington"
+        subtitle="The Beast of the East delivers the longest ski season in the East — plus snowmobiling, dog sledding, a legendary après scene, and world-class racing."
+        image="/images/hero/winter-activities-hero.png"
+      />
+
+      {/* Hero Stats */}
+      <div className="relative z-20 -mt-12 max-w-6xl mx-auto px-6">
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 inline-flex items-center gap-8">
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+            <p className="uppercase tracking-[0.3em] text-[10px] font-black text-brand-navy/60">November – April</p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tight mb-6">Winter in <span className="text-brand-green">Killington</span></h1>
-          <p className="text-white/80 text-xl font-medium max-w-2xl leading-relaxed">The Beast of the East delivers the longest ski season in the East — plus snowmobiling, dog sledding, a legendary après scene, and world-class racing.</p>
         </div>
-      </section>
+      </div>
 
       {/* Stats bar */}
       <section className="bg-white border-b border-gray-100 py-12 px-6">
