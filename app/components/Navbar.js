@@ -44,9 +44,6 @@ const NAV_LEFT = [
       { label: 'Ski Shops',  href: '/listings?category=ski-shops' },
     ],
   },
-]
-
-const NAV_RIGHT = [
   {
     label: 'Our Story',
     dropdown: [
@@ -55,6 +52,9 @@ const NAV_RIGHT = [
       { label: 'Giving Back',    href: '/giving-back' },
     ],
   },
+]
+
+const NAV_RIGHT = [
   { label: 'Blog',               href: '/blog' },
   { label: 'Swag',               href: 'https://skitheeast.net/' },
   { label: 'Best Gear For 2026', href: '/gear' },
@@ -159,150 +159,140 @@ export default function Navbar() {
         </p>
       </div>
 
-      <header className="bg-white sticky top-0 z-50 shadow-sm">
+      <header className="bg-white sticky top-0 z-50 shadow-sm transition-all duration-300">
         {/* ── Main nav row ── */}
-        <div className="border-b border-gray-100 relative">
-          <div className="max-w-screen-xl mx-auto px-5 flex items-center h-20 md:h-24">
-
-          {/* Left nav group (hugs the logo) */}
-          <div className="hidden lg:flex items-center flex-1 justify-end pr-12 gap-1 lg:gap-2">
-            {NAV_LEFT.map((item) => (
-              <DesktopItem key={item.label} item={item} />
-            ))}
-          </div>
-
-          {/* Center logo — absolute on desktop so it's truly centered */}
-          <div className="absolute left-1/2 -translate-x-1/2 hidden lg:block z-10">
-            <Link href="/">
-              <img src="/logo-color.png" alt="Killington Getaway" style={{ height: '63px' }} />
-            </Link>
-          </div>
-
-          {/* Mobile: logo left-aligned */}
-          <Link href="/" className="lg:hidden flex-shrink-0">
-            <img src="/logo-color.png" alt="Killington Getaway" className="h-10 md:h-12" />
-          </Link>
-
-          {/* Mobile Middle Section (Synced Weather) */}
-          <div className="lg:hidden flex-1 flex justify-center items-center px-2 min-w-0 overflow-hidden">
-            <div className="flex items-center gap-2 bg-gray-50/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gray-100 shadow-sm max-w-full">
-              {!loading && weather ? (
-                <div className="flex items-center gap-2 transition-opacity duration-300">
-                  {/* Temp */}
-                  <div className="flex items-center gap-1">
-                    <span className="text-base">🏔️</span>
-                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
-                      {weather.temp}°F
-                    </span>
-                  </div>
-                  
-                  <div className="w-[1px] h-3 bg-gray-200" />
-                  
-                  {/* Snow */}
-                  <div className="flex items-center gap-1">
-                    <span className="text-base">❄️</span>
-                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
-                      {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
-                    </span>
-                  </div>
-                </div>
-              ) : (
-                /* Compact Skeleton */
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-3 bg-gray-200 animate-pulse rounded" />
-                  <div className="w-[1px] h-3 bg-gray-200" />
-                  <div className="w-12 h-3 bg-gray-200 animate-pulse rounded" />
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Right nav group (hugs the logo) */}
-          <div className="hidden lg:flex items-center flex-1 justify-start pl-12 gap-1 lg:gap-2">
-            {NAV_RIGHT.map((item) => (
-              <DesktopItem key={item.label} item={item} />
-            ))}
+        <div className="border-b border-gray-100 relative bg-white">
+          <div className="max-w-screen-xl mx-auto px-5 h-20 md:h-24 grid grid-cols-2 lg:grid-cols-3 items-center">
             
-            {/* Desktop Weather (Synced) */}
-            <div className="ml-4 flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3 py-1.5 rounded-full border border-gray-100 transition-colors">
-              {!loading && weather ? (
-                <>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm">🏔️</span>
-                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
-                      {weather.temp}°F
-                    </span>
-                  </div>
-                  <div className="w-[1px] h-3 bg-gray-200" />
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-sm">❄️</span>
-                    <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
+            {/* 1. Left Section (Desktop) */}
+            <div className="hidden lg:flex items-center justify-start gap-1 lg:gap-2">
+              {NAV_LEFT.map((item) => (
+                <DesktopItem key={item.label} item={item} />
+              ))}
+            </div>
+
+            {/* 2. Center Section (Logo) */}
+            <div className="flex justify-start lg:justify-center items-center z-10">
+              <Link href="/" className="flex-shrink-0 transition-transform hover:scale-105 active:scale-95">
+                <img 
+                  src="/logo-color.png" 
+                  alt="Killington Getaway" 
+                  className="h-10 md:h-12 lg:h-[63px] object-contain"
+                />
+              </Link>
+            </div>
+
+            {/* 3. Right Section (Desktop + Mobile Toggle) */}
+            <div className="flex items-center justify-end gap-2 lg:gap-3">
+              
+              {/* Mobile Weather (Synced) */}
+              <div className="lg:hidden flex items-center bg-gray-50/80 px-2.5 py-1.5 rounded-full border border-gray-100 shadow-sm overflow-hidden max-w-[140px]">
+                {!loading && weather ? (
+                  <div className="flex items-center gap-1.5 animate-fade-in whitespace-nowrap">
+                    <span className="text-xs font-black text-brand-navy tracking-tight">{weather.temp}°F</span>
+                    <div className="w-[1px] h-3 bg-gray-200" />
+                    <span className="text-[9px] font-black text-brand-navy tracking-tight uppercase leading-none">
                       {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
                     </span>
                   </div>
-                </>
-              ) : (
-                <div className="w-20 h-3 bg-gray-100 animate-pulse rounded" />
-              )}
+                ) : (
+                  <div className="w-12 h-2.5 bg-gray-200 animate-pulse rounded" />
+                )}
+              </div>
+
+              {/* Desktop Nav Items */}
+              <div className="hidden lg:flex items-center gap-1 lg:gap-2 mr-2">
+                {NAV_RIGHT.map((item) => (
+                  <DesktopItem key={item.label} item={item} />
+                ))}
+              </div>
+
+              {/* Desktop Weather (Synced) */}
+              <div className="hidden lg:flex items-center gap-2 bg-gray-50/50 hover:bg-gray-50 px-3.5 py-2 rounded-full border border-gray-100 transition-all shadow-sm group/weather">
+                {!loading && weather ? (
+                  <>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-sm transform group-hover/weather:scale-110 transition-transform">🏔️</span>
+                      <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none">
+                        {weather.temp}°F
+                      </span>
+                    </div>
+                    <div className="w-[1px] h-3 bg-gray-200" />
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-sm transform group-hover/weather:scale-110 transition-transform">❄️</span>
+                      <span className="text-[10px] font-black text-brand-navy tracking-tight uppercase leading-none whitespace-nowrap">
+                        {weather.newSnow > 0 ? `${weather.newSnow}" New` : `${weather.snowDepth}" Base`}
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="w-20 h-3 bg-gray-100 animate-pulse rounded" />
+                )}
+              </div>
+
+              {/* Search Toggle */}
+              <button
+                onClick={() => setSearchOpen((s) => !s)}
+                className={`p-2.5 rounded-xl transition-all duration-300 ${searchOpen ? 'bg-brand-blue text-white shadow-lg scale-110' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
+                aria-label="Search"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <circle cx="11" cy="11" r="8" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35" />
+                </svg>
+              </button>
+
+              {/* Mobile Hamburger */}
+              <button
+                className="lg:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
+                onClick={() => setMobileOpen((o) => !o)}
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
+              </button>
+
             </div>
-
-            {/* Search */}
-            <button
-              onClick={() => setSearchOpen((s) => !s)}
-              className="ml-2 p-2 text-gray-500 hover:text-gray-900 transition-colors"
-              aria-label="Search"
-            >
-              <svg className="w-4.5 h-4.5" style={{ width: '18px', height: '18px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <circle cx="11" cy="11" r="8" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35" />
-              </svg>
-            </button>
           </div>
-
-          {/* Mobile: hamburger */}
-          <button
-            className="lg:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
-            onClick={() => setMobileOpen((o) => !o)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-
         </div>
-      </div>
 
       {/* ── Search bar (expands below nav) ── */}
-      {searchOpen && (
-        <div className="border-b border-gray-100 bg-white px-6 py-3">
-          <div className="max-w-2xl mx-auto flex gap-3">
+      <div className={`overflow-hidden transition-all duration-500 ease-in-out border-b border-gray-100 bg-white shadow-inner ${searchOpen ? 'max-h-[100px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'}`}>
+        <div className="max-w-2xl mx-auto flex gap-4 px-6">
+          <div className="flex-1 relative group">
+            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-brand-blue transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <circle cx="11" cy="11" r="8" /><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35" />
+            </svg>
             <input
               autoFocus
               type="text"
               placeholder="Search listings, activities, places…"
-              className="flex-1 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#2d94e3] focus:ring-2 focus:ring-[#2d94e3]/20"
+              className="w-full bg-gray-50 border border-gray-100 rounded-xl pl-12 pr-6 py-3 text-sm focus:outline-none focus:border-brand-blue focus:ring-4 focus:ring-brand-blue/10 transition-all font-medium"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && e.target.value.trim()) {
                   window.location.href = `/listings?search=${encodeURIComponent(e.target.value.trim())}`
                 }
               }}
             />
-            <button
-              className="text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#2d94e3' }}
-            >
-              Search
-            </button>
           </div>
+          <button
+            onClick={(e) => {
+              const val = e.currentTarget.previousSibling.querySelector('input').value;
+              if (val.trim()) window.location.href = `/listings?search=${encodeURIComponent(val.trim())}`;
+            }}
+            className="text-white text-sm font-black px-8 py-3 rounded-xl hover:opacity-90 transition-opacity bg-brand-blue shadow-premium uppercase tracking-widest"
+          >
+            Search
+          </button>
         </div>
-      )}
+      </div>
 
       {/* ── Mobile menu ── */}
       {mobileOpen && (

@@ -189,10 +189,17 @@ function ListingsPageInner() {
   }, [searchParams])
 
   const filtered = allListings.filter((l) => {
+    const s = search.toLowerCase().trim()
     const matchCat = activeCategory === 'all' || getListingSlugs(l).includes(activeCategory)
-    const matchSearch = search === '' ||
-      l.name.toLowerCase().includes(search.toLowerCase()) ||
-      (l.address || '').toLowerCase().includes(search.toLowerCase())
+    
+    if (s === '') return matchCat
+
+    const matchSearch = 
+      l.name.toLowerCase().includes(s) ||
+      (l.address || '').toLowerCase().includes(s) ||
+      (l.description || '').toLowerCase().includes(s) ||
+      (l.categories || []).some(c => c.toLowerCase().includes(s))
+
     return matchCat && matchSearch
   })
 
