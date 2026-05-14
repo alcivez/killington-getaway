@@ -14,6 +14,7 @@ const inter = Inter({
 export const metadata = {
   title: "Killington Getaway | Your Ultimate Vermont Adventure Guide",
   description: "Discover the best restaurants, breweries, ski shops, and summer activities in Killington, Vermont. Plan your perfect mountain escape with our curated listings.",
+  metadataBase: new URL("https://killingtongetaway.com"),
   openGraph: {
     title: "Killington Getaway | Your Ultimate Vermont Adventure Guide",
     description: "Discover the best restaurants, breweries, ski shops, and summer activities in Killington, Vermont.",
@@ -37,9 +38,9 @@ export const metadata = {
     images: ["/images/hero/killington-k1.jpg"],
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/favicon.ico?v=2",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/icon.png?v=2",
   },
 };
 
@@ -49,6 +50,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+        <link rel="icon" href="/icon.png?v=2" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon.png?v=2" />
+      </head>
       <body className="min-h-full flex flex-col font-body">{children}</body>
     </html>
   );
